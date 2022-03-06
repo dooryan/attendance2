@@ -7,7 +7,7 @@ Module Encrypt_Decrypt
     Public Function CaesarCipher(ByVal strInput As String,
         ByVal intShift As Integer, Optional ByVal strCharacterSet _
         As String = "abcdefghijklmnopqrstuvwxyz" &
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" & " ") As String
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" & "1234567890" & " ") As String
         Dim sbEncrypt As New StringBuilder With {.Capacity = strInput.Length}
         For Each c As Char In strInput
             Dim intChar As Integer = strCharacterSet.IndexOf(c)
@@ -22,7 +22,7 @@ Module Encrypt_Decrypt
     Public Function CaesarDecipher(ByVal strInput As String,
         ByVal intShift As Integer, Optional ByVal strCharacterSet _
         As String = "abcdefghijklmnopqrstuvwxyz" &
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" & " ") As String
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" & "1234567890" & " ") As String
         Return CaesarCipher(strInput, intShift, String.Join("",
          strCharacterSet.Reverse))
     End Function

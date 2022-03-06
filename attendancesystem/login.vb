@@ -14,7 +14,7 @@ Public Class login
     End Sub
 
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        checkDatabaseConnection()
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs)
@@ -25,14 +25,11 @@ Public Class login
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
-
-    Private Sub btn_login_Click_1(sender As Object, e As EventArgs) Handles btn_login.Click
-
-
+    Private Sub login(ByVal uname As String, ByVal pwd As String)
         checkDatabaseConnection()
 
-        Dim USERNAME As String = txtusername.Text
-        Dim PASSWORD As String = txtpassword.Text
+        'Dim USERNAME As String = txtusername.Text
+        'Dim PASSWORD As String = txtpassword.Text
 
         If txtusername.Text = "" Or txtpassword.Text = "" Then
             MessageBox.Show("PLEASE ENTER YOUR CRENDENTIALS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -42,8 +39,8 @@ Public Class login
             Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
                 Using cmd As MySqlCommand = New MySqlCommand(LogQuery, con)
 
-                    cmd.Parameters.AddWithValue("@USERNAME", USERNAME)
-                    cmd.Parameters.AddWithValue("@PASSWORD", PASSWORD)
+                    cmd.Parameters.AddWithValue("@USERNAME", uname)
+                    cmd.Parameters.AddWithValue("@PASSWORD", pwd)
 
                     Dim da As New MySqlDataAdapter(cmd)
                     Dim myTable As New DataTable
@@ -80,9 +77,99 @@ Public Class login
             End Using
         End If
 
+    End Sub
 
+    Private Sub userLogin(ByVal pwd As String, ByVal userType As String)
+        If txtusername.Text = "" Or txtpassword.Text = "" Then
+            MessageBox.Show("PLEASE ENTER YOUR CRENDENTIALS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+
+            If pwd = txtpassword.Text Then
+
+
+                Dim message As String = "You have successfully login. Please click ok to proceed."
+                Dim caption As String = "Success"
+                Dim result = MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+                If userType = "admin" Then
+                    Dim adminDashboard As New adminDashboard
+                    adminDashboard.adminDashboard = txtusername.Text
+                    adminDashboard.Show()
+
+                ElseIf userType = "user" Then
+                    Dim UserDashboard As New attendance
+                    attendance.userDashboard = txtusername.Text
+                    attendance.Show()
+                Else
+                    MessageBox.Show("Error Occured", " ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
+
+                End If
+
+            Else
+                MessageBox.Show("Username or password does not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
+
+        End If
+
+    End Sub
+    Private Sub decrypt()
+        If txtusername.Text = "" Or txtpassword.Text = "" Then
+            MessageBox.Show("PLEASE ENTER YOUR CRENDENTIALS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            
+        Else
+
+            Try
+                With command
+                    .Parameters.Clear()
+                    .CommandText = "prcDecrypt"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("uname", txtusername.Text)
+                    Dim paramPwd As IDbDataParameter = command.CreateParameter()
+                    paramPwd.ParameterName = "pwd"
+                    paramPwd.Direction = System.Data.ParameterDirection.Output
+                    .Parameters.Add(paramPwd)
+                    Dim paramUtype As IDbDataParameter = command.CreateParameter()
+                    paramUtype.ParameterName = "uType"
+                    paramUtype.Direction = System.Data.ParameterDirection.Output
+                    .Parameters.Add(paramUtype)
+
+
+
+                    '.Parameters.AddWithValue("@uname", txtusername.Text)
+                    '.Parameters("@uname").Direction = ParameterDirection.InputOutput
+
+                    '.Parameters.AddWithValue("@pwd", MySqlDbType.String)
+                    '.Parameters("@pwd").Direction = ParameterDirection.InputOutput
+
+                    '.Parameters.AddWithValue("@uType", MySqlDbType.String)
+                    '.Parameters("@uType").Direction = ParameterDirection.InputOutput
+                    .ExecuteNonQuery()
+
+                    Dim pwdDecrypted As String =
+                    CaesarDecipher(paramPwd.Value, intShift:=15)
+
+                    Dim userType As String = paramUtype.Value
+
+                    Console.WriteLine(paramPwd.Value & paramUtype.Value)
+
+
+                    userLogin(pwdDecrypted, userType)
+
+
+
+                End With
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show("" & ex.Message)
+
+            End Try
+        End If
+    End Sub
+    Private Sub btn_login_Click_1(sender As Object, e As EventArgs) Handles btn_login.Click
+        decrypt()
         Me.Hide()
-
 
     End Sub
 

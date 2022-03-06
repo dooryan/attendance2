@@ -25,11 +25,13 @@ Partial Class addUser
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(addUser))
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtUname = New System.Windows.Forms.TextBox()
+        Me.txtID = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtID = New System.Windows.Forms.TextBox()
-        Me.txtUname = New System.Windows.Forms.TextBox()
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -53,24 +55,64 @@ Partial Class addUser
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.txtUname)
+        Me.Panel1.Controls.Add(Me.txtID)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.txtConfirmPassword)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.txtID)
-        Me.Panel1.Controls.Add(Me.txtUname)
         Me.Panel1.Controls.Add(Me.txtPass)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Location = New System.Drawing.Point(12, 14)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(302, 186)
+        Me.Panel1.Size = New System.Drawing.Size(302, 257)
         Me.Panel1.TabIndex = 21
+        '
+        'txtUname
+        '
+        Me.txtUname.Location = New System.Drawing.Point(119, 68)
+        Me.txtUname.Name = "txtUname"
+        Me.txtUname.Size = New System.Drawing.Size(151, 20)
+        Me.txtUname.TabIndex = 20
+        '
+        'txtID
+        '
+        Me.txtID.Location = New System.Drawing.Point(119, 38)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(151, 20)
+        Me.txtID.TabIndex = 19
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(15, 131)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(148, 19)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "Confirm Password:"
+        '
+        'txtConfirmPassword
+        '
+        Me.txtConfirmPassword.BackColor = System.Drawing.Color.White
+        Me.txtConfirmPassword.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(109, 157)
+        Me.txtConfirmPassword.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtConfirmPassword.Name = "txtConfirmPassword"
+        Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtConfirmPassword.Size = New System.Drawing.Size(161, 26)
+        Me.txtConfirmPassword.TabIndex = 18
         '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(144, Byte), Integer))
         Me.Button2.Font = New System.Drawing.Font("Cambria", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(109, 133)
+        Me.Button2.Location = New System.Drawing.Point(109, 187)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(110, 41)
@@ -100,28 +142,6 @@ Partial Class addUser
         Me.Label7.Size = New System.Drawing.Size(87, 19)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Username:"
-        '
-        'txtID
-        '
-        Me.txtID.BackColor = System.Drawing.Color.White
-        Me.txtID.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.txtID.Location = New System.Drawing.Point(109, 30)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(161, 26)
-        Me.txtID.TabIndex = 9
-        '
-        'txtUname
-        '
-        Me.txtUname.BackColor = System.Drawing.Color.White
-        Me.txtUname.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.txtUname.Location = New System.Drawing.Point(109, 63)
-        Me.txtUname.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtUname.Name = "txtUname"
-        Me.txtUname.Size = New System.Drawing.Size(161, 26)
-        Me.txtUname.TabIndex = 12
         '
         'txtPass
         '
@@ -153,7 +173,7 @@ Partial Class addUser
         Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Location = New System.Drawing.Point(77, 85)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(327, 214)
+        Me.Panel2.Size = New System.Drawing.Size(327, 286)
         Me.Panel2.TabIndex = 22
         '
         'addUser
@@ -181,9 +201,11 @@ Partial Class addUser
     Friend WithEvents Button2 As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtID As TextBox
-    Friend WithEvents txtUname As TextBox
     Friend WithEvents txtPass As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtConfirmPassword As TextBox
+    Friend WithEvents txtUname As TextBox
+    Friend WithEvents txtID As TextBox
 End Class
