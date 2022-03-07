@@ -23,7 +23,6 @@ Partial Class adminDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminDashboard))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -31,6 +30,7 @@ Partial Class adminDashboard
         Me.Button3 = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.UserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewUsersToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddPayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PayRecordsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,7 +55,7 @@ Partial Class adminDashboard
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.ViewUsersToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnPayroll = New System.Windows.Forms.Button()
         Me.Panel10.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -80,25 +80,25 @@ Partial Class adminDashboard
         '
         'Panel10
         '
-        Me.Panel10.BackColor = System.Drawing.Color.Gray
+        Me.Panel10.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.Panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel10.Controls.Add(Me.Panel9)
         Me.Panel10.Location = New System.Drawing.Point(20, 24)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(756, 412)
+        Me.Panel10.Size = New System.Drawing.Size(851, 445)
         Me.Panel10.TabIndex = 38
         '
         'Panel9
         '
-        Me.Panel9.BackColor = System.Drawing.Color.White
+        Me.Panel9.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel9.Controls.Add(Me.Button3)
         Me.Panel9.Controls.Add(Me.MenuStrip1)
         Me.Panel9.Controls.Add(Me.Panel8)
         Me.Panel9.Controls.Add(Me.Panel13)
-        Me.Panel9.Location = New System.Drawing.Point(8, 9)
+        Me.Panel9.Location = New System.Drawing.Point(11, 12)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(741, 396)
+        Me.Panel9.Size = New System.Drawing.Size(827, 420)
         Me.Panel9.TabIndex = 33
         '
         'Button3
@@ -120,7 +120,7 @@ Partial Class adminDashboard
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 1)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(280, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(372, 28)
         Me.MenuStrip1.TabIndex = 32
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -133,6 +133,12 @@ Partial Class adminDashboard
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
         Me.UserToolStripMenuItem.Size = New System.Drawing.Size(135, 24)
         Me.UserToolStripMenuItem.Text = "Manage Accounts"
+        '
+        'ViewUsersToolStripMenuItem1
+        '
+        Me.ViewUsersToolStripMenuItem1.Name = "ViewUsersToolStripMenuItem1"
+        Me.ViewUsersToolStripMenuItem1.Size = New System.Drawing.Size(152, 24)
+        Me.ViewUsersToolStripMenuItem1.Text = "View Users"
         '
         'ToolStripMenuItem1
         '
@@ -171,16 +177,16 @@ Partial Class adminDashboard
         '
         'Panel8
         '
-        Me.Panel8.BackColor = System.Drawing.Color.SlateGray
+        Me.Panel8.BackColor = System.Drawing.Color.White
         Me.Panel8.Controls.Add(Me.Label2)
         Me.Panel8.Controls.Add(Me.Panel2)
         Me.Panel8.Controls.Add(Me.ffff)
         Me.Panel8.Controls.Add(Me.Panel7)
         Me.Panel8.Controls.Add(Me.Panel11)
         Me.Panel8.Controls.Add(Me.Panel12)
-        Me.Panel8.Location = New System.Drawing.Point(177, 29)
+        Me.Panel8.Location = New System.Drawing.Point(185, 32)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(538, 349)
+        Me.Panel8.Size = New System.Drawing.Size(626, 373)
         Me.Panel8.TabIndex = 7
         '
         'Label2
@@ -188,8 +194,8 @@ Partial Class adminDashboard
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(186, 27)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(267, 26)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(333, 49)
@@ -202,7 +208,7 @@ Partial Class adminDashboard
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.lblTotalEmp1)
-        Me.Panel2.Location = New System.Drawing.Point(290, 199)
+        Me.Panel2.Location = New System.Drawing.Point(371, 198)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(214, 98)
@@ -254,7 +260,7 @@ Partial Class adminDashboard
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel7.Controls.Add(Me.Label11)
         Me.Panel7.Controls.Add(Me.lblontime)
-        Me.Panel7.Location = New System.Drawing.Point(188, 87)
+        Me.Panel7.Location = New System.Drawing.Point(269, 86)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(156, 93)
@@ -294,7 +300,7 @@ Partial Class adminDashboard
         Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel11.Controls.Add(Me.Label12)
         Me.Panel11.Controls.Add(Me.lblpresent)
-        Me.Panel11.Location = New System.Drawing.Point(14, 87)
+        Me.Panel11.Location = New System.Drawing.Point(95, 86)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(154, 93)
@@ -333,7 +339,7 @@ Partial Class adminDashboard
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel12.Controls.Add(Me.Label14)
         Me.Panel12.Controls.Add(Me.lblLate)
-        Me.Panel12.Location = New System.Drawing.Point(355, 87)
+        Me.Panel12.Location = New System.Drawing.Point(436, 86)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(149, 93)
@@ -368,72 +374,83 @@ Partial Class adminDashboard
         '
         'Panel13
         '
-        Me.Panel13.BackColor = System.Drawing.Color.LightSlateGray
+        Me.Panel13.BackColor = System.Drawing.Color.White
+        Me.Panel13.Controls.Add(Me.btnPayroll)
         Me.Panel13.Controls.Add(Me.Button2)
         Me.Panel13.Controls.Add(Me.Button1)
         Me.Panel13.Controls.Add(Me.Button9)
-        Me.Panel13.Location = New System.Drawing.Point(8, 81)
+        Me.Panel13.Location = New System.Drawing.Point(8, 33)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(161, 245)
+        Me.Panel13.Size = New System.Drawing.Size(171, 372)
         Me.Panel13.TabIndex = 23
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.Gray
+        Me.Button2.BackColor = System.Drawing.Color.LightSlateGray
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Wheat
-        Me.Button2.Location = New System.Drawing.Point(7, 162)
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(12, 91)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(148, 70)
+        Me.Button2.Size = New System.Drawing.Size(148, 36)
         Me.Button2.TabIndex = 28
         Me.Button2.Text = "Daily Records"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Gray
+        Me.Button1.BackColor = System.Drawing.Color.LightSlateGray
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Wheat
-        Me.Button1.Location = New System.Drawing.Point(7, 86)
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(12, 52)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(148, 70)
+        Me.Button1.Size = New System.Drawing.Size(148, 35)
         Me.Button1.TabIndex = 27
         Me.Button1.Text = "Employees"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button9
         '
-        Me.Button9.BackColor = System.Drawing.Color.Gray
+        Me.Button9.BackColor = System.Drawing.Color.LightSlateGray
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button9.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.Wheat
-        Me.Button9.Location = New System.Drawing.Point(7, 11)
+        Me.Button9.ForeColor = System.Drawing.Color.White
+        Me.Button9.Location = New System.Drawing.Point(12, 14)
         Me.Button9.Margin = New System.Windows.Forms.Padding(2)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(148, 70)
+        Me.Button9.Size = New System.Drawing.Size(148, 34)
         Me.Button9.TabIndex = 26
         Me.Button9.Text = "Dashboard"
         Me.Button9.UseVisualStyleBackColor = False
         '
-        'ViewUsersToolStripMenuItem1
+        'btnPayroll
         '
-        Me.ViewUsersToolStripMenuItem1.Name = "ViewUsersToolStripMenuItem1"
-        Me.ViewUsersToolStripMenuItem1.Size = New System.Drawing.Size(152, 24)
-        Me.ViewUsersToolStripMenuItem1.Text = "View Users"
+        Me.btnPayroll.BackColor = System.Drawing.Color.LightSlateGray
+        Me.btnPayroll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPayroll.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPayroll.ForeColor = System.Drawing.Color.White
+        Me.btnPayroll.Location = New System.Drawing.Point(12, 131)
+        Me.btnPayroll.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnPayroll.Name = "btnPayroll"
+        Me.btnPayroll.Size = New System.Drawing.Size(148, 43)
+        Me.btnPayroll.TabIndex = 29
+        Me.btnPayroll.Text = "Payroll"
+        Me.btnPayroll.UseVisualStyleBackColor = False
         '
         'adminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SlateGray
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(796, 462)
+        Me.BackgroundImage = Global.attendancesystem.My.Resources.Resources.beautiful_color_ui_gradients_backgrounds_frost1
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(892, 492)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Label15)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "adminDashboard"
@@ -491,4 +508,5 @@ Partial Class adminDashboard
     Friend WithEvents WagesDetailsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Button3 As Button
     Friend WithEvents ViewUsersToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents btnPayroll As Button
 End Class

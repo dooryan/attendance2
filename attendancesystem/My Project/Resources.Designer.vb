@@ -163,6 +163,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property beautiful_color_ui_gradients_backgrounds_frost() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-frost", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property beautiful_color_ui_gradients_backgrounds_frost1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-frost1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property delete_remove_trash_trash_bin_trash_can_icon_1320073117929397588() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("delete+remove+trash+trash+bin+trash+can+icon-1320073117929397588", resourceCulture)
