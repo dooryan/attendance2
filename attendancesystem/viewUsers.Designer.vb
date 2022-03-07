@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class viewUsers
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,25 +20,24 @@ Partial Class viewUsers
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.uname = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pw = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dateCreated = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.uname, Me.pw, Me.date1})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.uname, Me.fname, Me.lname, Me.dateCreated})
+        Me.DataGridView1.Location = New System.Drawing.Point(9, 11)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(539, 352)
+        Me.DataGridView1.Size = New System.Drawing.Size(498, 283)
         Me.DataGridView1.TabIndex = 0
         '
         'id
@@ -51,23 +50,29 @@ Partial Class viewUsers
         Me.uname.HeaderText = "Username"
         Me.uname.Name = "uname"
         '
-        'pw
+        'fname
         '
-        Me.pw.HeaderText = "Password"
-        Me.pw.Name = "pw"
+        Me.fname.HeaderText = "First name"
+        Me.fname.Name = "fname"
         '
-        'date1
+        'lname
         '
-        Me.date1.HeaderText = "Date Created"
-        Me.date1.Name = "date1"
+        Me.lname.HeaderText = "Last name"
+        Me.lname.Name = "lname"
+        '
+        'dateCreated
+        '
+        Me.dateCreated.HeaderText = "Date Created"
+        Me.dateCreated.Name = "dateCreated"
         '
         'viewUsers
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(562, 377)
+        Me.ClientSize = New System.Drawing.Size(519, 306)
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "viewUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "viewUsers"
@@ -79,6 +84,7 @@ Partial Class viewUsers
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents uname As DataGridViewTextBoxColumn
-    Friend WithEvents pw As DataGridViewTextBoxColumn
-    Friend WithEvents date1 As DataGridViewTextBoxColumn
+    Friend WithEvents fname As DataGridViewTextBoxColumn
+    Friend WithEvents lname As DataGridViewTextBoxColumn
+    Friend WithEvents dateCreated As DataGridViewTextBoxColumn
 End Class

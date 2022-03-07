@@ -184,7 +184,7 @@ Public Class adminDashboard
         Me.Hide()
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -192,7 +192,7 @@ Public Class adminDashboard
 
     End Sub
 
-    Private Sub PayRecordsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PayRecordsToolStripMenuItem.Click
+    Private Sub PayRecordsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         AttendanceRecords.Show()
     End Sub
 
@@ -200,7 +200,7 @@ Public Class adminDashboard
 
     End Sub
 
-    Private Sub AddPayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddPayToolStripMenuItem.Click
+    Private Sub AddPayToolStripMenuItem_Click(sender As Object, e As EventArgs)
         payroll.Show()
     End Sub
 
@@ -231,7 +231,7 @@ Public Class adminDashboard
         EmpTimesheet.Show()
     End Sub
 
-    Private Sub ViewUsersToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ViewUsersToolStripMenuItem1.Click
+    Private Sub ViewUsersToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         viewUsers.Show()
     End Sub
 
@@ -250,7 +250,7 @@ Public Class adminDashboard
         Form1.Show()
     End Sub
 
-    Private Sub WagesDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WagesDetailsToolStripMenuItem.Click
+    Private Sub WagesDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         WageDetails.Show()
     End Sub
 
@@ -260,5 +260,13 @@ Public Class adminDashboard
 
     Private Sub Panel11_Paint(sender As Object, e As PaintEventArgs) Handles Panel11.Paint
 
+    End Sub
+
+    Private Sub btnViewUsers_Click(sender As Object, e As EventArgs) Handles btnViewUsers.Click
+        viewUsers.Show()
+    End Sub
+
+    Private Sub btnPayroll_Click(sender As Object, e As EventArgs) Handles btnPayroll.Click
+        payroll.Show()
     End Sub
 End Class

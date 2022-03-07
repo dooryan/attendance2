@@ -29,8 +29,9 @@ Public Class viewUsers
                         With DataGridView1
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("emp_id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("username").ToString
-                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("password").ToString
-                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("date_created").ToString
+                            .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("l_name").ToString
+                            .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("date_created").ToString
 
                         End With
                         row = row + 1

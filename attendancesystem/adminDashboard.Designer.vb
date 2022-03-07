@@ -29,12 +29,6 @@ Partial Class adminDashboard
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.UserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewUsersToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddPayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PayRecordsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WagesDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -52,10 +46,11 @@ Partial Class adminDashboard
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblLate = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.btnViewUsers = New System.Windows.Forms.Button()
+        Me.btnPayroll = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.btnPayroll = New System.Windows.Forms.Button()
         Me.Panel10.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -116,56 +111,13 @@ Partial Class adminDashboard
         Me.MenuStrip1.BackColor = System.Drawing.Color.Snow
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripMenuItem, Me.ToolStripMenuItem1, Me.LogOutToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 1)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogOutToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(5, 2)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(372, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(82, 28)
         Me.MenuStrip1.TabIndex = 32
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'UserToolStripMenuItem
-        '
-        Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewUsersToolStripMenuItem1})
-        Me.UserToolStripMenuItem.Enabled = False
-        Me.UserToolStripMenuItem.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UserToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(135, 24)
-        Me.UserToolStripMenuItem.Text = "Manage Accounts"
-        '
-        'ViewUsersToolStripMenuItem1
-        '
-        Me.ViewUsersToolStripMenuItem1.Name = "ViewUsersToolStripMenuItem1"
-        Me.ViewUsersToolStripMenuItem1.Size = New System.Drawing.Size(152, 24)
-        Me.ViewUsersToolStripMenuItem1.Text = "View Users"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddPayToolStripMenuItem, Me.PayRecordsToolStripMenuItem, Me.WagesDetailsToolStripMenuItem})
-        Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(63, 24)
-        Me.ToolStripMenuItem1.Text = "Payroll"
-        '
-        'AddPayToolStripMenuItem
-        '
-        Me.AddPayToolStripMenuItem.Name = "AddPayToolStripMenuItem"
-        Me.AddPayToolStripMenuItem.Size = New System.Drawing.Size(169, 24)
-        Me.AddPayToolStripMenuItem.Text = "Add Pay"
-        '
-        'PayRecordsToolStripMenuItem
-        '
-        Me.PayRecordsToolStripMenuItem.Name = "PayRecordsToolStripMenuItem"
-        Me.PayRecordsToolStripMenuItem.Size = New System.Drawing.Size(169, 24)
-        Me.PayRecordsToolStripMenuItem.Text = "Pay Records"
-        '
-        'WagesDetailsToolStripMenuItem
-        '
-        Me.WagesDetailsToolStripMenuItem.Name = "WagesDetailsToolStripMenuItem"
-        Me.WagesDetailsToolStripMenuItem.Size = New System.Drawing.Size(169, 24)
-        Me.WagesDetailsToolStripMenuItem.Text = "Wages Details"
         '
         'LogOutToolStripMenuItem
         '
@@ -204,7 +156,7 @@ Partial Class adminDashboard
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(107, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.DarkSlateBlue
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.lblTotalEmp1)
@@ -256,7 +208,7 @@ Partial Class adminDashboard
         '
         'Panel7
         '
-        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.Panel7.BackColor = System.Drawing.Color.CornflowerBlue
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel7.Controls.Add(Me.Label11)
         Me.Panel7.Controls.Add(Me.lblontime)
@@ -295,7 +247,7 @@ Partial Class adminDashboard
         '
         'Panel11
         '
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.Panel11.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel11.Controls.Add(Me.Label12)
@@ -335,7 +287,7 @@ Partial Class adminDashboard
         '
         'Panel12
         '
-        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(123, Byte), Integer), CType(CType(209, Byte), Integer))
+        Me.Panel12.BackColor = System.Drawing.Color.SlateBlue
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel12.Controls.Add(Me.Label14)
         Me.Panel12.Controls.Add(Me.lblLate)
@@ -375,6 +327,7 @@ Partial Class adminDashboard
         'Panel13
         '
         Me.Panel13.BackColor = System.Drawing.Color.White
+        Me.Panel13.Controls.Add(Me.btnViewUsers)
         Me.Panel13.Controls.Add(Me.btnPayroll)
         Me.Panel13.Controls.Add(Me.Button2)
         Me.Panel13.Controls.Add(Me.Button1)
@@ -384,9 +337,37 @@ Partial Class adminDashboard
         Me.Panel13.Size = New System.Drawing.Size(171, 372)
         Me.Panel13.TabIndex = 23
         '
+        'btnViewUsers
+        '
+        Me.btnViewUsers.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnViewUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnViewUsers.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewUsers.ForeColor = System.Drawing.Color.White
+        Me.btnViewUsers.Location = New System.Drawing.Point(12, 178)
+        Me.btnViewUsers.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnViewUsers.Name = "btnViewUsers"
+        Me.btnViewUsers.Size = New System.Drawing.Size(148, 43)
+        Me.btnViewUsers.TabIndex = 30
+        Me.btnViewUsers.Text = "View Users"
+        Me.btnViewUsers.UseVisualStyleBackColor = False
+        '
+        'btnPayroll
+        '
+        Me.btnPayroll.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnPayroll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPayroll.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPayroll.ForeColor = System.Drawing.Color.White
+        Me.btnPayroll.Location = New System.Drawing.Point(12, 131)
+        Me.btnPayroll.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnPayroll.Name = "btnPayroll"
+        Me.btnPayroll.Size = New System.Drawing.Size(148, 43)
+        Me.btnPayroll.TabIndex = 29
+        Me.btnPayroll.Text = "Payroll Management"
+        Me.btnPayroll.UseVisualStyleBackColor = False
+        '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.LightSlateGray
+        Me.Button2.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
@@ -400,7 +381,7 @@ Partial Class adminDashboard
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.LightSlateGray
+        Me.Button1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
@@ -414,7 +395,7 @@ Partial Class adminDashboard
         '
         'Button9
         '
-        Me.Button9.BackColor = System.Drawing.Color.LightSlateGray
+        Me.Button9.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button9.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.Color.White
@@ -425,20 +406,6 @@ Partial Class adminDashboard
         Me.Button9.TabIndex = 26
         Me.Button9.Text = "Dashboard"
         Me.Button9.UseVisualStyleBackColor = False
-        '
-        'btnPayroll
-        '
-        Me.btnPayroll.BackColor = System.Drawing.Color.LightSlateGray
-        Me.btnPayroll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPayroll.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPayroll.ForeColor = System.Drawing.Color.White
-        Me.btnPayroll.Location = New System.Drawing.Point(12, 131)
-        Me.btnPayroll.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnPayroll.Name = "btnPayroll"
-        Me.btnPayroll.Size = New System.Drawing.Size(148, 43)
-        Me.btnPayroll.TabIndex = 29
-        Me.btnPayroll.Text = "Payroll"
-        Me.btnPayroll.UseVisualStyleBackColor = False
         '
         'adminDashboard
         '
@@ -481,10 +448,6 @@ Partial Class adminDashboard
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel9 As Panel
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents UserToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents AddPayToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PayRecordsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label2 As Label
@@ -505,8 +468,7 @@ Partial Class adminDashboard
     Friend WithEvents Button9 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents WagesDetailsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Button3 As Button
-    Friend WithEvents ViewUsersToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents btnPayroll As Button
+    Friend WithEvents btnViewUsers As Button
 End Class

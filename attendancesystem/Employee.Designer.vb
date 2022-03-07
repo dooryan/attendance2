@@ -84,15 +84,15 @@ Partial Class Form1
         '
         'Panel7
         '
-        Me.Panel7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel7.BackColor = System.Drawing.Color.White
         Me.Panel7.Controls.Add(Me.Button2)
         Me.Panel7.Controls.Add(Me.Button3)
         Me.Panel7.Controls.Add(Me.Button6)
         Me.Panel7.Controls.Add(Me.Button7)
-        Me.Panel7.Location = New System.Drawing.Point(11, 10)
+        Me.Panel7.Location = New System.Drawing.Point(15, 10)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(170, 266)
+        Me.Panel7.Size = New System.Drawing.Size(144, 317)
         Me.Panel7.TabIndex = 0
         '
         'Button2
@@ -101,10 +101,10 @@ Partial Class Form1
         Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button2.Location = New System.Drawing.Point(20, 218)
+        Me.Button2.Location = New System.Drawing.Point(20, 245)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(130, 32)
+        Me.Button2.Size = New System.Drawing.Size(106, 32)
         Me.Button2.TabIndex = 5
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -115,10 +115,10 @@ Partial Class Form1
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Location = New System.Drawing.Point(20, 24)
+        Me.Button3.Location = New System.Drawing.Point(20, 40)
         Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(130, 41)
+        Me.Button3.Size = New System.Drawing.Size(111, 41)
         Me.Button3.TabIndex = 0
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomRight
         Me.Button3.UseVisualStyleBackColor = False
@@ -130,10 +130,10 @@ Partial Class Form1
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button6.Location = New System.Drawing.Point(20, 111)
+        Me.Button6.Location = New System.Drawing.Point(20, 127)
         Me.Button6.Margin = New System.Windows.Forms.Padding(2)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(130, 41)
+        Me.Button6.Size = New System.Drawing.Size(111, 41)
         Me.Button6.TabIndex = 2
         Me.Button6.UseVisualStyleBackColor = False
         '
@@ -144,26 +144,26 @@ Partial Class Form1
         Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button7.Location = New System.Drawing.Point(20, 67)
+        Me.Button7.Location = New System.Drawing.Point(20, 83)
         Me.Button7.Margin = New System.Windows.Forms.Padding(2)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(130, 41)
+        Me.Button7.Size = New System.Drawing.Size(111, 41)
         Me.Button7.TabIndex = 1
         Me.Button7.UseVisualStyleBackColor = False
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(9, 10)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(705, 412)
+        Me.Panel1.Size = New System.Drawing.Size(872, 471)
         Me.Panel1.TabIndex = 41
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel2.Controls.Add(Me.textSearch)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.DataGridView1)
@@ -171,31 +171,31 @@ Partial Class Form1
         Me.Panel2.Location = New System.Drawing.Point(12, 13)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(682, 385)
+        Me.Panel2.Size = New System.Drawing.Size(846, 446)
         Me.Panel2.TabIndex = 41
         '
         'textSearch
         '
-        Me.textSearch.Location = New System.Drawing.Point(175, 30)
+        Me.textSearch.Location = New System.Drawing.Point(181, 32)
         Me.textSearch.Margin = New System.Windows.Forms.Padding(2)
+        Me.textSearch.Multiline = True
         Me.textSearch.Name = "textSearch"
         Me.textSearch.Size = New System.Drawing.Size(192, 20)
         Me.textSearch.TabIndex = 42
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel3.Controls.Add(Me.Panel7)
-        Me.Panel3.Location = New System.Drawing.Point(484, 84)
+        Me.Panel3.Location = New System.Drawing.Point(658, 89)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(193, 287)
+        Me.Panel3.Size = New System.Drawing.Size(172, 342)
         Me.Panel3.TabIndex = 41
         '
         'DataGridView1
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Tan
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.deptID, Me.deptnsme, Me.fname, Me.lname, Me.addr, Me.bdate, Me.gendr, Me.dhired, Me.cont})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -225,7 +225,7 @@ Partial Class Form1
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(456, 287)
+        Me.DataGridView1.Size = New System.Drawing.Size(633, 342)
         Me.DataGridView1.TabIndex = 40
         '
         'id1
@@ -293,9 +293,11 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SlateGray
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(723, 434)
+        Me.BackgroundImage = Global.attendancesystem.My.Resources.Resources.beautiful_color_ui_gradients_backgrounds_frost1
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(892, 492)
         Me.Controls.Add(Me.Panel1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Location = New System.Drawing.Point(184, 36)
         Me.Margin = New System.Windows.Forms.Padding(2)
