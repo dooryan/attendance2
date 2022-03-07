@@ -15,6 +15,7 @@ Public Class adminDashboard
 
         ffff.Text = Date.Now.ToString("MMM dd, yyyy")
 
+        'Count
         Dim NAMEquery As String = "SELECT * FROM tbl_employee"
         Using NAMEcon As MySqlConnection = New MySqlConnection("server=localhost;uid=root;pwd=hello;database=db_attendance;SslMode=none;")
 
@@ -39,7 +40,7 @@ Public Class adminDashboard
             End Using
         End Using
 
-
+        'Present
         Dim query As String = "SELECT * FROM tbl_timesheet WHERE tdate ='" & DateAndTime.Now.ToString("yyyy/MM/dd") & "'  AND  status='" & "IN" & "' "
         Using con As MySqlConnection = New MySqlConnection("server=localhost;uid=root;pwd=hello;database=db_attendance;SslMode=none")
             Using cmd As MySqlCommand = New MySqlCommand(query, con)
@@ -60,7 +61,7 @@ Public Class adminDashboard
         End Using
 
 
-
+        'Late
         Using q As MySqlConnection = New MySqlConnection("server=localhost;uid=root;pwd=hello;database=db_attendance;SslMode=none")
             Using cmd As MySqlCommand = New MySqlCommand("", q)
 

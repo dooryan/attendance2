@@ -34,18 +34,18 @@ Partial Class attendance
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lbl_time = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lbl_time = New System.Windows.Forms.Label()
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnIn
@@ -160,6 +160,32 @@ Partial Class attendance
         Me.Panel2.Size = New System.Drawing.Size(271, 395)
         Me.Panel2.TabIndex = 17
         '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.DimGray
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel4.Controls.Add(Me.lbl_time)
+        Me.Panel4.Controls.Add(Me.lbl_date)
+        Me.Panel4.Controls.Add(Me.btnIn)
+        Me.Panel4.Controls.Add(Me.btnOut)
+        Me.Panel4.Location = New System.Drawing.Point(14, 16)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(242, 130)
+        Me.Panel4.TabIndex = 21
+        '
+        'lbl_time
+        '
+        Me.lbl_time.AutoSize = True
+        Me.lbl_time.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_time.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_time.ForeColor = System.Drawing.Color.White
+        Me.lbl_time.Location = New System.Drawing.Point(98, 54)
+        Me.lbl_time.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_time.Name = "lbl_time"
+        Me.lbl_time.Size = New System.Drawing.Size(42, 19)
+        Me.lbl_time.TabIndex = 6
+        Me.lbl_time.Text = "Date"
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -210,32 +236,6 @@ Partial Class attendance
         Me.PictureBox1.TabIndex = 20
         Me.PictureBox1.TabStop = False
         '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.DimGray
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel4.Controls.Add(Me.lbl_time)
-        Me.Panel4.Controls.Add(Me.lbl_date)
-        Me.Panel4.Controls.Add(Me.btnIn)
-        Me.Panel4.Controls.Add(Me.btnOut)
-        Me.Panel4.Location = New System.Drawing.Point(14, 16)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(242, 130)
-        Me.Panel4.TabIndex = 21
-        '
-        'lbl_time
-        '
-        Me.lbl_time.AutoSize = True
-        Me.lbl_time.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_time.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_time.ForeColor = System.Drawing.Color.White
-        Me.lbl_time.Location = New System.Drawing.Point(98, 54)
-        Me.lbl_time.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_time.Name = "lbl_time"
-        Me.lbl_time.Size = New System.Drawing.Size(42, 19)
-        Me.lbl_time.TabIndex = 6
-        Me.lbl_time.Text = "Date"
-        '
         'attendance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -254,12 +254,12 @@ Partial Class attendance
         Me.Text = "attendance"
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -271,9 +271,6 @@ Partial Class attendance
     Friend WithEvents lbl_date As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label3 As Label
-    Friend WithEvents date1 As DataGridViewTextBoxColumn
-    Friend WithEvents time1 As DataGridViewTextBoxColumn
-    Friend WithEvents stat As DataGridViewTextBoxColumn
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel1 As Panel
@@ -281,4 +278,7 @@ Partial Class attendance
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents lbl_time As Label
+    Friend WithEvents date1 As DataGridViewTextBoxColumn
+    Friend WithEvents time1 As DataGridViewTextBoxColumn
+    Friend WithEvents stat As DataGridViewTextBoxColumn
 End Class

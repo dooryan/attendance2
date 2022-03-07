@@ -97,10 +97,12 @@ Public Class login
                     adminDashboard.adminDashboard = txtusername.Text
                     adminDashboard.Show()
 
+
                 ElseIf userType = "user" Then
                     Dim UserDashboard As New attendance
                     attendance.userDashboard = txtusername.Text
                     attendance.Show()
+
                 Else
                     MessageBox.Show("Error Occured", " ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
 

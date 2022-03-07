@@ -2,11 +2,6 @@
 'Imports EXCEL = Microsoft.Office.Interop.Excel
 Imports CrystalDecisions.CrystalReports.Engine
 
-
-
-
-
-
 Public Class EmpTimesheet
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
@@ -311,5 +306,13 @@ Public Class EmpTimesheet
 
 
         End If
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 End Class

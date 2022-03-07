@@ -48,7 +48,7 @@ Public Class attendance
                         .Parameters.AddWithValue("uname", user)
                         .Parameters.AddWithValue("stat", statt)
                         .Parameters.AddWithValue("currTime", timeNow)
-                        .Parameters.AddWithValue("currDate", dateNow)
+                        .Parameters.AddWithValue("currDate", Date.Now.ToString("yyy/MM/dd"))
                         .Parameters.AddWithValue("flag", Flag)
                         .ExecuteNonQuery()
 
@@ -65,6 +65,7 @@ Public Class attendance
             MessageBox.Show("" & ex.Message)
 
         End Try
+        dateCompare()
         displayTimesheet()
 
 
@@ -74,6 +75,7 @@ Public Class attendance
 
     Private Sub attendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Refresh()
+
         Timer1.Enabled = True
 
         Label1.Text = userDashboard
@@ -140,10 +142,12 @@ Public Class attendance
                         .Parameters.AddWithValue("currTime", timeNow)
                         .Parameters.AddWithValue("currDate", dateNow)
                         .Parameters.AddWithValue("flag", Flag)
-                        .ExecuteNonQuery()
 
+                        .ExecuteNonQuery()
+                        btnIn.Show()
                         MessageBox.Show("Time-out successful", "", MessageBoxButtons.OK,
                                                         MessageBoxIcon.Information)
+
                     End With
                 End If
             End With
@@ -161,7 +165,7 @@ Public Class attendance
 
     Private Sub displayTimesheet()
         Dim user As String = Label1.Text
-
+        dgrid_emp_time_history.Columns(0).DefaultCellStyle.Format = "yyyy/MM/dd"
         dataAttendance = New DataTable()
         sqlAttendanceAdapter = New MySqlDataAdapter
         command.Connection = conAttendanceSystem
@@ -181,8 +185,10 @@ Public Class attendance
 
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
+
                         With dgrid_emp_time_history
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("tdate").ToString
+
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("ttime").ToString
 
                             .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("status").ToString
@@ -202,20 +208,33 @@ Public Class attendance
 
         End Try
 
+    End Sub
+    Private Sub dateCompare()
+        'Compare date to let btnIn and btnOut hide and show alternately
+        Dim dateFromDGridSplit As String
         Dim row1 = 0
-        While dgrid_emp_time_history.Rows.Count > row1
-            If (dgrid_emp_time_history.Rows(row1).Cells(row1).Value = dateNow) And (dgrid_emp_time_history.Rows(0).Cells(0).Value = "IN") Then
-                btnIn.Hide()
-            End If
-            row1 = row1 + 1
-        End While
 
+        If dgrid_emp_time_history.Rows.Count < 0 Then
+            While dgrid_emp_time_history.Rows.Count > row1
+                dateFromDGridSplit = dgrid_emp_time_history.Rows(row1).Cells(0).Value
+                dateFromDGridSplit.Substring(0, 10)
+                If ((dgrid_emp_time_history.Rows(row1).Cells(2).Value = "IN") And (dateFromDGridSplit.Substring(0, 10) = Date.Now.ToString("dd/MM/yyyy"))) Then
+                    btnIn.Hide()
 
-
+                Else
+                    Console.WriteLine("no value ")
+                    Console.WriteLine(dgrid_emp_time_history.Rows(row1).Cells(0).Value)
+                    Console.WriteLine(dateFromDGridSplit.Substring(0, 10))
+                    Console.WriteLine(Date.Now.ToString("dd/MM/yyyy"))
+                End If
+                row1 = row1 + 1
+            End While
+        Else
+            btnIn.Hide()
+        End If
 
 
     End Sub
-
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
