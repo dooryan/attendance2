@@ -1,16 +1,17 @@
 ﻿Imports System.ComponentModel
 Imports MySql.Data.MySqlClient
 Imports CrystalDecisions.CrystalReports.Engine
+Imports System.Data
 
 Public Class payroll
     Dim totalHolidayHours = 0
+
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
 
     End Sub
 
     Private Sub payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
-
         ComboBox1.Items.Clear()
 
         prcDisplayTimesheet()
@@ -323,6 +324,9 @@ Public Class payroll
         Dim DA = New DataTable()
         Dim sqlAdapter = New MySqlDataAdapter
         Dim dt = New DataSet
+
+
+
         'Dim cmd = New MySqlCommand
 
         ' Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
@@ -339,6 +343,7 @@ Public Class payroll
                 sqlAdapter.SelectCommand = cmd
                 DA.Clear()
                 sqlAdapter.Fill(DA)
+
                 row = 0
                 Dim counter = 0
                 Dim c = 0
@@ -359,54 +364,81 @@ Public Class payroll
                                                 "2021/11/30", "2021/12/08", "2021/12/25",
                                                 "2021/12/30"}
 
-                While counter < DA.Rows.Count
-                    x = CInt(DA(counter)(6))
-                    totalHours = totalHours + x - 1
+                'If 
+
+                Console.WriteLine(DA.Rows(0).Item(6).ToString())
 
 
-                    If (CInt(DA(counter)(6)) > 9) Then
-                        countOT = countOT + (CInt(DA(counter)(6)) - 1) - 8
-                        totalHours = totalHours - countOT
+                If DA.Rows.Count > 0 Then
+
+                    For Each row As DataRow In DA.Rows
+                        'x = CInt(DA(counter)(6))
+                        x = CInt(DA.Rows(counter).Item(6).ToString())
+                        totalHours = totalHours + x - 1
+
+
+                        If (CInt(DA.Rows(counter).Item(6).ToString()) > 9) Then
+                            countOT = (countOT + (DA.Rows(counter).Item(6).ToString()) - 1) - 8
+                            totalHours = totalHours - countOT
+                        End If
+
+                        counter = counter + 1
+                        'End While
+                    Next
+                    Dim count = 0
+                    Dim r = 0
+                    'count if the dates in attendance fall in holiday
+                    For Each row As DataRow In DA.Rows
+                        For Each dates As String In holidaydates
+                            If DA.Rows(r).Item(3).ToString = holidaydates(count) Then
+                                x = CInt(DA.Rows(row).Item(3).ToString)
+                                countHoliday = countHoliday + x - 1
+                                totalHours = totalHours - countHoliday
+                                count += 1
+                            End If
+                            count = 0
+                            r += 1
+                        Next
+                    Next
+
+                    totalHolidayHours = countHoliday
+
+                    'If (DA.Rows(c).Item(3).ToString() = holidaydates(0) Or DA.Rows(c).Item(3) = holidaydates(1) Or DA.Rows(c).Item(3) = holidaydates(2) Or
+                    '             DA.Rows(c).Item(3) = holidaydates(3) Or DA.Rows(c).Item(3) = holidaydates(4) Or DA.Rows(c).Item(3) = holidaydates(5) Or
+                    '              DA.Rows(c).Item(3) = holidaydates(6) Or DA.Rows(c).Item(3) = holidaydates(7) Or DA.Rows(c).Item(3) = holidaydates(8) Or
+                    '              DA(c)(3) = holidaydates(9) Or DA(c)(3) = holidaydates(10) Or DA(c)(3) = holidaydates(11) Or
+                    '              DA(c)(3) = holidaydates(12) Or DA(c)(3) = holidaydates(13) Or DA(c)(3) = holidaydates(14) Or
+                    '              DA(c)(3) = holidaydates(15)) Then
+                    '        x = CInt(DA(c)(6))
+                    '        countHoliday = countHoliday + x - 1
+                    '        totalHours = totalHours - countHoliday
+
+                    '    End If
+                    '    c = c + 1
+
+
+
+                    'x = x + Convert.ToInt32(DA(i)(6))
+
+                    If DA IsNot Nothing AndAlso DA.Rows.Count > 0 Then
+                        'some code
+                        'txtHours.Text = DA.Rows.Count.ToString
+
+                        txtHours.Text = totalHours
+                        txtOvertime.Text = countOT
+                        txtHoliday.Text = countHoliday
+                    Else
+                        'some code
+                        txtHours.Text = "0"
+                        txtOvertime.Text = "0"
                     End If
 
-                    counter = counter + 1
-                End While
 
-                While c < DA.Rows.Count
-
-                    If (DA(c)(3) = holidaydates(0) Or DA(c)(3) = holidaydates(1) Or DA(c)(3) = holidaydates(2) Or
-                             DA(c)(3) = holidaydates(3) Or DA(c)(3) = holidaydates(4) Or DA(c)(3) = holidaydates(5) Or
-                              DA(c)(3) = holidaydates(6) Or DA(c)(3) = holidaydates(7) Or DA(c)(3) = holidaydates(8) Or
-                              DA(c)(3) = holidaydates(9) Or DA(c)(3) = holidaydates(10) Or DA(c)(3) = holidaydates(11) Or
-                              DA(c)(3) = holidaydates(12) Or DA(c)(3) = holidaydates(13) Or DA(c)(3) = holidaydates(14) Or
-                              DA(c)(3) = holidaydates(15)) Then
-                        x = CInt(DA(c)(6))
-                        countHoliday = countHoliday + x - 1
-                        totalHours = totalHours - countHoliday
-
-                    End If
-                    c = c + 1
-                End While
-                totalHolidayHours = countHoliday
-
-                'x = x + Convert.ToInt32(DA(i)(6))
-
-                If DA IsNot Nothing AndAlso DA.Rows.Count > 0 Then
-                    'some code
-                    'txtHours.Text = DA.Rows.Count.ToString
-
-                    txtHours.Text = totalHours
-                    txtOvertime.Text = countOT
-                    txtHoliday.Text = countHoliday
+                    'count = dataAttendance.Rows.Count
                 Else
-                    'some code
-                    txtHours.Text = "0"
-                    txtOvertime.Text = "0"
+                    MessageBox.Show("No records found.", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
+
                 End If
-
-
-                'count = dataAttendance.Rows.Count
-
 
             End Using
         End Using
@@ -650,6 +682,10 @@ Public Class payroll
     End Sub
 
     Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub
 End Class
