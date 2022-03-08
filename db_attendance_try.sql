@@ -148,11 +148,10 @@ CREATE TABLE `tbl_pay_details` (
 /*Data for the table `tbl_pay_details` */
 
 insert  into `tbl_pay_details`(`id`,`emp_id`,`rate_hour`,`rate_day`,`rate_month`,`philhealth`,`sss`,`pagibig`) values 
-(1,1,'44','350','3500','550','200','300'),
-(2,2,'41','326','6520','550','200','300'),
-(3,3,'44','350','3500','550','200','300'),
-(4,16,'41','26','6520','550','200','300'),
-(5,19,'62.5','500','10000','550','200','300');
+(1,1000,'44','350','3500','550','200','300'),
+(2,1001,'41','326','6520','550','200','300'),
+(3,1002,'44','350','3500','550','200','300'),
+(4,1003,'41','26','6520','550','200','300');
 
 /*Table structure for table `tbl_pay_history` */
 
@@ -172,20 +171,7 @@ CREATE TABLE `tbl_pay_history` (
 /*Data for the table `tbl_pay_history` */
 
 insert  into `tbl_pay_history`(`id`,`emp_id`,`date`,`gross_pay`,`total_deduction`,`total_pay`,`day_period`) values 
-(6,1,'2021-03-13 00:00:00',1000,0,1000,5),
-(7,1,'2021-03-13 00:00:00',4000,1000,3000,20),
-(8,16,'2021-03-13 00:00:00',4000,0,4000,20),
-(9,3,'2021-03-13 00:00:00',7500,1500,6000,15),
-(10,1,'2021-03-13 00:00:00',1500,0,1500,3),
-(11,1,'2021-03-13 00:00:00',7000,2050,4950,20),
-(12,1,'2021-03-14 00:00:00',10500,1050,9450,30),
-(13,1,'2021-03-16 00:00:00',5250,1050,4200,15),
-(14,3,'2021-03-16 00:00:00',5250,1050,4200,15),
-(15,3,'2021-03-16 00:00:00',5250,1050,4200,15),
-(16,3,'2021-03-16 00:00:00',5250,1050,4200,15),
-(17,19,'2021-03-16 00:00:00',7500,1050,6450,15),
-(18,16,'2021-03-16 00:00:00',3900,1050,2850,15),
-(19,1,'2021-03-19 00:00:00',7000,1050,5950,20);
+(6,1,'2021-03-13 00:00:00',1000,0,1000,5);
 
 /*Table structure for table `tbl_report` */
 
@@ -209,14 +195,15 @@ CREATE TABLE `tbl_summaryhours` (
   `time_in` time default NULL,
   `time_out` time default NULL,
   `emp_id` int(10) unsigned NOT NULL,
-  `total_hours` varchar(45) default NULL,
+  `total_hours` int(45) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_summaryhours` */
 
 insert  into `tbl_summaryhours`(`id`,`date`,`time_in`,`time_out`,`emp_id`,`total_hours`) values 
-(50,'2022-03-07','16:40:58','16:40:58',1001,'00:00:00');
+(50,'2022-03-07','16:40:58','16:40:58',1001,8),
+(51,'2022-03-08','14:10:11','15:33:49',1001,1);
 
 /*Table structure for table `tbl_timeout` */
 
@@ -243,13 +230,15 @@ CREATE TABLE `tbl_timesheet` (
   `ttime` time NOT NULL,
   `tdate` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_timesheet` */
 
 insert  into `tbl_timesheet`(`id`,`user_id`,`status`,`ttime`,`tdate`) values 
 (124,51,'IN','16:40:58','2022-03-07'),
-(125,51,'OUT','16:40:58','2022-03-07');
+(125,51,'OUT','16:40:58','2022-03-07'),
+(126,51,'IN','14:10:11','2022-03-08'),
+(128,51,'OUT','15:33:49','2022-03-08');
 
 /*Table structure for table `tbl_user` */
 
@@ -643,7 +632,7 @@ BEGIN
 
 
         declare i integer;
-        declare taym time;
+        declare taym integer;
         declare timein time;
         declare aydi integer;
 
@@ -705,7 +694,7 @@ BEGIN
 SELECT a.id,  a.f_name, a.l_name , b.date, b.time_in, b.time_out, b.total_hours
 FROM tbl_employee a
 JOIN tbl_summaryhours b
-WHERE a.id=b.emp_id AND a.id=i AND DATE >= date1  AND DATE <= date2;
+WHERE a.id=b.emp_id AND b.emp_id=i AND b.DATE >= date1  AND b.DATE <= date2;
 
 
 
@@ -855,7 +844,7 @@ DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `prcSelectEmpName`(aydi varchar(10))
 BEGIN
-select l_name from tbl_employee
+select l_name, f_name from tbl_employee
 where id=aydi;
 
 
