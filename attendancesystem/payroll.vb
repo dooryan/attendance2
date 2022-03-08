@@ -5,6 +5,9 @@ Imports System.Data
 
 Public Class payroll
     Dim totalHolidayHours = 0
+    Public finalHoursTotal = 0
+    Dim recordsExist = True
+
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
 
@@ -69,10 +72,10 @@ Public Class payroll
                 sqlAttendanceAdapter.Fill(dataAttendance)
 
                 If dataAttendance.Rows.Count > 0 Then
-                    DataGridView1.RowCount = dataAttendance.Rows.Count
+                    DataGridView2.RowCount = dataAttendance.Rows.Count
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
-                        With DataGridView1
+                        With DataGridView2
 
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("emp_id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("date").ToString
@@ -88,7 +91,7 @@ Public Class payroll
                     End While
                 Else
 
-                    DataGridView1.Rows.Clear()
+                    DataGridView2.Rows.Clear()
 
 
                 End If
@@ -118,20 +121,21 @@ Public Class payroll
 
 
                 If dataAttendance.Rows.Count > 0 Then
-                    DataGridView1.RowCount = dataAttendance.Rows.Count
-                    Dim name = dataAttendance(0)(5) & "," & dataAttendance(0)(6)
+                    DataGridView2.RowCount = dataAttendance.Rows.Count
+                    Dim name As String = dataAttendance.Rows(row).Item("l_name").ToString & "," & dataAttendance.Rows(row).Item("f_name").ToString
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
-                        With DataGridView1
+                        With DataGridView2
                             ' .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
-                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
-                            .Rows(row).Cells(1).Value = dataAttendance(row)(5) & ", " & dataAttendance(row)(6)
+                            .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("emp_id").ToString
+                            .Rows(row).Cells(1).Value = name
                             .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("date").ToString
 
                             .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("gross_pay").ToString
                             .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("total_deduction").ToString
                             .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("total_pay").ToString
-                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("total_hours").ToString
+                            '.Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("total_hours").ToString
+                            .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("day_period").ToString
 
 
 
@@ -167,10 +171,10 @@ Public Class payroll
                 sqlAttendanceAdapter.Fill(dataAttendance)
 
                 If dataAttendance.Rows.Count > 0 Then
-                    DataGridView1.RowCount = dataAttendance.Rows.Count
+                    DataGridView2.RowCount = dataAttendance.Rows.Count
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
-                        With DataGridView1
+                        With DataGridView2
 
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("emp_id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("date").ToString
@@ -186,7 +190,7 @@ Public Class payroll
                     End While
                 Else
 
-                    DataGridView1.Rows.Clear()
+                    DataGridView2.Rows.Clear()
 
 
                 End If
@@ -209,8 +213,7 @@ Public Class payroll
             Dim hourstotal As Integer = txtHours.Text
             Dim id = ComboBox1.Text
 
-            'btnTotalPay.Text = totalpay
-
+            prcDisplayTimesheet()
 
             Try
 
@@ -224,6 +227,7 @@ Public Class payroll
                     .Parameters.AddWithValue("ttldeduction", deduct)
                     .Parameters.AddWithValue("ttlpay", totalpay)
                     .Parameters.AddWithValue("hours", hourstotal)
+                    .Parameters.AddWithValue("days", finalHoursTotal)
                     .ExecuteNonQuery()
 
 
@@ -267,17 +271,17 @@ Public Class payroll
 
 
                 'txtGrosspay.Text = Val(txtHours.Text) * CDec(DA(0)(1))
-                txtHourlyRate.Text = DA(0)(1)
-                txtPhil.Text = (CDec(DA(0)(4)) / 2) / 2
-                txtSSS.Text = CDec(DA(0)(5)) / 2
-                txtpagibig.Text = CDec(DA(0)(6)) / 2
+                txtHourlyRate.Text = DA.Rows(0).Item(1).ToString()
+                txtPhil.Text = (CDec(DA.Rows(0).Item(4).ToString()) / 2) / 2
+                txtSSS.Text = CDec(DA.Rows(0).Item(5).ToString()) / 2
+                txtpagibig.Text = CDec(DA.Rows(0).Item(6).ToString()) / 2
                 txtTtlDeductions.Text = Val(txtPhil.Text) + Val(txtSSS.Text) + Val(txtpagibig.Text)
 
                 txtMonthly.Text = Val(((Val(txtHourlyRate.Text) * 48) * 52) / 12)
                 txtBasicRate.Text = Val(txtMonthly.Text) / 2
                 txtOTPay.Text = (Val(txtOvertime.Text) * Val(txtHourlyRate.Text)) * 1.25
                 txtHoliday.Text = (totalHolidayHours * Val(txtHourlyRate.Text)) * 2
-                txtttlpay.Text = (((Val(txtHours.Text)) * CDec(DA(0)(1)))) + Val(txtOTPay.Text) + Val(txtHoliday.Text)
+                txtttlpay.Text = (((Val(txtHours.Text)) * CDec(DA.Rows(0).Item(1).ToString()))) + Val(txtOTPay.Text) + Val(txtHoliday.Text)
                 txtTotalPay.Text = Val(txtttlpay.Text) - Val(txtTtlDeductions.Text)
                 txtHolidayHous.Text = totalHolidayHours
 
@@ -288,8 +292,9 @@ Public Class payroll
     End Sub
 
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
-        getDaysCount()
+
         DisplayPayDetails()
+        getDaysCount()
         DisplayPayHistory()
 
         Dim DA = New DataTable()
@@ -307,7 +312,7 @@ Public Class payroll
                 DA.Clear()
                 sqlAdapter.Fill(DA)
 
-                txtName.Text = DA(0)(0) & ", " & DA(0)(1)
+                txtName.Text = DA.Rows(0).Item(0).ToString() & ", " & DA.Rows(0).Item(1).ToString()
 
             End Using
         End Using
@@ -351,12 +356,7 @@ Public Class payroll
                 Dim totalHours As Integer = 0
                 Dim countOT As Integer = 0
                 Dim countHoliday As Integer = 0
-                'For i As Integer = 0 To DA.Rows.Count
 
-                'x = CInt(DA(i)(6))
-                'totalHours = totalHours + x
-                'i = i + 1
-                'Next
                 Dim holidaydates() As String = {"2021/01/01", "2021/02/12", "2021/04/01",
                                                 "2021/04/02", "2021/04/09", "2021/05/01",
                                                 "2021/01/01", "2021/01/01", "2021/05/13",
@@ -364,18 +364,12 @@ Public Class payroll
                                                 "2021/11/30", "2021/12/08", "2021/12/25",
                                                 "2021/12/30"}
 
-                'If 
-
-                Console.WriteLine(DA.Rows(0).Item(6).ToString())
-
 
                 If DA.Rows.Count > 0 Then
 
                     For Each row As DataRow In DA.Rows
-                        'x = CInt(DA(counter)(6))
                         x = CInt(DA.Rows(counter).Item(6).ToString())
                         totalHours = totalHours + x - 1
-
 
                         If (CInt(DA.Rows(counter).Item(6).ToString()) > 9) Then
                             countOT = (countOT + (DA.Rows(counter).Item(6).ToString()) - 1) - 8
@@ -383,7 +377,7 @@ Public Class payroll
                         End If
 
                         counter = counter + 1
-                        'End While
+
                     Next
                     Dim count = 0
                     Dim r = 0
@@ -396,11 +390,12 @@ Public Class payroll
                                 totalHours = totalHours - countHoliday
                                 count += 1
                             End If
-                            count = 0
-                            r += 1
-                        Next
-                    Next
 
+                        Next
+                        count = 0
+                        r += 1
+                    Next
+                    finalHoursTotal = totalHours
                     totalHolidayHours = countHoliday
 
                     'If (DA.Rows(c).Item(3).ToString() = holidaydates(0) Or DA.Rows(c).Item(3) = holidaydates(1) Or DA.Rows(c).Item(3) = holidaydates(2) Or
@@ -434,8 +429,9 @@ Public Class payroll
                     End If
 
 
-                    'count = dataAttendance.Rows.Count
+
                 Else
+                    recordsExist = False
                     MessageBox.Show("No records found.", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
 
                 End If
@@ -514,50 +510,50 @@ Public Class payroll
 
     End Sub
     Private Sub DisplayPayHistory()
-        Dim DA = New DataTable()
-        Dim sqlAdapter = New MySqlDataAdapter
-        Dim dt = New DataSet
+        'Dim DA = New DataTable()
+        'Dim sqlAdapter = New MySqlDataAdapter
+        'Dim dt = New DataSet
 
-        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
-            Using cmd As MySqlCommand = New MySqlCommand("", con)
+        'Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
+        '    Using cmd As MySqlCommand = New MySqlCommand("", con)
 
-                cmd.CommandText = "prcDisplayPayHistorybyEmp"
-                cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("e_ID", ComboBox1.Text)
+        '        cmd.CommandText = "prcDisplayPayHistorybyEmp"
+        '        cmd.CommandType = CommandType.StoredProcedure
+        '        cmd.Parameters.Clear()
+        '        cmd.Parameters.AddWithValue("id", ComboBox1.Text)
 
-                sqlAdapter.SelectCommand = cmd
-                DA.Clear()
-                sqlAdapter.Fill(DA)
+        '        sqlAdapter.SelectCommand = cmd
+        '        DA.Clear()
+        '        sqlAdapter.Fill(DA)
 
-                If DA.Rows.Count > 0 Then
-                    DataGridView1.RowCount = DA.Rows.Count
-                    Dim name = DA(0)(5) & "," & DA(0)(6)
-                    row = 0
-                    While Not DA.Rows.Count - 1 < row
-                        With DataGridView1
-                            .Rows(row).Cells(0).Value = name
-                            .Rows(row).Cells(1).Value = DA.Rows(row).Item("date").ToString
-                            .Rows(row).Cells(2).Value = DA.Rows(row).Item("total_hours").ToString
-                            .Rows(row).Cells(3).Value = DA.Rows(row).Item("gross_pay").ToString
-                            .Rows(row).Cells(4).Value = DA.Rows(row).Item("total_deduction").ToString
-                            .Rows(row).Cells(5).Value = DA.Rows(row).Item("total_pay").ToString
-
-
-                        End With
-                        row = row + 1
-                    End While
-                Else
-                    MessageBox.Show("No record found...")
+        '        If DA.Rows.Count > 0 Then
+        '            DataGridView1.RowCount = DA.Rows.Count
+        '            Dim name = DA.Rows(0).Item(0).ToString() & "," & DA(0)(1)
+        '            row = 0
+        '            While Not DA.Rows.Count - 1 < row
+        '                With DataGridView1
+        '                    .Rows(row).Cells(0).Value = name
+        '                    .Rows(row).Cells(1).Value = DA.Rows(row).Item("date").ToString
+        '                    .Rows(row).Cells(2).Value = DA.Rows(row).Item("total_hours").ToString
+        '                    .Rows(row).Cells(3).Value = DA.Rows(row).Item("gross_pay").ToString
+        '                    .Rows(row).Cells(4).Value = DA.Rows(row).Item("total_deduction").ToString
+        '                    .Rows(row).Cells(5).Value = DA.Rows(row).Item("total_pay").ToString
 
 
-
-                End If
+        '                End With
+        '                row = row + 1
+        '            End While
+        '        Else
+        '            'MessageBox.Show("No record found...")
 
 
 
-            End Using
-        End Using
+        '        End If
+
+
+
+        '    End Using
+        'End Using
     End Sub
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
@@ -617,11 +613,11 @@ Public Class payroll
 
 
                 If dataAttendance.Rows.Count > 0 Then
-                    DataGridView1.RowCount = dataAttendance.Rows.Count
+                    DataGridView2.RowCount = dataAttendance.Rows.Count
                     Dim name = dataAttendance(0)(5) & "," & dataAttendance(0)(6)
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
-                        With DataGridView1
+                        With DataGridView2
                             ' .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance(row)(5) & ", " & dataAttendance(row)(6)
@@ -665,7 +661,7 @@ Public Class payroll
             .Columns.Add("WorkingDays")
         End With
 
-        For Each dgr As DataGridViewRow In Me.DataGridView1.Rows
+        For Each dgr As DataGridViewRow In Me.DataGridView2.Rows
             dt.Rows.Add(dgr.Cells(0).Value, dgr.Cells(1).Value, dgr.Cells(2).Value, dgr.Cells(3).Value, dgr.Cells(4).Value, dgr.Cells(5).Value, dgr.Cells(6).Value)
         Next
         Dim report1 As ReportDocument
@@ -685,7 +681,11 @@ Public Class payroll
 
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
     End Sub
 End Class

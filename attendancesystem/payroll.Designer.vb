@@ -43,13 +43,6 @@ Partial Class payroll
         Me.txtHourlyRate = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.name1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.hours = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.gpay = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.deduct = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tpay = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txtTtlDeductions = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -100,7 +93,6 @@ Partial Class payroll
         Me.Panel4.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -150,7 +142,6 @@ Partial Class payroll
         Me.Panel4.Controls.Add(Me.Label19)
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Controls.Add(Me.Panel5)
-        Me.Panel4.Controls.Add(Me.DataGridView1)
         Me.Panel4.Controls.Add(Me.Panel3)
         Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Controls.Add(Me.Panel1)
@@ -158,14 +149,14 @@ Partial Class payroll
         Me.Panel4.Location = New System.Drawing.Point(1, 54)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1016, 550)
+        Me.Panel4.Size = New System.Drawing.Size(1016, 545)
         Me.Panel4.TabIndex = 35
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Arial", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(655, 432)
+        Me.Label19.Location = New System.Drawing.Point(542, 404)
         Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(81, 23)
@@ -291,7 +282,7 @@ Partial Class payroll
         '
         Me.txtMonthly.BackColor = System.Drawing.SystemColors.Window
         Me.txtMonthly.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.txtMonthly.Location = New System.Drawing.Point(708, 37)
+        Me.txtMonthly.Location = New System.Drawing.Point(716, 37)
         Me.txtMonthly.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMonthly.Name = "txtMonthly"
         Me.txtMonthly.Size = New System.Drawing.Size(139, 26)
@@ -363,49 +354,6 @@ Partial Class payroll
         Me.Label14.Size = New System.Drawing.Size(49, 14)
         Me.Label14.TabIndex = 23
         Me.Label14.Text = "INCOME"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.name1, Me.date1, Me.hours, Me.gpay, Me.deduct, Me.tpay})
-        Me.DataGridView1.Location = New System.Drawing.Point(1, 398)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(596, 147)
-        Me.DataGridView1.TabIndex = 35
-        '
-        'name1
-        '
-        Me.name1.HeaderText = "Name"
-        Me.name1.Name = "name1"
-        '
-        'date1
-        '
-        Me.date1.HeaderText = "Date"
-        Me.date1.Name = "date1"
-        '
-        'hours
-        '
-        Me.hours.HeaderText = "Hours Worked"
-        Me.hours.Name = "hours"
-        '
-        'gpay
-        '
-        Me.gpay.HeaderText = "Gross Pay"
-        Me.gpay.Name = "gpay"
-        '
-        'deduct
-        '
-        Me.deduct.HeaderText = "Total Deductions"
-        Me.deduct.Name = "deduct"
-        '
-        'tpay
-        '
-        Me.tpay.HeaderText = "Total Pay"
-        Me.tpay.Name = "tpay"
         '
         'Panel3
         '
@@ -698,21 +646,22 @@ Partial Class payroll
         Me.txtTotalPay.BackColor = System.Drawing.Color.White
         Me.txtTotalPay.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTotalPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalPay.Location = New System.Drawing.Point(778, 429)
+        Me.txtTotalPay.Location = New System.Drawing.Point(665, 392)
         Me.txtTotalPay.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTotalPay.Name = "txtTotalPay"
         Me.txtTotalPay.Size = New System.Drawing.Size(184, 39)
         Me.txtTotalPay.TabIndex = 27
-        Me.txtTotalPay.Text = "Total"
+        Me.txtTotalPay.Text = "0"
         Me.txtTotalPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtName
         '
-        Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtName.Location = New System.Drawing.Point(796, 16)
+        Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtName.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtName.Location = New System.Drawing.Point(727, 17)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(206, 28)
+        Me.txtName.Size = New System.Drawing.Size(273, 25)
         Me.txtName.TabIndex = 4
         '
         'Label2
@@ -908,7 +857,6 @@ Partial Class payroll
         Me.Panel6.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -943,13 +891,6 @@ Partial Class payroll
     Friend WithEvents Label8 As Label
     Friend WithEvents txtTotalPay As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents name1 As DataGridViewTextBoxColumn
-    Friend WithEvents date1 As DataGridViewTextBoxColumn
-    Friend WithEvents hours As DataGridViewTextBoxColumn
-    Friend WithEvents gpay As DataGridViewTextBoxColumn
-    Friend WithEvents deduct As DataGridViewTextBoxColumn
-    Friend WithEvents tpay As DataGridViewTextBoxColumn
     Friend WithEvents Panel3 As Panel
     Friend WithEvents txtTtlDeductions As TextBox
     Friend WithEvents Label6 As Label
