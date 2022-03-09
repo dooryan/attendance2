@@ -125,7 +125,7 @@ Partial Class addEmployee
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(89, 335)
         Me.Panel1.TabIndex = 6
@@ -166,7 +166,7 @@ Partial Class addEmployee
         Me.Panel2.Controls.Add(Me.txtFname)
         Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Location = New System.Drawing.Point(20, 32)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(334, 335)
         Me.Panel2.TabIndex = 7
@@ -184,55 +184,63 @@ Partial Class addEmployee
         '
         'txtContact
         '
+        Me.txtContact.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContact.Location = New System.Drawing.Point(94, 292)
-        Me.txtContact.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtContact.Margin = New System.Windows.Forms.Padding(2)
         Me.txtContact.Name = "txtContact"
-        Me.txtContact.Size = New System.Drawing.Size(230, 20)
+        Me.txtContact.Size = New System.Drawing.Size(230, 21)
         Me.txtContact.TabIndex = 14
         '
         'dhired
         '
+        Me.dhired.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dhired.Location = New System.Drawing.Point(94, 268)
-        Me.dhired.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dhired.Margin = New System.Windows.Forms.Padding(2)
         Me.dhired.Name = "dhired"
-        Me.dhired.Size = New System.Drawing.Size(216, 20)
+        Me.dhired.Size = New System.Drawing.Size(216, 21)
         Me.dhired.TabIndex = 13
         Me.dhired.Value = New Date(2021, 3, 9, 0, 0, 0, 0)
         '
         'cmbDept
         '
+        Me.cmbDept.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDept.FormattingEnabled = True
         Me.cmbDept.Items.AddRange(New Object() {"Plantation", "Harvesting", "Fertilizer", "Office", "Bagging", "Bunch Spraying", "Bud Removal/Debudding", "Pests and Disease Management", "", "", ""})
         Me.cmbDept.Location = New System.Drawing.Point(94, 235)
-        Me.cmbDept.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbDept.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbDept.Name = "cmbDept"
         Me.cmbDept.Size = New System.Drawing.Size(230, 21)
         Me.cmbDept.TabIndex = 12
+        Me.cmbDept.Text = "Department"
         '
         'cmbGender
         '
+        Me.cmbGender.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbGender.FormattingEnabled = True
         Me.cmbGender.Items.AddRange(New Object() {"Male" & Global.Microsoft.VisualBasic.ChrW(9), "Female"})
         Me.cmbGender.Location = New System.Drawing.Point(94, 210)
-        Me.cmbGender.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbGender.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Size = New System.Drawing.Size(121, 21)
         Me.cmbGender.TabIndex = 11
+        Me.cmbGender.Text = "Male"
         '
         'bdate
         '
         Me.bdate.CalendarMonthBackground = System.Drawing.Color.Peru
+        Me.bdate.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bdate.Location = New System.Drawing.Point(96, 129)
-        Me.bdate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.bdate.Margin = New System.Windows.Forms.Padding(2)
         Me.bdate.Name = "bdate"
-        Me.bdate.Size = New System.Drawing.Size(228, 20)
+        Me.bdate.Size = New System.Drawing.Size(228, 21)
         Me.bdate.TabIndex = 10
         Me.bdate.Value = New Date(2021, 3, 9, 0, 0, 0, 0)
         '
         'txtAddress
         '
+        Me.txtAddress.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAddress.Location = New System.Drawing.Point(94, 157)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(230, 44)
@@ -240,18 +248,20 @@ Partial Class addEmployee
         '
         'txtLname
         '
+        Me.txtLname.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLname.Location = New System.Drawing.Point(94, 98)
-        Me.txtLname.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtLname.Margin = New System.Windows.Forms.Padding(2)
         Me.txtLname.Name = "txtLname"
-        Me.txtLname.Size = New System.Drawing.Size(230, 20)
+        Me.txtLname.Size = New System.Drawing.Size(230, 21)
         Me.txtLname.TabIndex = 8
         '
         'txtFname
         '
+        Me.txtFname.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFname.Location = New System.Drawing.Point(94, 63)
-        Me.txtFname.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtFname.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFname.Name = "txtFname"
-        Me.txtFname.Size = New System.Drawing.Size(230, 20)
+        Me.txtFname.Size = New System.Drawing.Size(230, 21)
         Me.txtFname.TabIndex = 7
         '
         'Button1
@@ -261,7 +271,7 @@ Partial Class addEmployee
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(20, 389)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(171, 37)
         Me.Button1.TabIndex = 16
@@ -275,7 +285,7 @@ Partial Class addEmployee
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(195, 389)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(159, 37)
         Me.Button2.TabIndex = 17
@@ -294,7 +304,7 @@ Partial Class addEmployee
         Me.Controls.Add(Me.Panel2)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "addEmployee"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Add Employee"

@@ -61,17 +61,20 @@ Partial Class login
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(45, 227)
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label5.Location = New System.Drawing.Point(117, 234)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(103, 13)
+        Me.Label5.Size = New System.Drawing.Size(98, 15)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Create new account"
+        Me.Label5.Text = "Create new user"
         '
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(43, 97)
+        Me.PictureBox3.Location = New System.Drawing.Point(39, 109)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(46, 34)
@@ -82,7 +85,7 @@ Partial Class login
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(43, 39)
+        Me.PictureBox2.Location = New System.Drawing.Point(39, 51)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(46, 34)
@@ -94,9 +97,9 @@ Partial Class login
         '
         Me.btn_login.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_login.Font = New System.Drawing.Font("Cambria", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
-        Me.btn_login.Location = New System.Drawing.Point(110, 147)
+        Me.btn_login.Location = New System.Drawing.Point(94, 171)
         Me.btn_login.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_login.Name = "btn_login"
         Me.btn_login.Size = New System.Drawing.Size(155, 37)
@@ -107,29 +110,31 @@ Partial Class login
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Corbel", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(45, 76)
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label2.Location = New System.Drawing.Point(36, 94)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 18)
+        Me.Label2.Size = New System.Drawing.Size(54, 14)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Password"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Corbel", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(45, 19)
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label1.Location = New System.Drawing.Point(36, 36)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(22, 18)
+        Me.Label1.Size = New System.Drawing.Size(58, 14)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "ID"
+        Me.Label1.Text = "Username"
         '
         'txtpassword
         '
         Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpassword.Location = New System.Drawing.Point(87, 97)
+        Me.txtpassword.Location = New System.Drawing.Point(83, 109)
         Me.txtpassword.Margin = New System.Windows.Forms.Padding(2)
         Me.txtpassword.Name = "txtpassword"
         Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -140,7 +145,7 @@ Partial Class login
         'txtusername
         '
         Me.txtusername.Font = New System.Drawing.Font("Trebuchet MS", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtusername.Location = New System.Drawing.Point(87, 40)
+        Me.txtusername.Location = New System.Drawing.Point(83, 52)
         Me.txtusername.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(222, 33)
@@ -160,11 +165,11 @@ Partial Class login
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 48.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(68, 104)
+        Me.Label3.Location = New System.Drawing.Point(55, 124)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(238, 81)
+        Me.Label3.Size = New System.Drawing.Size(224, 78)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "LEMCO"
         '

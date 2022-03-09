@@ -105,8 +105,10 @@ Partial Class payroll
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(9, 4)
         Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1025, 630)
         Me.TabControl1.TabIndex = 38
@@ -118,10 +120,10 @@ Partial Class payroll
         Me.TabPage1.Controls.Add(Me.txtName)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 28)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1017, 604)
+        Me.TabPage1.Size = New System.Drawing.Size(1017, 598)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Payroll"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -130,7 +132,7 @@ Partial Class payroll
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Calibri", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(24, 16)
+        Me.Label23.Location = New System.Drawing.Point(55, 15)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(159, 26)
         Me.Label23.TabIndex = 36
@@ -144,6 +146,7 @@ Partial Class payroll
         Me.Panel4.Controls.Add(Me.Panel5)
         Me.Panel4.Controls.Add(Me.Panel3)
         Me.Panel4.Controls.Add(Me.Panel2)
+        Me.Panel4.Controls.Add(Me.btnPay)
         Me.Panel4.Controls.Add(Me.Panel1)
         Me.Panel4.Controls.Add(Me.txtTotalPay)
         Me.Panel4.Location = New System.Drawing.Point(1, 54)
@@ -156,7 +159,7 @@ Partial Class payroll
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Arial", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(542, 404)
+        Me.Label19.Location = New System.Drawing.Point(30, 463)
         Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(81, 23)
@@ -169,14 +172,13 @@ Partial Class payroll
         Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Controls.Add(Me.txtHoliday)
         Me.Panel6.Controls.Add(Me.Label18)
-        Me.Panel6.Controls.Add(Me.Label3)
         Me.Panel6.Controls.Add(Me.txtOTPay)
         Me.Panel6.Controls.Add(Me.Label4)
         Me.Panel6.Controls.Add(Me.txtttlpay)
-        Me.Panel6.Location = New System.Drawing.Point(0, 146)
+        Me.Panel6.Location = New System.Drawing.Point(18, 169)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1015, 95)
+        Me.Panel6.Size = New System.Drawing.Size(981, 95)
         Me.Panel6.TabIndex = 37
         '
         'Label9
@@ -219,7 +221,7 @@ Partial Class payroll
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial Black", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(4, 80)
+        Me.Label3.Location = New System.Drawing.Point(4, 4)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(106, 15)
@@ -272,10 +274,10 @@ Partial Class payroll
         Me.Panel5.Controls.Add(Me.txtHourlyRate)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label14)
-        Me.Panel5.Location = New System.Drawing.Point(-3, 309)
+        Me.Panel5.Location = New System.Drawing.Point(18, 335)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1018, 73)
+        Me.Panel5.Size = New System.Drawing.Size(981, 90)
         Me.Panel5.TabIndex = 36
         '
         'txtMonthly
@@ -347,11 +349,11 @@ Partial Class payroll
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(26, 7)
+        Me.Label14.Font = New System.Drawing.Font("Arial Black", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label14.Location = New System.Drawing.Point(10, 2)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(49, 14)
+        Me.Label14.Size = New System.Drawing.Size(56, 15)
         Me.Label14.TabIndex = 23
         Me.Label14.Text = "INCOME"
         '
@@ -361,15 +363,16 @@ Partial Class payroll
         Me.Panel3.Controls.Add(Me.txtTtlDeductions)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.txtpagibig)
+        Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.txtSSS)
         Me.Panel3.Controls.Add(Me.Label11)
         Me.Panel3.Controls.Add(Me.txtPhil)
         Me.Panel3.Controls.Add(Me.Label10)
-        Me.Panel3.Location = New System.Drawing.Point(-1, 239)
+        Me.Panel3.Location = New System.Drawing.Point(18, 262)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1017, 71)
+        Me.Panel3.Size = New System.Drawing.Size(981, 84)
         Me.Panel3.TabIndex = 34
         '
         'txtTtlDeductions
@@ -470,10 +473,10 @@ Partial Class payroll
         Me.Panel2.Controls.Add(Me.txtHours)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Location = New System.Drawing.Point(0, 63)
+        Me.Panel2.Location = New System.Drawing.Point(18, 86)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1014, 87)
+        Me.Panel2.Size = New System.Drawing.Size(981, 87)
         Me.Panel2.TabIndex = 33
         '
         'Label13
@@ -565,28 +568,27 @@ Partial Class payroll
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Panel1.Controls.Add(Me.btnFilter)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.btnPay)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
+        Me.Panel1.Location = New System.Drawing.Point(18, 23)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1017, 64)
+        Me.Panel1.Size = New System.Drawing.Size(981, 64)
         Me.Panel1.TabIndex = 26
         '
         'ComboBox1
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(183, 12)
+        Me.ComboBox1.Location = New System.Drawing.Point(168, 15)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(83, 30)
+        Me.ComboBox1.Size = New System.Drawing.Size(83, 31)
         Me.ComboBox1.TabIndex = 29
         '
         'DateTimePicker2
         '
         Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(499, 12)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(700, 18)
         Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(148, 28)
@@ -597,7 +599,7 @@ Partial Class payroll
         '
         Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(328, 12)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(529, 18)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(148, 28)
@@ -606,12 +608,12 @@ Partial Class payroll
         '
         'btnFilter
         '
-        Me.btnFilter.BackColor = System.Drawing.Color.White
+        Me.btnFilter.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnFilter.Location = New System.Drawing.Point(660, 12)
+        Me.btnFilter.Location = New System.Drawing.Point(881, 18)
         Me.btnFilter.Margin = New System.Windows.Forms.Padding(2)
         Me.btnFilter.Name = "btnFilter"
-        Me.btnFilter.Size = New System.Drawing.Size(44, 30)
+        Me.btnFilter.Size = New System.Drawing.Size(71, 30)
         Me.btnFilter.TabIndex = 26
         Me.btnFilter.Text = "GO"
         Me.btnFilter.UseVisualStyleBackColor = False
@@ -619,24 +621,24 @@ Partial Class payroll
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(60, 17)
+        Me.Label1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(68, 21)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 20)
+        Me.Label1.Size = New System.Drawing.Size(96, 18)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Employee ID"
         '
         'btnPay
         '
-        Me.btnPay.BackColor = System.Drawing.Color.IndianRed
+        Me.btnPay.BackColor = System.Drawing.SystemColors.HotTrack
         Me.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPay.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPay.ForeColor = System.Drawing.Color.White
-        Me.btnPay.Location = New System.Drawing.Point(844, 17)
+        Me.btnPay.Location = New System.Drawing.Point(753, 455)
         Me.btnPay.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPay.Name = "btnPay"
-        Me.btnPay.Size = New System.Drawing.Size(146, 30)
+        Me.btnPay.Size = New System.Drawing.Size(246, 50)
         Me.btnPay.TabIndex = 23
         Me.btnPay.Text = "Generate Payroll"
         Me.btnPay.UseVisualStyleBackColor = False
@@ -646,10 +648,10 @@ Partial Class payroll
         Me.txtTotalPay.BackColor = System.Drawing.Color.White
         Me.txtTotalPay.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTotalPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalPay.Location = New System.Drawing.Point(665, 392)
+        Me.txtTotalPay.Location = New System.Drawing.Point(124, 455)
         Me.txtTotalPay.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTotalPay.Name = "txtTotalPay"
-        Me.txtTotalPay.Size = New System.Drawing.Size(184, 39)
+        Me.txtTotalPay.Size = New System.Drawing.Size(245, 39)
         Me.txtTotalPay.TabIndex = 27
         Me.txtTotalPay.Text = "0"
         Me.txtTotalPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -658,11 +660,12 @@ Partial Class payroll
         '
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtName.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtName.Location = New System.Drawing.Point(727, 17)
+        Me.txtName.Location = New System.Drawing.Point(719, 18)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(273, 25)
         Me.txtName.TabIndex = 4
+        Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label2
         '
@@ -678,10 +681,10 @@ Partial Class payroll
         '
         Me.TabPage2.Controls.Add(Me.Panel7)
         Me.TabPage2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 28)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1017, 604)
+        Me.TabPage2.Size = New System.Drawing.Size(1017, 598)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Reports"
         Me.TabPage2.UseVisualStyleBackColor = True

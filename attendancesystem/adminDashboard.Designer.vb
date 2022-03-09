@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class adminDashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class adminDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -105,6 +105,7 @@ Partial Class adminDashboard
         Me.Button3.TabIndex = 33
         Me.Button3.Text = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Visible = False
         '
         'MenuStrip1
         '
@@ -145,18 +146,18 @@ Partial Class adminDashboard
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(267, 26)
+        Me.Label2.Location = New System.Drawing.Point(346, 24)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(333, 49)
+        Me.Label2.Size = New System.Drawing.Size(239, 35)
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "Welcome, Admin!"
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.DarkSlateBlue
+        Me.Panel2.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.lblTotalEmp1)
@@ -170,12 +171,12 @@ Partial Class adminDashboard
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(84, 64)
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(74, 64)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(133, 20)
+        Me.Label5.Size = New System.Drawing.Size(117, 18)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "TOTAL Employees"
         '
@@ -186,7 +187,7 @@ Partial Class adminDashboard
         Me.lblTotalEmp1.CausesValidation = False
         Me.lblTotalEmp1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalEmp1.ForeColor = System.Drawing.Color.White
-        Me.lblTotalEmp1.Location = New System.Drawing.Point(169, 11)
+        Me.lblTotalEmp1.Location = New System.Drawing.Point(158, 11)
         Me.lblTotalEmp1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTotalEmp1.Name = "lblTotalEmp1"
         Me.lblTotalEmp1.Size = New System.Drawing.Size(41, 44)
@@ -197,18 +198,18 @@ Partial Class adminDashboard
         '
         Me.ffff.AutoSize = True
         Me.ffff.BackColor = System.Drawing.Color.Transparent
-        Me.ffff.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ffff.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.ffff.Location = New System.Drawing.Point(302, 1)
+        Me.ffff.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ffff.ForeColor = System.Drawing.Color.Black
+        Me.ffff.Location = New System.Drawing.Point(35, 20)
         Me.ffff.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.ffff.Name = "ffff"
-        Me.ffff.Size = New System.Drawing.Size(50, 24)
+        Me.ffff.Size = New System.Drawing.Size(77, 39)
         Me.ffff.TabIndex = 21
         Me.ffff.Text = "date"
         '
         'Panel7
         '
-        Me.Panel7.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Panel7.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel7.Controls.Add(Me.Label11)
         Me.Panel7.Controls.Add(Me.lblontime)
@@ -222,12 +223,12 @@ Partial Class adminDashboard
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(20, 68)
+        Me.Label11.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label11.Location = New System.Drawing.Point(65, 68)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(69, 20)
+        Me.Label11.Size = New System.Drawing.Size(62, 18)
         Me.Label11.TabIndex = 5
         Me.Label11.Text = "ON TIME"
         '
@@ -238,7 +239,7 @@ Partial Class adminDashboard
         Me.lblontime.CausesValidation = False
         Me.lblontime.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblontime.ForeColor = System.Drawing.Color.White
-        Me.lblontime.Location = New System.Drawing.Point(2, 11)
+        Me.lblontime.Location = New System.Drawing.Point(93, 11)
         Me.lblontime.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblontime.Name = "lblontime"
         Me.lblontime.Size = New System.Drawing.Size(41, 44)
@@ -247,7 +248,7 @@ Partial Class adminDashboard
         '
         'Panel11
         '
-        Me.Panel11.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Panel11.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel11.Controls.Add(Me.Label12)
@@ -262,12 +263,12 @@ Partial Class adminDashboard
         '
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(17, 68)
+        Me.Label12.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label12.Location = New System.Drawing.Point(45, 68)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(102, 20)
+        Me.Label12.Size = New System.Drawing.Size(86, 18)
         Me.Label12.TabIndex = 5
         Me.Label12.Text = "ALL PRESENT"
         '
@@ -278,7 +279,7 @@ Partial Class adminDashboard
         Me.lblpresent.CausesValidation = False
         Me.lblpresent.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblpresent.ForeColor = System.Drawing.Color.White
-        Me.lblpresent.Location = New System.Drawing.Point(2, 11)
+        Me.lblpresent.Location = New System.Drawing.Point(90, 11)
         Me.lblpresent.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblpresent.Name = "lblpresent"
         Me.lblpresent.Size = New System.Drawing.Size(41, 44)
@@ -287,7 +288,7 @@ Partial Class adminDashboard
         '
         'Panel12
         '
-        Me.Panel12.BackColor = System.Drawing.Color.SlateBlue
+        Me.Panel12.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel12.Controls.Add(Me.Label14)
         Me.Panel12.Controls.Add(Me.lblLate)
@@ -301,12 +302,12 @@ Partial Class adminDashboard
         '
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(20, 68)
+        Me.Label14.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label14.Location = New System.Drawing.Point(90, 68)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(44, 20)
+        Me.Label14.Size = New System.Drawing.Size(36, 18)
         Me.Label14.TabIndex = 5
         Me.Label14.Text = "LATE"
         '
@@ -317,7 +318,7 @@ Partial Class adminDashboard
         Me.lblLate.CausesValidation = False
         Me.lblLate.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLate.ForeColor = System.Drawing.Color.White
-        Me.lblLate.Location = New System.Drawing.Point(2, 11)
+        Me.lblLate.Location = New System.Drawing.Point(93, 11)
         Me.lblLate.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblLate.Name = "lblLate"
         Me.lblLate.Size = New System.Drawing.Size(41, 44)
@@ -339,11 +340,11 @@ Partial Class adminDashboard
         '
         'btnViewUsers
         '
-        Me.btnViewUsers.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnViewUsers.BackColor = System.Drawing.Color.SteelBlue
         Me.btnViewUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnViewUsers.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewUsers.ForeColor = System.Drawing.Color.White
-        Me.btnViewUsers.Location = New System.Drawing.Point(12, 178)
+        Me.btnViewUsers.Location = New System.Drawing.Point(11, 216)
         Me.btnViewUsers.Margin = New System.Windows.Forms.Padding(2)
         Me.btnViewUsers.Name = "btnViewUsers"
         Me.btnViewUsers.Size = New System.Drawing.Size(148, 43)
@@ -353,11 +354,11 @@ Partial Class adminDashboard
         '
         'btnPayroll
         '
-        Me.btnPayroll.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnPayroll.BackColor = System.Drawing.Color.SteelBlue
         Me.btnPayroll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPayroll.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPayroll.ForeColor = System.Drawing.Color.White
-        Me.btnPayroll.Location = New System.Drawing.Point(12, 131)
+        Me.btnPayroll.Location = New System.Drawing.Point(11, 169)
         Me.btnPayroll.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPayroll.Name = "btnPayroll"
         Me.btnPayroll.Size = New System.Drawing.Size(148, 43)
@@ -367,11 +368,11 @@ Partial Class adminDashboard
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Button2.BackColor = System.Drawing.Color.SteelBlue
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(12, 91)
+        Me.Button2.Location = New System.Drawing.Point(11, 129)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(148, 36)
@@ -381,11 +382,11 @@ Partial Class adminDashboard
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Button1.BackColor = System.Drawing.Color.SteelBlue
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(12, 52)
+        Me.Button1.Location = New System.Drawing.Point(11, 90)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(148, 35)
@@ -395,11 +396,11 @@ Partial Class adminDashboard
         '
         'Button9
         '
-        Me.Button9.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Button9.BackColor = System.Drawing.Color.SteelBlue
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button9.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(12, 14)
+        Me.Button9.Location = New System.Drawing.Point(11, 52)
         Me.Button9.Margin = New System.Windows.Forms.Padding(2)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(148, 34)

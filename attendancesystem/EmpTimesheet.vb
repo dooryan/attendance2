@@ -66,9 +66,18 @@ Public Class EmpTimesheet
         DateTimePicker1.CustomFormat = "yyyy/MM/dd"
         DateTimePicker2.Format = DateTimePickerFormat.Custom
         DateTimePicker2.CustomFormat = "yyyy/MM/dd"
+        If rbDate.Checked Then
+            ComboBox1.Enabled = False
+            rbID.Checked = False
+            rbAll.Checked = False
+        ElseIf rbID.Checked Then
+            ComboBox1.Enabled = True
+        ElseIf rbAll.Checked Then
+            prcDisplayTimesheet()
 
+        End If
         ComboBox1.Items.Clear()
-
+        ComboBox1.Items.Add("None")
         Try
             dataAttendance = New DataTable()
 
@@ -76,7 +85,7 @@ Public Class EmpTimesheet
             command.Connection = conAttendanceSystem
             With command
                 .Parameters.Clear()
-                .CommandText = "prcDisplayEmployee"
+                .CommandText = "prcDisplayEmployeeID"
                 .CommandType = CommandType.StoredProcedure
                 sqlAttendanceAdapter.SelectCommand = command
                 dataAttendance.Clear()
@@ -86,8 +95,10 @@ Public Class EmpTimesheet
 
             sqlAttendanceAdapter.Fill(dataAttendance)
             ComboBox1.DataSource = dataAttendance
-            ComboBox1.DisplayMember = "emp_id"
-            ComboBox1.ValueMember = "emp_id"
+            ComboBox1.DisplayMember = "id"
+            ComboBox1.ValueMember = "id"
+
+
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -190,26 +201,70 @@ Public Class EmpTimesheet
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        filterSummaryHoursByID()
+    End Sub
+    Private Sub filterSummaryHoursByID()
         Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
 
         Dim date2 As String = DateTimePicker2.Value.ToString("yyyy/MM/dd")
 
-
-
-
         Dim DA = New DataTable()
         Dim sqlAdapter = New MySqlDataAdapter
-        'Dim v = ComboBox1.SelectedItem
-        'Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
         Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
             Using cmd As MySqlCommand = New MySqlCommand("", con)
 
-                cmd.CommandText = "prcFilterSummaryHours"
+                cmd.CommandText = "prcFilterSummaryHoursByID"
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("date1", date1)
                 cmd.Parameters.AddWithValue("date2", date2)
-                cmd.Parameters.AddWithValue("i", ComboBox1.Text)
+                cmd.Parameters.AddWithValue("id", ComboBox1.Text)
+                sqlAdapter.SelectCommand = cmd
+                DA.Clear()
+                sqlAdapter.Fill(DA)
+
+                If DA.Rows.Count > 0 Then
+                    DataGridView1.RowCount = DA.Rows.Count
+
+                    row = 0
+                    While Not DA.Rows.Count - 1 < row
+                        With DataGridView1
+                            .Rows(row).Cells(0).Value = DA.Rows(row).Item("id").ToString
+                            .Rows(row).Cells(1).Value = DA.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(2).Value = DA.Rows(row).Item("l_name").ToString
+
+                            .Rows(row).Cells(3).Value = DA.Rows(row).Item("date").ToString
+                            .Rows(row).Cells(4).Value = DA.Rows(row).Item("time_in").ToString
+                            .Rows(row).Cells(5).Value = DA.Rows(row).Item("time_out").ToString
+                            .Rows(row).Cells(6).Value = DA.Rows(row).Item("total_hours").ToString
+
+                        End With
+                        row = row + 1
+                    End While
+                Else
+
+                End If
+                DA.Dispose()
+                sqlAdapter.Dispose()
+
+            End Using
+        End Using
+    End Sub
+    Private Sub filterSummaryHoursByDate()
+        Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
+
+        Dim date2 As String = DateTimePicker2.Value.ToString("yyyy/MM/dd")
+
+        Dim DA = New DataTable()
+        Dim sqlAdapter = New MySqlDataAdapter
+        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
+            Using cmd As MySqlCommand = New MySqlCommand("", con)
+
+                cmd.CommandText = "prcFilterTimesheetByDate"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("date1", date1)
+                cmd.Parameters.AddWithValue("date2", date2)
                 sqlAdapter.SelectCommand = cmd
                 DA.Clear()
                 sqlAdapter.Fill(DA)
@@ -291,28 +346,28 @@ Public Class EmpTimesheet
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked = True Then
+        'If CheckBox1.Checked = True Then
 
-            Label1.Visible = False
-            ComboBox1.Visible = False
-            DateTimePicker2.Visible = False
-
-
-        Else
-
-            Label1.Visible = True
-            ComboBox1.Visible = True
-            DateTimePicker2.Visible = True
+        '    Label1.Visible = False
+        '    ComboBox1.Visible = False
+        '    DateTimePicker2.Visible = False
 
 
-        End If
+        'Else
+
+        '    Label1.Visible = True
+        '    ComboBox1.Visible = True
+        '    DateTimePicker2.Visible = True
+
+
+        'End If
     End Sub
 
     Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 End Class

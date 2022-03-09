@@ -34,6 +34,7 @@ Partial Class addUser
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -42,12 +43,12 @@ Partial Class addUser
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Cambria", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(141, 36)
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(93, 14)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(218, 34)
+        Me.Label5.Size = New System.Drawing.Size(185, 33)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Create Account"
         '
@@ -55,6 +56,7 @@ Partial Class addUser
         '
         Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel1.Controls.Add(Me.txtUname)
+        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.txtID)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.txtConfirmPassword)
@@ -63,15 +65,15 @@ Partial Class addUser
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.txtPass)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Location = New System.Drawing.Point(12, 14)
+        Me.Panel1.Location = New System.Drawing.Point(17, 17)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(302, 257)
+        Me.Panel1.Size = New System.Drawing.Size(345, 269)
         Me.Panel1.TabIndex = 21
         '
         'txtUname
         '
         Me.txtUname.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUname.Location = New System.Drawing.Point(119, 68)
+        Me.txtUname.Location = New System.Drawing.Point(127, 95)
         Me.txtUname.Name = "txtUname"
         Me.txtUname.Size = New System.Drawing.Size(151, 26)
         Me.txtUname.TabIndex = 20
@@ -79,7 +81,7 @@ Partial Class addUser
         'txtID
         '
         Me.txtID.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.Location = New System.Drawing.Point(119, 38)
+        Me.txtID.Location = New System.Drawing.Point(127, 65)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(151, 26)
         Me.txtID.TabIndex = 19
@@ -87,12 +89,12 @@ Partial Class addUser
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(15, 131)
+        Me.Label1.Location = New System.Drawing.Point(13, 161)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(148, 19)
+        Me.Label1.Size = New System.Drawing.Size(110, 15)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Confirm Password:"
         '
@@ -101,7 +103,7 @@ Partial Class addUser
         Me.txtConfirmPassword.BackColor = System.Drawing.Color.White
         Me.txtConfirmPassword.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(119, 157)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(127, 155)
         Me.txtConfirmPassword.Margin = New System.Windows.Forms.Padding(2)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -111,12 +113,12 @@ Partial Class addUser
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Button2.Font = New System.Drawing.Font("Cambria", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(137, 203)
+        Me.Button2.Location = New System.Drawing.Point(106, 206)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 41)
+        Me.Button2.Size = New System.Drawing.Size(155, 37)
         Me.Button2.TabIndex = 16
         Me.Button2.Text = "Create"
         Me.Button2.UseVisualStyleBackColor = False
@@ -124,23 +126,23 @@ Partial Class addUser
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(15, 101)
+        Me.Label6.Location = New System.Drawing.Point(59, 131)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(85, 19)
+        Me.Label6.Size = New System.Drawing.Size(64, 15)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Password:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(13, 68)
+        Me.Label7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(57, 101)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(87, 19)
+        Me.Label7.Size = New System.Drawing.Size(65, 15)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Username:"
         '
@@ -149,7 +151,7 @@ Partial Class addUser
         Me.txtPass.BackColor = System.Drawing.Color.White
         Me.txtPass.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.txtPass.Location = New System.Drawing.Point(119, 98)
+        Me.txtPass.Location = New System.Drawing.Point(127, 125)
         Me.txtPass.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -159,12 +161,12 @@ Partial Class addUser
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(46, 37)
+        Me.Label8.Location = New System.Drawing.Point(82, 71)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(54, 19)
+        Me.Label8.Size = New System.Drawing.Size(40, 15)
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "ID No:"
         '
@@ -172,18 +174,30 @@ Partial Class addUser
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.Panel2.Controls.Add(Me.Panel1)
-        Me.Panel2.Location = New System.Drawing.Point(77, 85)
+        Me.Panel2.Location = New System.Drawing.Point(352, 35)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(327, 286)
+        Me.Panel2.Size = New System.Drawing.Size(376, 301)
         Me.Panel2.TabIndex = 22
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(55, 124)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(224, 78)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "LEMCO"
         '
         'addUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.attendancesystem.My.Resources.Resources.beautiful_color_ui_gradients_backgrounds_frost
-        Me.ClientSize = New System.Drawing.Size(497, 472)
-        Me.Controls.Add(Me.Label5)
+        Me.ClientSize = New System.Drawing.Size(773, 369)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -209,4 +223,5 @@ Partial Class addUser
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents txtUname As TextBox
     Friend WithEvents txtID As TextBox
+    Friend WithEvents Label3 As Label
 End Class

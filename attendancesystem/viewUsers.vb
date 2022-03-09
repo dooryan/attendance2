@@ -5,6 +5,30 @@ Public Class viewUsers
         displayUsers()
 
     End Sub
+
+    Private Sub deleteUser()
+        Dim num As Integer
+
+        Try
+            num = MessageBox.Show("Delete user?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If num = DialogResult.Yes Then
+                With command
+                    .Parameters.Clear()
+                    .CommandText = "prcDeleteUser"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("id", CInt(DataGridView1.CurrentRow.Cells(0).Value))
+                    .ExecuteNonQuery()
+
+                End With
+            End If
+
+
+
+        Catch ex As Exception
+            MessageBox.Show("" & ex.Message)
+        End Try
+    End Sub
     Private Sub displayUsers()
         ' Dim user As String = Label1.Text
 
@@ -52,4 +76,8 @@ Public Class viewUsers
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        deleteUser()
+        displayUsers()
+    End Sub
 End Class

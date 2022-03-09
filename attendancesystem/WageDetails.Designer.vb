@@ -64,7 +64,7 @@ Partial Class WageDetails
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Panel1.Location = New System.Drawing.Point(11, 10)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(227, 54)
         Me.Panel1.TabIndex = 0
@@ -72,7 +72,7 @@ Partial Class WageDetails
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(172, 13)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(26, 24)
         Me.Button1.TabIndex = 2
@@ -95,7 +95,7 @@ Partial Class WageDetails
         Me.txtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtID.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtID.Location = New System.Drawing.Point(63, 14)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(98, 23)
         Me.txtID.TabIndex = 0
@@ -116,7 +116,7 @@ Partial Class WageDetails
         '
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.Location = New System.Drawing.Point(64, 13)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(153, 23)
         Me.txtName.TabIndex = 2
@@ -136,7 +136,7 @@ Partial Class WageDetails
         '
         Me.txtHourlyRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHourlyRate.Location = New System.Drawing.Point(377, 23)
-        Me.txtHourlyRate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtHourlyRate.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHourlyRate.Name = "txtHourlyRate"
         Me.txtHourlyRate.Size = New System.Drawing.Size(97, 23)
         Me.txtHourlyRate.TabIndex = 3
@@ -159,7 +159,7 @@ Partial Class WageDetails
         '
         Me.txtDept.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDept.Location = New System.Drawing.Point(96, 50)
-        Me.txtDept.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtDept.Margin = New System.Windows.Forms.Padding(2)
         Me.txtDept.Name = "txtDept"
         Me.txtDept.Size = New System.Drawing.Size(121, 23)
         Me.txtDept.TabIndex = 4
@@ -180,7 +180,7 @@ Partial Class WageDetails
         '
         Me.txtJobStat.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtJobStat.Location = New System.Drawing.Point(81, 88)
-        Me.txtJobStat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtJobStat.Margin = New System.Windows.Forms.Padding(2)
         Me.txtJobStat.Name = "txtJobStat"
         Me.txtJobStat.Size = New System.Drawing.Size(136, 23)
         Me.txtJobStat.TabIndex = 6
@@ -198,7 +198,7 @@ Partial Class WageDetails
         Me.Panel2.Controls.Add(Me.txtDept)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Location = New System.Drawing.Point(11, 69)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(227, 157)
         Me.Panel2.TabIndex = 8
@@ -221,7 +221,7 @@ Partial Class WageDetails
         Me.cmbPayBasis.FormattingEnabled = True
         Me.cmbPayBasis.Items.AddRange(New Object() {"HOURLY", "SALARY"})
         Me.cmbPayBasis.Location = New System.Drawing.Point(81, 123)
-        Me.cmbPayBasis.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbPayBasis.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbPayBasis.Name = "cmbPayBasis"
         Me.cmbPayBasis.Size = New System.Drawing.Size(136, 25)
         Me.cmbPayBasis.TabIndex = 8
@@ -242,7 +242,7 @@ Partial Class WageDetails
         '
         Me.txtsss.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtsss.Location = New System.Drawing.Point(120, 59)
-        Me.txtsss.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtsss.Margin = New System.Windows.Forms.Padding(2)
         Me.txtsss.Name = "txtsss"
         Me.txtsss.Size = New System.Drawing.Size(97, 23)
         Me.txtsss.TabIndex = 11
@@ -262,7 +262,7 @@ Partial Class WageDetails
         '
         Me.txtphilhealth.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtphilhealth.Location = New System.Drawing.Point(120, 32)
-        Me.txtphilhealth.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtphilhealth.Margin = New System.Windows.Forms.Padding(2)
         Me.txtphilhealth.Name = "txtphilhealth"
         Me.txtphilhealth.Size = New System.Drawing.Size(97, 23)
         Me.txtphilhealth.TabIndex = 9
@@ -288,7 +288,7 @@ Partial Class WageDetails
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.txtphilhealth)
         Me.Panel3.Location = New System.Drawing.Point(253, 102)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(227, 124)
         Me.Panel3.TabIndex = 14
@@ -308,7 +308,7 @@ Partial Class WageDetails
         '
         Me.txtpagibig.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpagibig.Location = New System.Drawing.Point(120, 86)
-        Me.txtpagibig.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtpagibig.Margin = New System.Windows.Forms.Padding(2)
         Me.txtpagibig.Name = "txtpagibig"
         Me.txtpagibig.Size = New System.Drawing.Size(97, 23)
         Me.txtpagibig.TabIndex = 14
@@ -318,7 +318,7 @@ Partial Class WageDetails
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSave.Font = New System.Drawing.Font("Arial Black", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.Location = New System.Drawing.Point(253, 240)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(92, 32)
         Me.btnSave.TabIndex = 15
@@ -330,7 +330,7 @@ Partial Class WageDetails
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnUpdate.Font = New System.Drawing.Font("Arial Black", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.Location = New System.Drawing.Point(146, 240)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(92, 32)
         Me.btnUpdate.TabIndex = 16
@@ -343,7 +343,7 @@ Partial Class WageDetails
         Me.Panel4.Controls.Add(Me.txtGrossWage)
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Location = New System.Drawing.Point(253, 10)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(227, 84)
         Me.Panel4.TabIndex = 17
@@ -363,7 +363,7 @@ Partial Class WageDetails
         '
         Me.txtGrossWage.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtGrossWage.Location = New System.Drawing.Point(124, 40)
-        Me.txtGrossWage.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtGrossWage.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGrossWage.Name = "txtGrossWage"
         Me.txtGrossWage.Size = New System.Drawing.Size(97, 23)
         Me.txtGrossWage.TabIndex = 5
@@ -384,7 +384,7 @@ Partial Class WageDetails
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "WageDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

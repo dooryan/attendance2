@@ -282,7 +282,7 @@ Public Class payroll
                 txtOTPay.Text = (Val(txtOvertime.Text) * Val(txtHourlyRate.Text)) * 1.25
                 txtHoliday.Text = (totalHolidayHours * Val(txtHourlyRate.Text)) * 2
                 txtttlpay.Text = (((Val(txtHours.Text)) * CDec(DA.Rows(0).Item(1).ToString()))) + Val(txtOTPay.Text) + Val(txtHoliday.Text)
-                txtTotalPay.Text = Val(txtttlpay.Text) - Val(txtTtlDeductions.Text)
+                txtTotalPay.Text = " ₱ " & (Val(txtttlpay.Text) - Val(txtTtlDeductions.Text))
                 txtHolidayHous.Text = totalHolidayHours
 
 
