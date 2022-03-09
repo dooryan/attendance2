@@ -7,7 +7,8 @@ Public Class payroll
     Dim totalHolidayHours = 0
     Public finalHoursTotal = 0
     Dim recordsExist = True
-
+    Dim totalHours As Integer = 0
+    Dim countOT As Integer = 0
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
 
@@ -17,13 +18,14 @@ Public Class payroll
         checkDatabaseConnection()
         ComboBox1.Items.Clear()
 
-        prcDisplayTimesheet()
+
 
         DateTimePicker1.Format = DateTimePickerFormat.Custom
         DateTimePicker1.CustomFormat = "yyyy/MM/dd"
         DateTimePicker2.Format = DateTimePickerFormat.Custom
         DateTimePicker2.CustomFormat = "yyyy/MM/dd"
 
+        displayPayroll()
 
         Try
             dataAttendance = New DataTable()
@@ -43,12 +45,6 @@ Public Class payroll
                 ComboBox1.DisplayMember = "id"
                 ComboBox1.ValueMember = "id"
             End With
-
-
-
-
-            'sqlAttendanceAdapter.Dispose()
-            'dataAttendance.Dispose()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -104,7 +100,7 @@ Public Class payroll
         End Try
 
     End Sub
-    Private Sub prcDisplayTimesheet()
+    Private Sub displayPayroll()
 
         dataAttendance = New DataTable()
 
@@ -122,7 +118,7 @@ Public Class payroll
 
                 If dataAttendance.Rows.Count > 0 Then
                     DataGridView2.RowCount = dataAttendance.Rows.Count
-                    Dim name As String = dataAttendance.Rows(row).Item("l_name").ToString & "," & dataAttendance.Rows(row).Item("f_name").ToString
+                    Dim name As String = dataAttendance.Rows(row).Item("l_name").ToString & " ," & dataAttendance.Rows(row).Item("f_name").ToString
                     row = 0
                     While Not dataAttendance.Rows.Count - 1 < row
                         With DataGridView2
@@ -204,7 +200,7 @@ Public Class payroll
 
     End Sub
     Private Sub AddPay()
-        Dim mes = MessageBox.Show("Confirm PAY?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim mes = MessageBox.Show("Confirm?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If mes = vbYes Then
             Dim petsa = Date.Now.ToString("yyyy/MM/dd")
             Dim gross As Decimal = Val(txtttlpay.Text)
@@ -213,8 +209,9 @@ Public Class payroll
             Dim hourstotal As Integer = txtHours.Text
             Dim id = ComboBox1.Text
 
-            prcDisplayTimesheet()
 
+            displayPayroll()
+            DataGridView2.Refresh()
             Try
 
                 With command
@@ -226,75 +223,63 @@ Public Class payroll
                     .Parameters.AddWithValue("gpay", gross)
                     .Parameters.AddWithValue("ttldeduction", deduct)
                     .Parameters.AddWithValue("ttlpay", totalpay)
-                    .Parameters.AddWithValue("hours", hourstotal)
-                    .Parameters.AddWithValue("days", finalHoursTotal)
+                    .Parameters.AddWithValue("days", hourstotal)
                     .ExecuteNonQuery()
-
-
-
-
                 End With
-
             Catch ex As Exception
                 MessageBox.Show("" & ex.Message)
-
             End Try
         Else
 
-
-
         End If
-
-
-
-
-
-
 
     End Sub
     Private Sub DisplayPayDetails()
-        Dim DA = New DataTable()
-        Dim sqlAdapter = New MySqlDataAdapter
-        Dim v = ComboBox1.SelectedItem
-        'Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
-        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
-            Using cmd As MySqlCommand = New MySqlCommand("", con)
-
-                cmd.CommandText = "prcDisplayPayDetails"
-                cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("i", ComboBox1.Text)
-                sqlAdapter.SelectCommand = cmd
-                DA.Clear()
-                sqlAdapter.Fill(DA)
 
 
+        If getDaysCount() = True Then
 
-                'txtGrosspay.Text = Val(txtHours.Text) * CDec(DA(0)(1))
-                txtHourlyRate.Text = DA.Rows(0).Item(1).ToString()
-                txtPhil.Text = (CDec(DA.Rows(0).Item(4).ToString()) / 2) / 2
-                txtSSS.Text = CDec(DA.Rows(0).Item(5).ToString()) / 2
-                txtpagibig.Text = CDec(DA.Rows(0).Item(6).ToString()) / 2
-                txtTtlDeductions.Text = Val(txtPhil.Text) + Val(txtSSS.Text) + Val(txtpagibig.Text)
+            Dim DA = New DataTable()
+            Dim sqlAdapter = New MySqlDataAdapter
+            Dim v = ComboBox1.SelectedItem
+            Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
+                Using cmd As MySqlCommand = New MySqlCommand("", con)
 
-                txtMonthly.Text = Val(((Val(txtHourlyRate.Text) * 48) * 52) / 12)
-                txtBasicRate.Text = Val(txtMonthly.Text) / 2
-                txtOTPay.Text = (Val(txtOvertime.Text) * Val(txtHourlyRate.Text)) * 1.25
-                txtHoliday.Text = (totalHolidayHours * Val(txtHourlyRate.Text)) * 2
-                txtttlpay.Text = (((Val(txtHours.Text)) * CDec(DA.Rows(0).Item(1).ToString()))) + Val(txtOTPay.Text) + Val(txtHoliday.Text)
-                txtTotalPay.Text = " ₱ " & (Val(txtttlpay.Text) - Val(txtTtlDeductions.Text))
-                txtHolidayHous.Text = totalHolidayHours
+                    cmd.CommandText = "prcDisplayPayDetails"
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.Clear()
+                    cmd.Parameters.AddWithValue("i", ComboBox1.Text)
+                    sqlAdapter.SelectCommand = cmd
+                    DA.Clear()
+                    sqlAdapter.Fill(DA)
 
+                    txtHours.Text = totalHours
+                    txtOTPay.Text = countOT
+                    txtHourlyRate.Text = DA.Rows(0).Item(1).ToString()
+                    txtPhil.Text = (CDec(DA.Rows(0).Item(4).ToString()) / 2) / 2
+                    txtSSS.Text = CDec(DA.Rows(0).Item(5).ToString()) / 2
+                    txtpagibig.Text = CDec(DA.Rows(0).Item(6).ToString()) / 2
+                    txtTtlDeductions.Text = Val(txtPhil.Text) + Val(txtSSS.Text) + Val(txtpagibig.Text)
 
+                    txtMonthly.Text = Val(((Val(txtHourlyRate.Text) * 48) * 52) / 12)
+                    txtBasicRate.Text = Val(txtMonthly.Text) / 2
+                    txtOTPay.Text = (Val(txtOvertime.Text) * Val(txtHourlyRate.Text)) * 1.25
+                    txtHoliday.Text = (totalHolidayHours * Val(txtHourlyRate.Text)) * 2
+                    txtttlpay.Text = (((Val(txtHours.Text)) * CDec(DA.Rows(0).Item(1).ToString()))) + Val(txtOTPay.Text) + Val(txtHoliday.Text)
+                    txtTotalPay.Text = (Val(txtttlpay.Text) - Val(txtTtlDeductions.Text))
+                    txtHolidayHous.Text = totalHolidayHours
+
+                End Using
             End Using
-        End Using
+        Else
+            delTextBoxValues()
+        End If
 
     End Sub
 
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
 
         DisplayPayDetails()
-        getDaysCount()
         DisplayPayHistory()
 
         Dim DA = New DataTable()
@@ -317,24 +302,20 @@ Public Class payroll
             End Using
         End Using
 
-    End Sub
-    Private Sub getDaysCount()
+        totalHolidayHours = 0
+        finalHoursTotal = 0
+        totalHours = 0
+        countOT = 0
 
+    End Sub
+    Private Function getDaysCount()
         Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
         Dim date2 As String = DateTimePicker2.Value.ToString("yyyy/MM/dd")
-
-        'Dim count As Integer
-        'txtdays.Text = count
-
+        Dim countHoliday As Integer = 0
         Dim DA = New DataTable()
         Dim sqlAdapter = New MySqlDataAdapter
         Dim dt = New DataSet
 
-
-
-        'Dim cmd = New MySqlCommand
-
-        ' Dim LogQuery As String = "SELECT USERNAME, PASSWORD, USER_TYPE FROM tbl_user WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD "
         Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
             Using cmd As MySqlCommand = New MySqlCommand("", con)
 
@@ -353,9 +334,6 @@ Public Class payroll
                 Dim counter = 0
                 Dim c = 0
                 Dim x As Integer = 0
-                Dim totalHours As Integer = 0
-                Dim countOT As Integer = 0
-                Dim countHoliday As Integer = 0
 
                 Dim holidaydates() As String = {"2021/01/01", "2021/02/12", "2021/04/01",
                                                 "2021/04/02", "2021/04/09", "2021/05/01",
@@ -364,9 +342,7 @@ Public Class payroll
                                                 "2021/11/30", "2021/12/08", "2021/12/25",
                                                 "2021/12/30"}
 
-
                 If DA.Rows.Count > 0 Then
-
                     For Each row As DataRow In DA.Rows
                         x = CInt(DA.Rows(counter).Item(6).ToString())
                         totalHours = totalHours + x - 1
@@ -397,50 +373,44 @@ Public Class payroll
                     Next
                     finalHoursTotal = totalHours
                     totalHolidayHours = countHoliday
-
-                    'If (DA.Rows(c).Item(3).ToString() = holidaydates(0) Or DA.Rows(c).Item(3) = holidaydates(1) Or DA.Rows(c).Item(3) = holidaydates(2) Or
-                    '             DA.Rows(c).Item(3) = holidaydates(3) Or DA.Rows(c).Item(3) = holidaydates(4) Or DA.Rows(c).Item(3) = holidaydates(5) Or
-                    '              DA.Rows(c).Item(3) = holidaydates(6) Or DA.Rows(c).Item(3) = holidaydates(7) Or DA.Rows(c).Item(3) = holidaydates(8) Or
-                    '              DA(c)(3) = holidaydates(9) Or DA(c)(3) = holidaydates(10) Or DA(c)(3) = holidaydates(11) Or
-                    '              DA(c)(3) = holidaydates(12) Or DA(c)(3) = holidaydates(13) Or DA(c)(3) = holidaydates(14) Or
-                    '              DA(c)(3) = holidaydates(15)) Then
-                    '        x = CInt(DA(c)(6))
-                    '        countHoliday = countHoliday + x - 1
-                    '        totalHours = totalHours - countHoliday
-
-                    '    End If
-                    '    c = c + 1
-
-
-
-                    'x = x + Convert.ToInt32(DA(i)(6))
-
-                    If DA IsNot Nothing AndAlso DA.Rows.Count > 0 Then
-                        'some code
-                        'txtHours.Text = DA.Rows.Count.ToString
-
-                        txtHours.Text = totalHours
-                        txtOvertime.Text = countOT
-                        txtHoliday.Text = countHoliday
-                    Else
-                        'some code
-                        txtHours.Text = "0"
-                        txtOvertime.Text = "0"
-                    End If
-
-
-
+                    'If DA IsNot Nothing AndAlso DA.Rows.Count > 0 Then
+                    '    'some code
+                    '    txtHours.Text = totalHours
+                    '    txtOvertime.Text = countOT
+                    '    txtHoliday.Text = countHoliday
+                    'Else
+                    '    'some code
+                    '    txtHours.Text = "0"
+                    '    txtOvertime.Text = "0"
+                    'End If
+                    Return True
                 Else
                     recordsExist = False
                     MessageBox.Show("No records found.", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
-
+                    Return False
                 End If
 
             End Using
         End Using
 
-    End Sub
 
+    End Function
+    Private Sub delTextBoxValues()
+        txtHours.Clear()
+        txtOvertime.Clear()
+        txtHolidayHous.Clear()
+        txtOTPay.Clear()
+        txtHoliday.Clear()
+        txtttlpay.Clear()
+        txtPhil.Clear()
+        txtpagibig.Clear()
+        txtSSS.Clear()
+        txtBasicRate.Clear()
+        txtHourlyRate.Clear()
+        txtMonthly.Clear()
+        txtTotalPay.Clear()
+
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         'Dim gross = Val(txtperHour.Text) * Val(txtHours.Text)
         'Dim deduct = Val(txtCAd.Text) + Val(txtpagibig.Text) + Val(txtPhil.Text) + Val(txtSSS.Text)
@@ -456,11 +426,16 @@ Public Class payroll
     End Sub
 
     Private Sub btnCompute_Click(sender As Object, e As EventArgs) Handles btnPay.Click
-        AddPay()
-        DisplayPayHistory()
-        Dim mes = MessageBox.Show("Generate Payslip?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        If (mes = vbYes) Then
+        Dim mes
+
+        If txtTotalPay.Text = "" Or "0" Then
+            MessageBox.Show("Invalid", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
+        Else
+            AddPay()
+            displayPayroll()
+            mes = MessageBox.Show("Generate Payslip?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If (mes = vbYes) Then
             Dim dt As New DataTable
             With dt
                 .Columns.Add("ID")
@@ -506,6 +481,8 @@ Public Class payroll
 
             Report.ShowDialog()
             Report.Dispose()
+        End If
+
         End If
 
     End Sub
@@ -687,5 +664,13 @@ Public Class payroll
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        delTextBoxValues()
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        displayPayroll()
     End Sub
 End Class

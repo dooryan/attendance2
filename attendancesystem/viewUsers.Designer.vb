@@ -22,6 +22,7 @@ Partial Class viewUsers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.uname = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,6 +42,14 @@ Partial Class viewUsers
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.uname, Me.fname, Me.lname, Me.dateCreated})
         Me.DataGridView1.Location = New System.Drawing.Point(16, 25)
         Me.DataGridView1.Name = "DataGridView1"
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Size = New System.Drawing.Size(546, 388)
         Me.DataGridView1.TabIndex = 0
         '

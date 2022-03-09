@@ -26,12 +26,12 @@ Partial Class payroll
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtHoliday = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtOTPay = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtttlpay = New System.Windows.Forms.TextBox()
@@ -47,6 +47,7 @@ Partial Class payroll
         Me.txtTtlDeductions = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtpagibig = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtSSS = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -60,14 +61,15 @@ Partial Class payroll
         Me.txtHours = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnPay = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.btnFilter = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnPay = New System.Windows.Forms.Button()
         Me.txtTotalPay = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -141,6 +143,7 @@ Partial Class payroll
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Panel4.Controls.Add(Me.Button3)
         Me.Panel4.Controls.Add(Me.Label19)
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Controls.Add(Me.Panel5)
@@ -149,17 +152,30 @@ Partial Class payroll
         Me.Panel4.Controls.Add(Me.btnPay)
         Me.Panel4.Controls.Add(Me.Panel1)
         Me.Panel4.Controls.Add(Me.txtTotalPay)
+        Me.Panel4.Controls.Add(Me.Label24)
         Me.Panel4.Location = New System.Drawing.Point(1, 54)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1016, 545)
         Me.Panel4.TabIndex = 35
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.ForestGreen
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(911, 0)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(88, 23)
+        Me.Button3.TabIndex = 37
+        Me.Button3.Text = "Clear All"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Arial", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(30, 463)
+        Me.Label19.Location = New System.Drawing.Point(38, 467)
         Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(81, 23)
@@ -216,17 +232,6 @@ Partial Class payroll
         Me.Label18.Size = New System.Drawing.Size(111, 15)
         Me.Label18.TabIndex = 43
         Me.Label18.Text = "Total Overtime pay"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial Black", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(4, 4)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(106, 15)
-        Me.Label3.TabIndex = 23
-        Me.Label3.Text = "Less Deductions"
         '
         'txtOTPay
         '
@@ -408,6 +413,17 @@ Partial Class payroll
         Me.txtpagibig.TabIndex = 22
         Me.txtpagibig.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Black", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(4, 4)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(106, 15)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Less Deductions"
+        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -560,6 +576,20 @@ Partial Class payroll
         Me.Label5.Size = New System.Drawing.Size(0, 13)
         Me.Label5.TabIndex = 9
         '
+        'btnPay
+        '
+        Me.btnPay.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnPay.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPay.ForeColor = System.Drawing.Color.White
+        Me.btnPay.Location = New System.Drawing.Point(753, 455)
+        Me.btnPay.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnPay.Name = "btnPay"
+        Me.btnPay.Size = New System.Drawing.Size(246, 50)
+        Me.btnPay.TabIndex = 23
+        Me.btnPay.Text = "Generate Payroll"
+        Me.btnPay.UseVisualStyleBackColor = False
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -629,32 +659,28 @@ Partial Class payroll
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Employee ID"
         '
-        'btnPay
-        '
-        Me.btnPay.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPay.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPay.ForeColor = System.Drawing.Color.White
-        Me.btnPay.Location = New System.Drawing.Point(753, 455)
-        Me.btnPay.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnPay.Name = "btnPay"
-        Me.btnPay.Size = New System.Drawing.Size(246, 50)
-        Me.btnPay.TabIndex = 23
-        Me.btnPay.Text = "Generate Payroll"
-        Me.btnPay.UseVisualStyleBackColor = False
-        '
         'txtTotalPay
         '
         Me.txtTotalPay.BackColor = System.Drawing.Color.White
-        Me.txtTotalPay.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTotalPay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTotalPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalPay.Location = New System.Drawing.Point(124, 455)
+        Me.txtTotalPay.Location = New System.Drawing.Point(170, 455)
         Me.txtTotalPay.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTotalPay.Name = "txtTotalPay"
-        Me.txtTotalPay.Size = New System.Drawing.Size(245, 39)
+        Me.txtTotalPay.Size = New System.Drawing.Size(199, 46)
         Me.txtTotalPay.TabIndex = 27
-        Me.txtTotalPay.Text = "0"
         Me.txtTotalPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.BackColor = System.Drawing.Color.Transparent
+        Me.Label24.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(112, 446)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(75, 59)
+        Me.Label24.TabIndex = 39
+        Me.Label24.Text = " ₱ "
         '
         'txtName
         '
@@ -940,4 +966,6 @@ Partial Class payroll
     Friend WithEvents stat As DataGridViewTextBoxColumn
     Friend WithEvents days As DataGridViewTextBoxColumn
     Friend WithEvents Label23 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label24 As Label
 End Class
