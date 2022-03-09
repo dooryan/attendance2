@@ -41,14 +41,14 @@ Partial Class EmpTimesheet
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.rbAll = New System.Windows.Forms.RadioButton()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.rbDate = New System.Windows.Forms.RadioButton()
         Me.rbID = New System.Windows.Forms.RadioButton()
-        Me.rbAll = New System.Windows.Forms.RadioButton()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.rbDate = New System.Windows.Forms.RadioButton()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -189,29 +189,16 @@ Partial Class EmpTimesheet
         Me.Button1.Text = "Generate Report"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'CheckBox1
+        'rbAll
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(662, 82)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox1.TabIndex = 22
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.CalendarFont = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Olive
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(408, 6)
-        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(98, 24)
-        Me.DateTimePicker2.TabIndex = 15
-        Me.DateTimePicker2.Value = New Date(2022, 3, 9, 0, 0, 0, 0)
+        Me.rbAll.AutoSize = True
+        Me.rbAll.Location = New System.Drawing.Point(120, 13)
+        Me.rbAll.Name = "rbAll"
+        Me.rbAll.Size = New System.Drawing.Size(36, 17)
+        Me.rbAll.TabIndex = 26
+        Me.rbAll.TabStop = True
+        Me.rbAll.Text = "All"
+        Me.rbAll.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -227,6 +214,42 @@ Partial Class EmpTimesheet
         Me.Button2.Text = "Filter"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(703, 90)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox1.TabIndex = 22
+        Me.CheckBox1.Text = "CheckBox1"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.CheckBox1.Visible = False
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.CalendarFont = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Olive
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker2.Location = New System.Drawing.Point(408, 6)
+        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(98, 24)
+        Me.DateTimePicker2.TabIndex = 15
+        Me.DateTimePicker2.Value = New Date(2022, 3, 9, 0, 0, 0, 0)
+        '
+        'rbID
+        '
+        Me.rbID.AutoSize = True
+        Me.rbID.Location = New System.Drawing.Point(15, 13)
+        Me.rbID.Name = "rbID"
+        Me.rbID.Size = New System.Drawing.Size(36, 17)
+        Me.rbID.TabIndex = 25
+        Me.rbID.TabStop = True
+        Me.rbID.Text = "ID"
+        Me.rbID.UseVisualStyleBackColor = True
+        '
         'DateTimePicker1
         '
         Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -239,6 +262,17 @@ Partial Class EmpTimesheet
         Me.DateTimePicker1.Size = New System.Drawing.Size(102, 24)
         Me.DateTimePicker1.TabIndex = 14
         Me.DateTimePicker1.Value = New Date(2022, 3, 9, 0, 0, 0, 0)
+        '
+        'rbDate
+        '
+        Me.rbDate.AutoSize = True
+        Me.rbDate.Location = New System.Drawing.Point(66, 13)
+        Me.rbDate.Name = "rbDate"
+        Me.rbDate.Size = New System.Drawing.Size(48, 17)
+        Me.rbDate.TabIndex = 24
+        Me.rbDate.TabStop = True
+        Me.rbDate.Text = "Date"
+        Me.rbDate.UseVisualStyleBackColor = True
         '
         'ComboBox1
         '
@@ -255,39 +289,6 @@ Partial Class EmpTimesheet
         Me.ComboBox1.Sorted = True
         Me.ComboBox1.TabIndex = 16
         Me.ComboBox1.Text = "Employee ID"
-        '
-        'rbDate
-        '
-        Me.rbDate.AutoSize = True
-        Me.rbDate.Location = New System.Drawing.Point(66, 13)
-        Me.rbDate.Name = "rbDate"
-        Me.rbDate.Size = New System.Drawing.Size(48, 17)
-        Me.rbDate.TabIndex = 24
-        Me.rbDate.TabStop = True
-        Me.rbDate.Text = "Date"
-        Me.rbDate.UseVisualStyleBackColor = True
-        '
-        'rbID
-        '
-        Me.rbID.AutoSize = True
-        Me.rbID.Location = New System.Drawing.Point(15, 13)
-        Me.rbID.Name = "rbID"
-        Me.rbID.Size = New System.Drawing.Size(36, 17)
-        Me.rbID.TabIndex = 25
-        Me.rbID.TabStop = True
-        Me.rbID.Text = "ID"
-        Me.rbID.UseVisualStyleBackColor = True
-        '
-        'rbAll
-        '
-        Me.rbAll.AutoSize = True
-        Me.rbAll.Location = New System.Drawing.Point(120, 13)
-        Me.rbAll.Name = "rbAll"
-        Me.rbAll.Size = New System.Drawing.Size(36, 17)
-        Me.rbAll.TabIndex = 26
-        Me.rbAll.TabStop = True
-        Me.rbAll.Text = "All"
-        Me.rbAll.UseVisualStyleBackColor = True
         '
         'EmpTimesheet
         '

@@ -201,7 +201,14 @@ Public Class EmpTimesheet
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        filterSummaryHoursByID()
+        If rbDate.Checked = True Then
+            filterSummaryHoursByDate()
+        ElseIf rbID.Checked = True Then
+            filterSummaryHoursByID()
+        ElseIf rbAll.Checked = True Then
+            prcDisplayTimesheet()
+        End If
+
     End Sub
     Private Sub filterSummaryHoursByID()
         Dim date1 As String = DateTimePicker1.Value.ToString("yyyy/MM/dd")
@@ -213,7 +220,7 @@ Public Class EmpTimesheet
         Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
             Using cmd As MySqlCommand = New MySqlCommand("", con)
 
-                cmd.CommandText = "prcFilterSummaryHoursByID"
+                cmd.CommandText = "prcFilterTimesheetbyID"
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("date1", date1)
@@ -369,5 +376,13 @@ Public Class EmpTimesheet
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs)
 
+    End Sub
+
+    Private Sub rbAll_CheckedChanged(sender As Object, e As EventArgs) Handles rbAll.CheckedChanged
+        prcDisplayTimesheet()
+    End Sub
+
+    Private Sub rbDate_CheckedChanged(sender As Object, e As EventArgs) Handles rbDate.CheckedChanged
+        rbID.Enabled = True
     End Sub
 End Class
