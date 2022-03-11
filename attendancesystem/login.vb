@@ -3,9 +3,8 @@ Imports MySql.Data.MySqlClient
 
 
 Public Class login
+
     Private Sub btn_login_Click(sender As Object, e As EventArgs)
-
-
 
     End Sub
 
@@ -84,7 +83,7 @@ Public Class login
             MessageBox.Show("PLEASE ENTER YOUR CRENDENTIALS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
 
-            If pwd = txtpassword.Text Then
+            If (pwd = txtpassword.Text) Then
 
 
                 Dim message As String = "You have successfully login. Please click ok to proceed."
@@ -119,15 +118,15 @@ Public Class login
     Private Sub decrypt()
         If txtusername.Text = "" Or txtpassword.Text = "" Then
             MessageBox.Show("PLEASE ENTER YOUR CRENDENTIALS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            
-        Else
 
+        Else
             Try
                 With command
                     .Parameters.Clear()
                     .CommandText = "prcDecrypt"
                     .CommandType = CommandType.StoredProcedure
                     .Parameters.AddWithValue("uname", txtusername.Text)
+
                     Dim paramPwd As IDbDataParameter = command.CreateParameter()
                     paramPwd.ParameterName = "pwd"
                     paramPwd.Direction = System.Data.ParameterDirection.Output
@@ -136,33 +135,27 @@ Public Class login
                     paramUtype.ParameterName = "uType"
                     paramUtype.Direction = System.Data.ParameterDirection.Output
                     .Parameters.Add(paramUtype)
-
-
-
-                    '.Parameters.AddWithValue("@uname", txtusername.Text)
-                    '.Parameters("@uname").Direction = ParameterDirection.InputOutput
-
-                    '.Parameters.AddWithValue("@pwd", MySqlDbType.String)
-                    '.Parameters("@pwd").Direction = ParameterDirection.InputOutput
-
-                    '.Parameters.AddWithValue("@uType", MySqlDbType.String)
-                    '.Parameters("@uType").Direction = ParameterDirection.InputOutput
+                    Dim paramIfUNameExist As IDbDataParameter = command.CreateParameter()
+                    paramIfUNameExist.ParameterName = "IfUNameExist"
+                    paramIfUNameExist.Direction = System.Data.ParameterDirection.Output
+                    paramIfUNameExist.DbType = System.Data.DbType.Boolean
+                    .Parameters.Add(paramIfUNameExist)
                     .ExecuteNonQuery()
 
-                    Dim pwdDecrypted As String =
-                    CaesarDecipher(paramPwd.Value, intShift:=15)
+                    Dim IfUNameExist As Boolean = paramIfUNameExist.Value
 
-                    Dim userType As String = paramUtype.Value
+                    If (IfUNameExist = True) Then
+                        Dim userType As String = paramUtype.Value
+                        Dim pwdDecrypted As String = CaesarDecipher(paramPwd.Value, intShift:=15)
+                        userLogin(pwdDecrypted, userType)
+                    Else
+                        MessageBox.Show("Username does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
 
                     Console.WriteLine(paramPwd.Value & paramUtype.Value)
 
-
-                    userLogin(pwdDecrypted, userType)
-
-
-
                 End With
-                Me.Dispose()
+                'Me.Dispose()
             Catch ex As Exception
                 MessageBox.Show("" & ex.Message)
 
@@ -171,7 +164,9 @@ Public Class login
     End Sub
     Private Sub btn_login_Click_1(sender As Object, e As EventArgs) Handles btn_login.Click
         decrypt()
-        Me.Hide()
+        txtpassword.Clear()
+        txtusername.Clear()
+
 
     End Sub
 

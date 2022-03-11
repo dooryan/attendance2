@@ -63,10 +63,10 @@ Partial Class EmpTimesheet
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(104, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
@@ -83,7 +83,7 @@ Partial Class EmpTimesheet
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView1.GridColor = System.Drawing.Color.Black
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 34)
+        Me.DataGridView1.Location = New System.Drawing.Point(15, 37)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
@@ -93,7 +93,7 @@ Partial Class EmpTimesheet
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Transparent
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(788, 369)
+        Me.DataGridView1.Size = New System.Drawing.Size(788, 366)
         Me.DataGridView1.TabIndex = 20
         '
         'DataGridViewTextBoxColumn1
@@ -102,7 +102,7 @@ Partial Class EmpTimesheet
         Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 45
+        Me.DataGridViewTextBoxColumn1.Width = 43
         '
         'DataGridViewTextBoxColumn2
         '
@@ -118,7 +118,7 @@ Partial Class EmpTimesheet
         Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn3.HeaderText = "Last name"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 85
+        Me.DataGridViewTextBoxColumn3.Width = 86
         '
         'date1
         '
@@ -127,7 +127,7 @@ Partial Class EmpTimesheet
         Me.date1.DefaultCellStyle = DataGridViewCellStyle6
         Me.date1.HeaderText = "Date"
         Me.date1.Name = "date1"
-        Me.date1.Width = 59
+        Me.date1.Width = 56
         '
         'time1
         '
@@ -139,13 +139,13 @@ Partial Class EmpTimesheet
         '
         Me.stat1.HeaderText = "TIME OUT"
         Me.stat1.Name = "stat1"
-        Me.stat1.Width = 85
+        Me.stat1.Width = 84
         '
         'ttlhours
         '
         Me.ttlhours.HeaderText = "TOTAL HOURS"
         Me.ttlhours.Name = "ttlhours"
-        Me.ttlhours.Width = 109
+        Me.ttlhours.Width = 106
         '
         'Panel1
         '
@@ -179,8 +179,8 @@ Partial Class EmpTimesheet
         '
         Me.Button1.BackColor = System.Drawing.Color.SeaGreen
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(683, 6)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
@@ -192,9 +192,11 @@ Partial Class EmpTimesheet
         'rbAll
         '
         Me.rbAll.AutoSize = True
-        Me.rbAll.Location = New System.Drawing.Point(120, 13)
+        Me.rbAll.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbAll.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.rbAll.Location = New System.Drawing.Point(120, 9)
         Me.rbAll.Name = "rbAll"
-        Me.rbAll.Size = New System.Drawing.Size(36, 17)
+        Me.rbAll.Size = New System.Drawing.Size(40, 21)
         Me.rbAll.TabIndex = 26
         Me.rbAll.TabStop = True
         Me.rbAll.Text = "All"
@@ -202,10 +204,10 @@ Partial Class EmpTimesheet
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.DarkGoldenrod
+        Me.Button2.BackColor = System.Drawing.Color.LightSlateGray
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(533, 6)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
@@ -230,21 +232,23 @@ Partial Class EmpTimesheet
         '
         Me.DateTimePicker2.CalendarFont = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.CalendarMonthBackground = System.Drawing.Color.Olive
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker2.Location = New System.Drawing.Point(408, 6)
         Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(98, 24)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(98, 27)
         Me.DateTimePicker2.TabIndex = 15
         Me.DateTimePicker2.Value = New Date(2022, 3, 9, 0, 0, 0, 0)
         '
         'rbID
         '
         Me.rbID.AutoSize = True
-        Me.rbID.Location = New System.Drawing.Point(15, 13)
+        Me.rbID.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbID.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.rbID.Location = New System.Drawing.Point(15, 9)
         Me.rbID.Name = "rbID"
-        Me.rbID.Size = New System.Drawing.Size(36, 17)
+        Me.rbID.Size = New System.Drawing.Size(38, 21)
         Me.rbID.TabIndex = 25
         Me.rbID.TabStop = True
         Me.rbID.Text = "ID"
@@ -254,21 +258,23 @@ Partial Class EmpTimesheet
         '
         Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Olive
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(302, 6)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(102, 24)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(102, 27)
         Me.DateTimePicker1.TabIndex = 14
         Me.DateTimePicker1.Value = New Date(2022, 3, 9, 0, 0, 0, 0)
         '
         'rbDate
         '
         Me.rbDate.AutoSize = True
-        Me.rbDate.Location = New System.Drawing.Point(66, 13)
+        Me.rbDate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbDate.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.rbDate.Location = New System.Drawing.Point(61, 9)
         Me.rbDate.Name = "rbDate"
-        Me.rbDate.Size = New System.Drawing.Size(48, 17)
+        Me.rbDate.Size = New System.Drawing.Size(53, 21)
         Me.rbDate.TabIndex = 24
         Me.rbDate.TabStop = True
         Me.rbDate.Text = "Date"
@@ -279,13 +285,13 @@ Partial Class EmpTimesheet
         Me.ComboBox1.BackColor = System.Drawing.Color.GhostWhite
         Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.Default
         Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.ComboBox1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(193, 8)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox1.MaxDropDownItems = 5
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(92, 23)
+        Me.ComboBox1.Size = New System.Drawing.Size(92, 25)
         Me.ComboBox1.Sorted = True
         Me.ComboBox1.TabIndex = 16
         Me.ComboBox1.Text = "Employee ID"

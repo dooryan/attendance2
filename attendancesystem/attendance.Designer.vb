@@ -36,53 +36,52 @@ Partial Class attendance
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lbl_time = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnIn
         '
-        Me.btnIn.BackColor = System.Drawing.Color.Green
-        Me.btnIn.BackgroundImage = Global.attendancesystem.My.Resources.Resources._800722
+        Me.btnIn.BackColor = System.Drawing.Color.DarkGreen
         Me.btnIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnIn.Location = New System.Drawing.Point(-2, 87)
+        Me.btnIn.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIn.ForeColor = System.Drawing.Color.White
+        Me.btnIn.Location = New System.Drawing.Point(-3, 122)
         Me.btnIn.Margin = New System.Windows.Forms.Padding(2)
         Me.btnIn.Name = "btnIn"
-        Me.btnIn.Size = New System.Drawing.Size(241, 39)
+        Me.btnIn.Size = New System.Drawing.Size(265, 47)
         Me.btnIn.TabIndex = 0
         Me.btnIn.Text = "TIME IN"
-        Me.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnIn.UseVisualStyleBackColor = False
         '
         'btnOut
         '
-        Me.btnOut.BackColor = System.Drawing.Color.Green
-        Me.btnOut.BackgroundImage = Global.attendancesystem.My.Resources.Resources._1267047
+        Me.btnOut.BackColor = System.Drawing.Color.DarkGreen
         Me.btnOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnOut.Location = New System.Drawing.Point(0, 87)
+        Me.btnOut.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOut.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnOut.Location = New System.Drawing.Point(-2, 122)
         Me.btnOut.Margin = New System.Windows.Forms.Padding(2)
         Me.btnOut.Name = "btnOut"
-        Me.btnOut.Size = New System.Drawing.Size(241, 39)
+        Me.btnOut.Size = New System.Drawing.Size(265, 47)
         Me.btnOut.TabIndex = 1
         Me.btnOut.Text = "TIME OUT"
-        Me.btnOut.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnOut.UseVisualStyleBackColor = False
         '
         'dgrid_emp_time_history
         '
         Me.dgrid_emp_time_history.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgrid_emp_time_history.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgrid_emp_time_history.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgrid_emp_time_history.BackgroundColor = System.Drawing.Color.White
         Me.dgrid_emp_time_history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgrid_emp_time_history.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.date1, Me.time1, Me.stat})
         Me.dgrid_emp_time_history.Location = New System.Drawing.Point(26, 45)
@@ -112,12 +111,12 @@ Partial Class attendance
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label1.Font = New System.Drawing.Font("Gadugi", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(635, 16)
+        Me.Label1.Font = New System.Drawing.Font("Gadugi", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label1.Location = New System.Drawing.Point(773, 16)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 26)
+        Me.Label1.Size = New System.Drawing.Size(32, 16)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "user"
         '
@@ -125,14 +124,15 @@ Partial Class attendance
         '
         Me.lbl_date.AutoSize = True
         Me.lbl_date.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_date.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_date.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_date.ForeColor = System.Drawing.Color.White
-        Me.lbl_date.Location = New System.Drawing.Point(95, 11)
+        Me.lbl_date.Location = New System.Drawing.Point(47, 17)
         Me.lbl_date.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_date.Name = "lbl_date"
-        Me.lbl_date.Size = New System.Drawing.Size(42, 19)
+        Me.lbl_date.Size = New System.Drawing.Size(68, 32)
         Me.lbl_date.TabIndex = 5
         Me.lbl_date.Text = "Date"
+        Me.lbl_date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Timer1
         '
@@ -162,42 +162,30 @@ Partial Class attendance
         '
         'Panel4
         '
-        Me.Panel4.BackColor = System.Drawing.Color.DimGray
+        Me.Panel4.BackColor = System.Drawing.Color.SteelBlue
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel4.Controls.Add(Me.lbl_time)
-        Me.Panel4.Controls.Add(Me.lbl_date)
         Me.Panel4.Controls.Add(Me.btnIn)
+        Me.Panel4.Controls.Add(Me.lbl_date)
         Me.Panel4.Controls.Add(Me.btnOut)
-        Me.Panel4.Location = New System.Drawing.Point(14, 16)
+        Me.Panel4.Location = New System.Drawing.Point(3, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(242, 130)
+        Me.Panel4.Size = New System.Drawing.Size(265, 174)
         Me.Panel4.TabIndex = 21
         '
         'lbl_time
         '
         Me.lbl_time.AutoSize = True
         Me.lbl_time.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_time.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_time.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_time.ForeColor = System.Drawing.Color.White
-        Me.lbl_time.Location = New System.Drawing.Point(98, 54)
+        Me.lbl_time.Location = New System.Drawing.Point(65, 66)
         Me.lbl_time.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_time.Name = "lbl_time"
-        Me.lbl_time.Size = New System.Drawing.Size(42, 19)
+        Me.lbl_time.Size = New System.Drawing.Size(81, 40)
         Me.lbl_time.TabIndex = 6
         Me.lbl_time.Text = "Date"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label4.Font = New System.Drawing.Font("Gadugi", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(553, 16)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 26)
-        Me.Label4.TabIndex = 19
-        Me.Label4.Text = "Hello, "
+        Me.lbl_time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel1
         '
@@ -213,10 +201,9 @@ Partial Class attendance
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel3.Controls.Add(Me.lblName)
         Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.dgrid_emp_time_history)
-        Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Panel2)
         Me.Panel3.Location = New System.Drawing.Point(16, 15)
@@ -225,16 +212,15 @@ Partial Class attendance
         Me.Panel3.Size = New System.Drawing.Size(853, 456)
         Me.Panel3.TabIndex = 21
         '
-        'PictureBox1
+        'lblName
         '
-        Me.PictureBox1.Image = Global.attendancesystem.My.Resources.Resources.free_exit_logout_icon_2857_thumb
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 28)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 20
-        Me.PictureBox1.TabStop = False
+        Me.lblName.AutoSize = True
+        Me.lblName.Font = New System.Drawing.Font("Segoe UI", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Location = New System.Drawing.Point(22, 7)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(77, 31)
+        Me.lblName.TabIndex = 21
+        Me.lblName.Text = "Name"
         '
         'attendance
         '
@@ -245,13 +231,15 @@ Partial Class attendance
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(909, 518)
         Me.Controls.Add(Me.Panel1)
+        Me.Cursor = System.Windows.Forms.Cursors.AppStarting
         Me.DoubleBuffered = True
+        Me.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "attendance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "attendance"
+        Me.Text = "Attendance"
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
@@ -259,7 +247,6 @@ Partial Class attendance
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -272,13 +259,13 @@ Partial Class attendance
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label4 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents lbl_time As Label
     Friend WithEvents date1 As DataGridViewTextBoxColumn
     Friend WithEvents time1 As DataGridViewTextBoxColumn
     Friend WithEvents stat As DataGridViewTextBoxColumn
+    Friend WithEvents lblName As Label
+    Friend WithEvents Timer2 As Timer
 End Class

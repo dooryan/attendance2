@@ -20,7 +20,7 @@ Public Class addUser
         checkIfExists()
 
         If (ifEmpIDExist = False) Then
-            MessageBox.Show("Employee does not exist.", "", MessageBoxButtons.OK,
+            MessageBox.Show("Employee with that ID does not exist.", "", MessageBoxButtons.OK,
                     MessageBoxIcon.Error)
         Else
             If (uNameIfExist = True) Then
@@ -33,10 +33,11 @@ Public Class addUser
                                          MessageBoxIcon.Exclamation)
                 Else
                     If txtPass.Text = txtConfirmPassword.Text Then
+
                         Dim strVal As String = txtPass.Text
                         Dim pwdEncrypted As String = CaesarCipher(strVal, intShift:=15)
-
                         addUser(pwdEncrypted)
+
                         MessageBox.Show("Succesfully Added User.", "", MessageBoxButtons.OK,
                                             MessageBoxIcon.Information)
                         Me.Hide()
@@ -45,51 +46,18 @@ Public Class addUser
                         MessageBox.Show("Password doesn't match..", "", MessageBoxButtons.OK,
                                            MessageBoxIcon.Information)
                     End If
-
                 End If
-
-
             End If
-
-
         End If
 
-        'If (uNameIfExist = True) Then
-        '    MessageBox.Show("Username exist.", "", MessageBoxButtons.OK,
-        '                         MessageBoxIcon.Exclamation)
-        'End If
-        'If (userAlreadyExist = True) Then
-        '    MessageBox.Show("User with that ID already exist.", "", MessageBoxButtons.OK,
-        '                         MessageBoxIcon.Exclamation)
-        'End If
 
-        'If (ifEmpIDExist = True And uNameIfExist = False And userAlreadyExist = False) Then
-
-        '    If txtPass.Text = txtConfirmPassword.Text Then
-        '        Dim strVal As String = txtPass.Text
-        '        Dim pwdEncrypted As String = CaesarCipher(strVal, intShift:=15)
-
-        '        addUser(pwdEncrypted)
-        '        MessageBox.Show("Succesfully Added User.", "", MessageBoxButtons.OK,
-        '                            MessageBoxIcon.Information)
-        '        Me.Hide()
-        '        Me.Dispose()
-        '    Else
-        '        MessageBox.Show("Password not match", "", MessageBoxButtons.OK,
-        '                                 MessageBoxIcon.Exclamation)
-        '        txtPass.Clear()
-        '        txtConfirmPassword.Clear()
-        '    End If
-        'Else
-        '    MessageBox.Show("Error", "", MessageBoxButtons.OK,
-        '                        MessageBoxIcon.Information)
-        'End If
-
-
-
-        uNameIfExist = False
-        ifEmpIDExist = False
-        userAlreadyExist = False
+        Console.WriteLine("obj value: ")
+        Console.WriteLine(ifEmpIDExist)
+        Console.WriteLine(uNameIfExist)
+        Console.WriteLine(userAlreadyExist)
+        'uNameIfExist = False
+        'ifEmpIDExist = False
+        'userAlreadyExist = False
 
 
 
@@ -127,15 +95,17 @@ Public Class addUser
 
 
                 command.ExecuteNonQuery()
-                Console.WriteLine("param value")
-                Console.WriteLine(param1.Value)
-                Console.WriteLine(param2.Value)
-                Console.WriteLine(param3.Value)
 
 
                 ifEmpIDExist = param1.Value
                 uNameIfExist = param2.Value
                 userAlreadyExist = param3.Value
+
+                Console.WriteLine("param value")
+                Console.WriteLine(param1.Value)
+                Console.WriteLine(param2.Value)
+                Console.WriteLine(param3.Value)
+
             End With
         Catch ex As Exception
 
@@ -150,16 +120,16 @@ Public Class addUser
         type = "user"
         Using cmd As MySqlCommand = New MySqlCommand("", conAttendanceSystem)
 
-                cmd.Parameters.Clear()
-                cmd.CommandText = "prcAddUser2"
-                cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Clear()
+            cmd.CommandText = "prcAddUser2"
+            cmd.CommandType = CommandType.StoredProcedure
 
-                cmd.Parameters.AddWithValue("eID", txtID.Text)
-                cmd.Parameters.AddWithValue("uname", txtUname.Text)
-                cmd.Parameters.AddWithValue("pass", pwdEncrypted)
-                cmd.Parameters.AddWithValue("d", dateNow)
-                cmd.Parameters.AddWithValue("utype", type)
-                cmd.ExecuteNonQuery()
+            cmd.Parameters.AddWithValue("eID", txtID.Text)
+            cmd.Parameters.AddWithValue("uname", txtUname.Text)
+            cmd.Parameters.AddWithValue("pass", pwdEncrypted)
+            cmd.Parameters.AddWithValue("d", dateNow)
+            cmd.Parameters.AddWithValue("utype", type)
+            cmd.ExecuteNonQuery()
 
             'Dim param As IDbDataParameter = command.CreateParameter()
             'param.ParameterName = "ifExist"
@@ -171,31 +141,35 @@ Public Class addUser
         End Using
 
     End Sub
+    Private Sub ifNotAlphanumeric()
+
+
+    End Sub
     Private Sub ifExistUname()
 
-        dataAttendance = New DataTable()
+        'dataAttendance = New DataTable()
 
-        Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
-            Using cmd As MySqlCommand = New MySqlCommand("", con)
+        'Using con As MySqlConnection = New MySqlConnection("server=localhost;user id=root;password=hello;database=db_attendance")
+        '    Using cmd As MySqlCommand = New MySqlCommand("", con)
 
-                cmd.Parameters.Clear()
-                cmd.CommandText = "prcCheckUname"
-                cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.AddWithValue("uname", txtUname.Text)
+        '        cmd.Parameters.Clear()
+        '        cmd.CommandText = "prcCheckUname"
+        '        cmd.CommandType = CommandType.StoredProcedure
+        '        cmd.Parameters.AddWithValue("uname", txtUname.Text)
 
-                Dim param As IDbDataParameter = command.CreateParameter()
-                param.ParameterName = "exist"
-                param.Direction = System.Data.ParameterDirection.InputOutput
-                param.DbType = System.Data.DbType.Boolean
-                cmd.Parameters.Add(param)
-                Console.WriteLine(param.Value)
+        '        Dim param As IDbDataParameter = command.CreateParameter()
+        '        param.ParameterName = "exist"
+        '        param.Direction = System.Data.ParameterDirection.InputOutput
+        '        param.DbType = System.Data.DbType.Boolean
+        '        cmd.Parameters.Add(param)
+        '        Console.WriteLine(param.Value)
 
-                If (param.Value = True) Then
-                    uNameIfExist = True
-                End If
+        '        If (param.Value = True) Then
+        '            uNameIfExist = True
+        '        End If
 
-            End Using
-        End Using
+        '    End Using
+        'End Using
 
 
     End Sub
@@ -209,8 +183,7 @@ Public Class addUser
     End Sub
 
 
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtConfirmPassword.TextChanged
+    Private Sub txtPass_TextChanged(sender As Object, e As EventArgs) Handles txtPass.TextChanged
 
     End Sub
 End Class

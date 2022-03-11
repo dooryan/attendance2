@@ -1,13 +1,62 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class WageDetails
+
     Private Sub WageDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
+        displayWageDetails()
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtID.TextChanged
 
 
+    End Sub
+    Private Sub displayWageDetails()
+
+        Dim displayDA = New DataTable()
+        Dim sqlAttendanceAdapter = New MySqlDataAdapter
+
+        Using cmd As MySqlCommand = New MySqlCommand("", conAttendanceSystem)
+            With cmd
+                .Parameters.Clear()
+                .CommandText = "prcDisplayPayDetails"
+                .CommandType = CommandType.StoredProcedure
+                sqlAttendanceAdapter.SelectCommand = cmd
+                displayDA.Clear()
+                sqlAttendanceAdapter.Fill(displayDA)
+
+                row = 0
+                If displayDA.Rows.Count > 0 Then
+                    DataGridView1.RowCount = displayDA.Rows.Count
+
+                    'Dim name As String = displayDA.Rows(row).Item("l_name").ToString & " ," & displayDA.Rows(row).Item("f_name").ToString
+
+                    While Not displayDA.Rows.Count - 1 < row
+                        With DataGridView1
+                            .Rows(row).Cells(0).Value = displayDA.Rows(row).Item("id").ToString
+                            .Rows(row).Cells(1).Value = displayDA.Rows(row).Item("l_name").ToString & " ," & displayDA.Rows(row).Item("f_name").ToString
+                            .Rows(row).Cells(2).Value = displayDA.Rows(row).Item("name").ToString
+                            .Rows(row).Cells(3).Value = displayDA.Rows(row).Item("rate_hour").ToString
+                            .Rows(row).Cells(4).Value = displayDA.Rows(row).Item("philhealth").ToString
+                            .Rows(row).Cells(5).Value = displayDA.Rows(row).Item("sss").ToString
+                            .Rows(row).Cells(6).Value = displayDA.Rows(row).Item("pagibig").ToString
+
+                        End With
+                        row = row + 1
+                    End While
+                Else
+
+
+
+
+                End If
+                sqlAttendanceAdapter.Dispose()
+                dataAttendance.Dispose()
+
+            End With
+
+        End Using
+        Me.Refresh()
     End Sub
 
     Private Sub EmployeeInfo()
@@ -31,7 +80,7 @@ Public Class WageDetails
                     txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
                     txtName.Text = DA(0)(8) & ", " & DA(0)(9)
                     txtDept.Text = DA(0)(10)
-                    txtJobStat.Text = DA(0)(7)
+                    'txtJobStat.Text = DA(0)(7)
                     txtphilhealth.Text = CDec(DA(0)(4))
                     txtsss.Text = CDec(DA(0)(5))
                     txtpagibig.Text = CDec(DA(0)(6))
@@ -46,7 +95,7 @@ Public Class WageDetails
                         txtName.Clear()
                         txtDept.Clear()
                         txtDept.Clear()
-                        txtJobStat.Clear()
+                        'txtJobStat.Clear()
                         txtphilhealth.Clear()
                         txtsss.Clear()
                         txtphilhealth.Clear()
@@ -86,21 +135,21 @@ Public Class WageDetails
 
                     .Parameters.Clear()
                     .CommandType = CommandType.StoredProcedure
-                        .Parameters.AddWithValue("id", txtID.Text)
-                        .Parameters.AddWithValue("ratehour", txtHourlyRate.Text)
-                        .Parameters.AddWithValue("rateday", rate_day)
-                        .Parameters.AddWithValue("ratemonth", rate_month)
-                        .Parameters.AddWithValue("phealth", txtphilhealth.Text)
-                        .Parameters.AddWithValue("ss", txtsss.Text)
-                        .Parameters.AddWithValue("pibig", txtpagibig.Text)
-                        .Parameters.AddWithValue("jobstat", txtJobStat.Text)
-                        .ExecuteNonQuery()
+                    .Parameters.AddWithValue("id", txtID.Text)
+                    .Parameters.AddWithValue("ratehour", txtHourlyRate.Text)
+                    .Parameters.AddWithValue("rateday", rate_day)
+                    .Parameters.AddWithValue("ratemonth", rate_month)
+                    .Parameters.AddWithValue("phealth", txtphilhealth.Text)
+                    .Parameters.AddWithValue("ss", txtsss.Text)
+                    .Parameters.AddWithValue("pibig", txtpagibig.Text)
+                    '.Parameters.AddWithValue("jobstat", txtJobStat.Text)
+                    .ExecuteNonQuery()
 
-                        MessageBox.Show("Successfully added.", "Information", MessageBoxButtons.OK,
+                    MessageBox.Show("Successfully added.", "Information", MessageBoxButtons.OK,
                                         MessageBoxIcon.Information)
 
 
-                ElseIf (flag = "update")
+                ElseIf (flag = "update") Then
 
 
                     .Parameters.Clear()
@@ -113,7 +162,7 @@ Public Class WageDetails
                     .Parameters.AddWithValue("ph", txtphilhealth.Text)
                     .Parameters.AddWithValue("sss", txtsss.Text)
                     .Parameters.AddWithValue("pibig", txtpagibig.Text)
-                    .Parameters.AddWithValue("jobstat", txtJobStat.Text)
+                    '.Parameters.AddWithValue("jobstat", txtJobStat.Text)
                     .ExecuteNonQuery()
 
                     MessageBox.Show("Successfully updated.", "Information", MessageBoxButtons.OK,

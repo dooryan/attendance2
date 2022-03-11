@@ -77,13 +77,63 @@ Public Class attendance
         Me.Refresh()
 
         Timer1.Enabled = True
-
+        displayName()
         Label1.Text = userDashboard
-
         displayTimesheet()
 
 
 
+    End Sub
+    Private Sub displayName()
+
+
+        Using command As MySqlCommand = New MySqlCommand("", conAttendanceSystem)
+            command.Parameters.Clear()
+            command.CommandText = "prcDisplayEmpName"
+            command.CommandType = CommandType.StoredProcedure
+            command.Parameters.AddWithValue("uname", userDashboard)
+
+            Dim l_name As IDbDataParameter = command.CreateParameter()
+            l_name.ParameterName = "l_name"
+            l_name.Direction = System.Data.ParameterDirection.Output
+            command.Parameters.Add(l_name)
+            Dim f_name As IDbDataParameter = command.CreateParameter()
+            f_name.ParameterName = "f_name"
+            f_name.Direction = System.Data.ParameterDirection.Output
+            command.Parameters.Add(f_name)
+
+            command.ExecuteNonQuery()
+            lblName.Text = l_name.Value & ", " & f_name.Value
+        End Using
+
+
+        'command.Connection = conAttendanceSystem
+        'Dim com = New MySqlCommand()
+        'com.Connection = conAttendanceSystem
+        'Try
+        '    With command
+        '        .Parameters.Clear()
+        '        .CommandText = "prcDisplayEmpName"
+        '        .CommandType = CommandType.StoredProcedure
+        '        .Parameters.AddWithValue("uname", userDashboard)
+
+        '        Dim l_name As IDbDataParameter = command.CreateParameter()
+        '        l_name.ParameterName = "l_name"
+        '        l_name.Direction = System.Data.ParameterDirection.Output
+        '        .Parameters.Add(l_name)
+        '        Dim f_name As IDbDataParameter = command.CreateParameter()
+        '        f_name.ParameterName = "f_name"
+        '        f_name.Direction = System.Data.ParameterDirection.Output
+        '        .Parameters.Add(f_name)
+
+
+        '        lblName.Text = l_name.Value & ", " & f_name.Value
+        '    End With
+        '    Me.Dispose()
+        'Catch ex As Exception
+        '    MessageBox.Show("" & ex.Message)
+
+        'End Try
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lbl_date.Click
@@ -209,6 +259,7 @@ Public Class attendance
         End Try
 
     End Sub
+
     Private Sub dateCompare()
         'Compare date to let btnIn and btnOut hide and show alternately
         Dim dateFromDGridSplit As String
@@ -243,9 +294,9 @@ Public Class attendance
 
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.Dispose()
-        login.Show()
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
+        'Me.Dispose()
+        'login.Show()
     End Sub
 
     Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint

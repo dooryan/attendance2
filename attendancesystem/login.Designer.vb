@@ -34,7 +34,6 @@ Partial Class login
         Me.txtusername = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,11 +62,11 @@ Partial Class login
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label5.Location = New System.Drawing.Point(117, 234)
+        Me.Label5.Location = New System.Drawing.Point(125, 237)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(98, 15)
+        Me.Label5.Size = New System.Drawing.Size(106, 17)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Create new user"
         '
@@ -97,7 +96,7 @@ Partial Class login
         '
         Me.btn_login.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_login.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
         Me.btn_login.Location = New System.Drawing.Point(94, 171)
         Me.btn_login.Margin = New System.Windows.Forms.Padding(2)
@@ -134,7 +133,7 @@ Partial Class login
         'txtpassword
         '
         Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpassword.Location = New System.Drawing.Point(83, 109)
+        Me.txtpassword.Location = New System.Drawing.Point(85, 109)
         Me.txtpassword.Margin = New System.Windows.Forms.Padding(2)
         Me.txtpassword.Name = "txtpassword"
         Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -145,7 +144,7 @@ Partial Class login
         'txtusername
         '
         Me.txtusername.Font = New System.Drawing.Font("Trebuchet MS", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtusername.Location = New System.Drawing.Point(83, 52)
+        Me.txtusername.Location = New System.Drawing.Point(85, 52)
         Me.txtusername.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(222, 33)
@@ -165,22 +164,13 @@ Partial Class login
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(55, 124)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label3.Location = New System.Drawing.Point(54, 116)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(224, 78)
+        Me.Label3.Size = New System.Drawing.Size(253, 86)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "LEMCO"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(0, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Label4"
         '
         'login
         '
@@ -189,7 +179,6 @@ Partial Class login
         Me.BackColor = System.Drawing.Color.Tan
         Me.BackgroundImage = Global.attendancesystem.My.Resources.Resources.beautiful_color_ui_gradients_backgrounds_frost
         Me.ClientSize = New System.Drawing.Size(773, 369)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -218,5 +207,4 @@ Partial Class login
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
 End Class

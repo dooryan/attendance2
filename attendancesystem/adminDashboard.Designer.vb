@@ -344,7 +344,7 @@ Partial Class adminDashboard
         Me.btnViewUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnViewUsers.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewUsers.ForeColor = System.Drawing.Color.White
-        Me.btnViewUsers.Location = New System.Drawing.Point(11, 216)
+        Me.btnViewUsers.Location = New System.Drawing.Point(11, 183)
         Me.btnViewUsers.Margin = New System.Windows.Forms.Padding(2)
         Me.btnViewUsers.Name = "btnViewUsers"
         Me.btnViewUsers.Size = New System.Drawing.Size(148, 43)
@@ -358,7 +358,7 @@ Partial Class adminDashboard
         Me.btnPayroll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPayroll.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPayroll.ForeColor = System.Drawing.Color.White
-        Me.btnPayroll.Location = New System.Drawing.Point(11, 169)
+        Me.btnPayroll.Location = New System.Drawing.Point(11, 136)
         Me.btnPayroll.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPayroll.Name = "btnPayroll"
         Me.btnPayroll.Size = New System.Drawing.Size(148, 43)
@@ -372,7 +372,7 @@ Partial Class adminDashboard
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(11, 129)
+        Me.Button2.Location = New System.Drawing.Point(11, 96)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(148, 36)
@@ -386,7 +386,7 @@ Partial Class adminDashboard
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(11, 90)
+        Me.Button1.Location = New System.Drawing.Point(11, 57)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(148, 35)
@@ -400,7 +400,7 @@ Partial Class adminDashboard
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button9.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(11, 52)
+        Me.Button9.Location = New System.Drawing.Point(11, 19)
         Me.Button9.Margin = New System.Windows.Forms.Padding(2)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(148, 34)

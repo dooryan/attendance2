@@ -90,6 +90,7 @@ Partial Class payroll
         Me.ttime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.days = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -107,7 +108,7 @@ Partial Class payroll
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(9, 4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -117,15 +118,16 @@ Partial Class payroll
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button3)
         Me.TabPage1.Controls.Add(Me.Label23)
         Me.TabPage1.Controls.Add(Me.Panel4)
         Me.TabPage1.Controls.Add(Me.txtName)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 30)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1017, 598)
+        Me.TabPage1.Size = New System.Drawing.Size(1017, 596)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Payroll"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -133,17 +135,16 @@ Partial Class payroll
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Calibri", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(55, 15)
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(21, 11)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(159, 26)
+        Me.Label23.Size = New System.Drawing.Size(178, 30)
         Me.Label23.TabIndex = 36
         Me.Label23.Text = "Payroll Overview"
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.Panel4.Controls.Add(Me.Button3)
         Me.Panel4.Controls.Add(Me.Label19)
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Controls.Add(Me.Panel5)
@@ -163,8 +164,9 @@ Partial Class payroll
         '
         Me.Button3.BackColor = System.Drawing.Color.ForestGreen
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(911, 0)
+        Me.Button3.Location = New System.Drawing.Point(912, 18)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(88, 23)
         Me.Button3.TabIndex = 37
@@ -174,11 +176,11 @@ Partial Class payroll
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Arial", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(38, 467)
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(30, 465)
         Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(81, 23)
+        Me.Label19.Size = New System.Drawing.Size(89, 30)
         Me.Label19.TabIndex = 38
         Me.Label19.Text = "Net Pay"
         '
@@ -200,12 +202,12 @@ Partial Class payroll
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
         Me.Label9.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label9.Location = New System.Drawing.Point(457, 15)
+        Me.Label9.Location = New System.Drawing.Point(457, 24)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(69, 15)
+        Me.Label9.Size = New System.Drawing.Size(77, 17)
         Me.Label9.TabIndex = 45
         Me.Label9.Text = "Holiday pay"
         '
@@ -217,19 +219,19 @@ Partial Class payroll
         Me.txtHoliday.Location = New System.Drawing.Point(420, 43)
         Me.txtHoliday.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHoliday.Name = "txtHoliday"
-        Me.txtHoliday.Size = New System.Drawing.Size(139, 26)
+        Me.txtHoliday.Size = New System.Drawing.Size(144, 26)
         Me.txtHoliday.TabIndex = 44
         Me.txtHoliday.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
         Me.Label18.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label18.Location = New System.Drawing.Point(96, 15)
+        Me.Label18.Location = New System.Drawing.Point(96, 24)
         Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(111, 15)
+        Me.Label18.Size = New System.Drawing.Size(119, 17)
         Me.Label18.TabIndex = 43
         Me.Label18.Text = "Total Overtime pay"
         '
@@ -248,12 +250,12 @@ Partial Class payroll
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
         Me.Label4.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label4.Location = New System.Drawing.Point(735, 15)
+        Me.Label4.Location = New System.Drawing.Point(733, 24)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(86, 15)
+        Me.Label4.Size = New System.Drawing.Size(94, 17)
         Me.Label4.TabIndex = 41
         Me.Label4.Text = "TOTAL SALARY"
         '
@@ -262,10 +264,10 @@ Partial Class payroll
         Me.txtttlpay.BackColor = System.Drawing.SystemColors.Window
         Me.txtttlpay.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtttlpay.ForeColor = System.Drawing.Color.Black
-        Me.txtttlpay.Location = New System.Drawing.Point(713, 43)
+        Me.txtttlpay.Location = New System.Drawing.Point(716, 43)
         Me.txtttlpay.Margin = New System.Windows.Forms.Padding(2)
         Me.txtttlpay.Name = "txtttlpay"
-        Me.txtttlpay.Size = New System.Drawing.Size(136, 26)
+        Me.txtttlpay.Size = New System.Drawing.Size(144, 26)
         Me.txtttlpay.TabIndex = 40
         Me.txtttlpay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -292,18 +294,18 @@ Partial Class payroll
         Me.txtMonthly.Location = New System.Drawing.Point(716, 37)
         Me.txtMonthly.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMonthly.Name = "txtMonthly"
-        Me.txtMonthly.Size = New System.Drawing.Size(139, 26)
+        Me.txtMonthly.Size = New System.Drawing.Size(144, 26)
         Me.txtMonthly.TabIndex = 31
         Me.txtMonthly.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
         Me.Label16.Location = New System.Drawing.Point(733, 16)
         Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(104, 15)
+        Me.Label16.Size = New System.Drawing.Size(112, 17)
         Me.Label16.TabIndex = 30
         Me.Label16.Text = "Monthly Basic Pay"
         '
@@ -311,21 +313,21 @@ Partial Class payroll
         '
         Me.txtBasicRate.BackColor = System.Drawing.SystemColors.Window
         Me.txtBasicRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.txtBasicRate.Location = New System.Drawing.Point(418, 37)
+        Me.txtBasicRate.Location = New System.Drawing.Point(421, 37)
         Me.txtBasicRate.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBasicRate.Name = "txtBasicRate"
-        Me.txtBasicRate.Size = New System.Drawing.Size(139, 26)
+        Me.txtBasicRate.Size = New System.Drawing.Size(144, 26)
         Me.txtBasicRate.TabIndex = 29
         Me.txtBasicRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label15.Location = New System.Drawing.Point(455, 16)
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
+        Me.Label15.Location = New System.Drawing.Point(457, 16)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(61, 15)
+        Me.Label15.Size = New System.Drawing.Size(67, 17)
         Me.Label15.TabIndex = 28
         Me.Label15.Text = "Basic Rate"
         '
@@ -336,29 +338,29 @@ Partial Class payroll
         Me.txtHourlyRate.Location = New System.Drawing.Point(85, 37)
         Me.txtHourlyRate.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHourlyRate.Name = "txtHourlyRate"
-        Me.txtHourlyRate.Size = New System.Drawing.Size(140, 26)
+        Me.txtHourlyRate.Size = New System.Drawing.Size(144, 26)
         Me.txtHourlyRate.TabIndex = 27
         Me.txtHourlyRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label8.Location = New System.Drawing.Point(101, 16)
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
+        Me.Label8.Location = New System.Drawing.Point(121, 18)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(71, 15)
+        Me.Label8.Size = New System.Drawing.Size(76, 17)
         Me.Label8.TabIndex = 26
         Me.Label8.Text = "Hourly Rate"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Arial Black", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(10, 2)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(56, 15)
+        Me.Label14.Size = New System.Drawing.Size(55, 17)
         Me.Label14.TabIndex = 23
         Me.Label14.Text = "INCOME"
         '
@@ -406,32 +408,32 @@ Partial Class payroll
         '
         Me.txtpagibig.BackColor = System.Drawing.SystemColors.Window
         Me.txtpagibig.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpagibig.Location = New System.Drawing.Point(421, 37)
+        Me.txtpagibig.Location = New System.Drawing.Point(420, 34)
         Me.txtpagibig.Margin = New System.Windows.Forms.Padding(2)
         Me.txtpagibig.Name = "txtpagibig"
-        Me.txtpagibig.Size = New System.Drawing.Size(139, 26)
+        Me.txtpagibig.Size = New System.Drawing.Size(144, 26)
         Me.txtpagibig.TabIndex = 22
         Me.txtpagibig.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial Black", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(4, 4)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(106, 15)
+        Me.Label3.Size = New System.Drawing.Size(94, 17)
         Me.Label3.TabIndex = 23
         Me.Label3.Text = "Less Deductions"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label12.Location = New System.Drawing.Point(466, 12)
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
+        Me.Label12.Location = New System.Drawing.Point(457, 12)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(49, 15)
+        Me.Label12.Size = New System.Drawing.Size(57, 17)
         Me.Label12.TabIndex = 21
         Me.Label12.Text = "Pag-ibig"
         '
@@ -442,18 +444,18 @@ Partial Class payroll
         Me.txtSSS.Location = New System.Drawing.Point(714, 33)
         Me.txtSSS.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSSS.Name = "txtSSS"
-        Me.txtSSS.Size = New System.Drawing.Size(136, 26)
+        Me.txtSSS.Size = New System.Drawing.Size(144, 26)
         Me.txtSSS.TabIndex = 20
         Me.txtSSS.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
         Me.Label11.Location = New System.Drawing.Point(776, 12)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(25, 15)
+        Me.Label11.Size = New System.Drawing.Size(29, 17)
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "SSS"
         '
@@ -464,18 +466,18 @@ Partial Class payroll
         Me.txtPhil.Location = New System.Drawing.Point(85, 34)
         Me.txtPhil.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPhil.Name = "txtPhil"
-        Me.txtPhil.Size = New System.Drawing.Size(143, 26)
+        Me.txtPhil.Size = New System.Drawing.Size(144, 26)
         Me.txtPhil.TabIndex = 18
         Me.txtPhil.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
         Me.Label10.Location = New System.Drawing.Point(121, 12)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(62, 15)
+        Me.Label10.Size = New System.Drawing.Size(63, 17)
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "Philhealth"
         '
@@ -498,12 +500,12 @@ Partial Class payroll
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label13.Location = New System.Drawing.Point(723, 11)
+        Me.Label13.Location = New System.Drawing.Point(725, 21)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(111, 15)
+        Me.Label13.Size = New System.Drawing.Size(124, 17)
         Me.Label13.TabIndex = 39
         Me.Label13.Text = "Total Holiday Hours"
         '
@@ -512,22 +514,22 @@ Partial Class payroll
         Me.txtHolidayHous.BackColor = System.Drawing.Color.White
         Me.txtHolidayHous.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHolidayHous.ForeColor = System.Drawing.Color.Black
-        Me.txtHolidayHous.Location = New System.Drawing.Point(713, 40)
+        Me.txtHolidayHous.Location = New System.Drawing.Point(716, 40)
         Me.txtHolidayHous.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHolidayHous.Name = "txtHolidayHous"
-        Me.txtHolidayHous.Size = New System.Drawing.Size(136, 26)
+        Me.txtHolidayHous.Size = New System.Drawing.Size(144, 26)
         Me.txtHolidayHous.TabIndex = 38
         Me.txtHolidayHous.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
         Me.Label17.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label17.Location = New System.Drawing.Point(449, 11)
+        Me.Label17.Location = New System.Drawing.Point(455, 21)
         Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(85, 15)
+        Me.Label17.Size = New System.Drawing.Size(95, 17)
         Me.Label17.TabIndex = 37
         Me.Label17.Text = "Total OT hours"
         '
@@ -539,7 +541,7 @@ Partial Class payroll
         Me.txtOvertime.Location = New System.Drawing.Point(420, 40)
         Me.txtOvertime.Margin = New System.Windows.Forms.Padding(2)
         Me.txtOvertime.Name = "txtOvertime"
-        Me.txtOvertime.Size = New System.Drawing.Size(139, 26)
+        Me.txtOvertime.Size = New System.Drawing.Size(144, 26)
         Me.txtOvertime.TabIndex = 36
         Me.txtOvertime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -558,11 +560,11 @@ Partial Class payroll
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(103, 11)
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Emoji", 9.75!)
+        Me.Label7.Location = New System.Drawing.Point(96, 21)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(112, 15)
+        Me.Label7.Size = New System.Drawing.Size(121, 17)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Total hours worked"
         '
@@ -580,9 +582,9 @@ Partial Class payroll
         '
         Me.btnPay.BackColor = System.Drawing.SystemColors.HotTrack
         Me.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPay.Font = New System.Drawing.Font("Arial Black", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPay.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPay.ForeColor = System.Drawing.Color.White
-        Me.btnPay.Location = New System.Drawing.Point(753, 455)
+        Me.btnPay.Location = New System.Drawing.Point(745, 459)
         Me.btnPay.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPay.Name = "btnPay"
         Me.btnPay.Size = New System.Drawing.Size(246, 50)
@@ -593,6 +595,7 @@ Partial Class payroll
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.Label25)
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.DateTimePicker2)
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
@@ -606,41 +609,43 @@ Partial Class payroll
         '
         'ComboBox1
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(168, 15)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(83, 31)
+        Me.ComboBox1.Size = New System.Drawing.Size(83, 28)
         Me.ComboBox1.TabIndex = 29
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker2.Location = New System.Drawing.Point(700, 18)
         Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(148, 28)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(148, 33)
         Me.DateTimePicker2.TabIndex = 28
         Me.DateTimePicker2.Value = New Date(2022, 3, 8, 0, 0, 0, 0)
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(529, 18)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(520, 18)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(148, 28)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(148, 33)
         Me.DateTimePicker1.TabIndex = 27
         Me.DateTimePicker1.Value = New Date(2022, 3, 8, 0, 0, 0, 0)
         '
         'btnFilter
         '
-        Me.btnFilter.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.btnFilter.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnFilter.Location = New System.Drawing.Point(881, 18)
+        Me.btnFilter.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFilter.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnFilter.Location = New System.Drawing.Point(893, 18)
         Me.btnFilter.Margin = New System.Windows.Forms.Padding(2)
         Me.btnFilter.Name = "btnFilter"
         Me.btnFilter.Size = New System.Drawing.Size(71, 30)
@@ -651,11 +656,11 @@ Partial Class payroll
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(68, 21)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(67, 20)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 18)
+        Me.Label1.Size = New System.Drawing.Size(97, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Employee ID"
         '
@@ -663,11 +668,11 @@ Partial Class payroll
         '
         Me.txtTotalPay.BackColor = System.Drawing.Color.White
         Me.txtTotalPay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTotalPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalPay.Location = New System.Drawing.Point(170, 455)
+        Me.txtTotalPay.Font = New System.Drawing.Font("Segoe UI Semibold", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalPay.Location = New System.Drawing.Point(169, 455)
         Me.txtTotalPay.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTotalPay.Name = "txtTotalPay"
-        Me.txtTotalPay.Size = New System.Drawing.Size(199, 46)
+        Me.txtTotalPay.Size = New System.Drawing.Size(212, 54)
         Me.txtTotalPay.TabIndex = 27
         Me.txtTotalPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -676,7 +681,7 @@ Partial Class payroll
         Me.Label24.AutoSize = True
         Me.Label24.BackColor = System.Drawing.Color.Transparent
         Me.Label24.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(112, 446)
+        Me.Label24.Location = New System.Drawing.Point(114, 452)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(75, 59)
         Me.Label24.TabIndex = 39
@@ -862,6 +867,16 @@ Partial Class payroll
         Me.days.HeaderText = "Total Working Hours"
         Me.days.Name = "days"
         '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Calibri", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(673, 22)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(18, 26)
+        Me.Label25.TabIndex = 30
+        Me.Label25.Text = "-"
+        '
         'payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -968,4 +983,5 @@ Partial Class payroll
     Friend WithEvents Label23 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
 End Class
