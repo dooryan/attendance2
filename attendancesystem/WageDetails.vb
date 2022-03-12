@@ -76,18 +76,18 @@ Public Class WageDetails
                 sqlAdapter.Fill(DA)
 
                 If DA.Rows.Count > 0 Then
-                    txtHourlyRate.Text = DA(0)(1)
-                    txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
-                    txtName.Text = DA(0)(8) & ", " & DA(0)(9)
-                    txtDept.Text = DA(0)(10)
-                    'txtJobStat.Text = DA(0)(7)
-                    txtphilhealth.Text = CDec(DA(0)(4))
-                    txtsss.Text = CDec(DA(0)(5))
-                    txtpagibig.Text = CDec(DA(0)(6))
-                    txtDept.Text = DA(0)(11)
-                    btnSave.Enabled = False
-                    btnUpdate.Enabled = True
-                    'txtBasic.Text = DA(0)(11)
+                    'txtHourlyRate.Text = DataGridView1.CurrentRow.Cells(3).Value
+                    ''txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
+                    'txtName.Text = DataGridView1.CurrentRow.Cells(1).Value
+                    'txtDept.Text = DataGridView1.CurrentRow.Cells(2).Value
+                    ''txtJobStat.Text = DA(0)(7)
+                    'txtphilhealth.Text = CDec(DataGridView1.CurrentRow.Cells(4).Value)
+                    'txtsss.Text = CDec(DataGridView1.CurrentRow.Cells(5).Value)
+                    'txtpagibig.Text = CDec(DataGridView1.CurrentRow.Cells(6).Value)
+                    ''txtDept.Text = DA(0)(11)
+                    'btnSave.Enabled = False
+                    'btnUpdate.Enabled = True
+                    ''txtBasic.Text = DA(0)(11)
                 Else
                     Dim m = MessageBox.Show("No record found. Add record?", "", MessageBoxButtons.OKCancel)
                     If m = vbOK Then
@@ -101,7 +101,7 @@ Public Class WageDetails
                         txtphilhealth.Clear()
                         txtpagibig.Clear()
                         txtHourlyRate.Clear()
-                        txtGrossWage.Clear()
+                        'txtGrossWage.Clear()
 
                         btnUpdate.Enabled = False
                         btnSave.Enabled = True
@@ -117,9 +117,25 @@ Public Class WageDetails
         'you have total annual contributions Of Php 10, 92.06.
 
     End Sub
+    Private Sub displayIndividualRecord()
+        txtID.Text = DataGridView1.CurrentRow.Cells(0).Value
+        txtHourlyRate.Text = DataGridView1.CurrentRow.Cells(3).Value
+        'txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
+        txtName.Text = DataGridView1.CurrentRow.Cells(1).Value
+        txtDept.Text = DataGridView1.CurrentRow.Cells(2).Value
+        'txtJobStat.Text = DA(0)(7)
+        txtphilhealth.Text = CDec(DataGridView1.CurrentRow.Cells(4).Value)
+        txtsss.Text = CDec(DataGridView1.CurrentRow.Cells(5).Value)
+        txtpagibig.Text = CDec(DataGridView1.CurrentRow.Cells(6).Value)
+        'txtDept.Text = DA(0)(11)
+        btnSave.Enabled = False
+        btnUpdate.Enabled = True
+        'txtBasic.Text = DA(0)(11)
+    End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        EmployeeInfo()
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        'EmployeeInfo()
+
     End Sub
 
     Private Sub InsertPayDetails(ByVal flag)
@@ -136,13 +152,12 @@ Public Class WageDetails
                     .Parameters.Clear()
                     .CommandType = CommandType.StoredProcedure
                     .Parameters.AddWithValue("id", txtID.Text)
-                    .Parameters.AddWithValue("ratehour", txtHourlyRate.Text)
-                    .Parameters.AddWithValue("rateday", rate_day)
-                    .Parameters.AddWithValue("ratemonth", rate_month)
-                    .Parameters.AddWithValue("phealth", txtphilhealth.Text)
-                    .Parameters.AddWithValue("ss", txtsss.Text)
+                    .Parameters.AddWithValue("hr", txtHourlyRate.Text)
+                    .Parameters.AddWithValue("rd", rate_day)
+                    .Parameters.AddWithValue("rm", rate_month)
+                    .Parameters.AddWithValue("ph", txtphilhealth.Text)
+                    .Parameters.AddWithValue("sss", txtsss.Text)
                     .Parameters.AddWithValue("pibig", txtpagibig.Text)
-                    '.Parameters.AddWithValue("jobstat", txtJobStat.Text)
                     .ExecuteNonQuery()
 
                     MessageBox.Show("Successfully added.", "Information", MessageBoxButtons.OK,
@@ -195,21 +210,20 @@ Public Class WageDetails
 
         txtsss.Text = (((Val(txtHourlyRate.Text) * 48) * 52) / 12) * 0.0363
         txtpagibig.Text = (((Val(txtHourlyRate.Text) * 48) * 52) / 12) * 0.02
-        txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
+        'txtGrossWage.Text = 48 * Val(txtHourlyRate.Text) * 2
 
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         InsertPayDetails("insert")
+        displayWageDetails()
 
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         InsertPayDetails("update")
-        'Dim rate_day = txtHourlyRate.Text * 8
-        'Dim rate_month = ((Val(txtHourlyRate.Text) * 48) * 52) / 12
+        displayWageDetails()
 
-        'command.Connection = conAttendanceSystem
 
 
 
@@ -218,5 +232,69 @@ Public Class WageDetails
 
     Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
 
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub DataGridView1_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseClick
+        displayIndividualRecord()
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        addNew()
+    End Sub
+
+    Private Sub addNew()
+        txtID.Clear()
+        txtHourlyRate.Clear()
+
+        txtName.Clear()
+        txtDept.Clear()
+
+        txtphilhealth.Clear()
+        txtsss.Clear()
+        txtpagibig.Clear()
+
+        btnSave.Enabled = True
+        btnUpdate.Enabled = False
+
+    End Sub
+    Private Sub delete()
+        Using cmd As MySqlCommand = New MySqlCommand("", conAttendanceSystem)
+            Dim m = MessageBox.Show("Are you sure you want to delete this data?.", "Delete Data", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Information)
+            If m = DialogResult.Yes Then
+
+                Try
+                    With cmd
+                        .CommandText = "prcDeletePayDetails"
+                        .Parameters.Clear()
+                        .CommandType = CommandType.StoredProcedure
+                        .Parameters.AddWithValue("id", DataGridView1.CurrentRow.Cells(0).Value)
+
+                        .ExecuteNonQuery()
+
+
+                    End With
+
+                Catch ex As Exception
+
+                End Try
+
+                MessageBox.Show("Data Deleted.", "Information", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Information)
+            ElseIf m = DialogResult.No Then
+
+
+            End If
+
+        End Using
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        delete()
+        displayWageDetails()
     End Sub
 End Class

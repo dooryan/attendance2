@@ -64,7 +64,7 @@ Partial Class login
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label5.Location = New System.Drawing.Point(125, 237)
+        Me.Label5.Location = New System.Drawing.Point(116, 236)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(106, 17)
         Me.Label5.TabIndex = 5
