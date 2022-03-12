@@ -136,6 +136,12 @@
     <Compile Include="AttendanceRecords.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BackupRestore.Designer.vb">
+      <DependentUpon>BackupRestore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BackupRestore.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CrystalPayrollReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AttendanceRecords.resx">
       <DependentUpon>AttendanceRecords.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackupRestore.resx">
+      <DependentUpon>BackupRestore.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalPayrollReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

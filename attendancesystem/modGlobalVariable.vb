@@ -13,5 +13,6 @@ Module modGlobalVariable
     Public sqlAttendanceAdapter As New MySqlDataAdapter
     Public row As Integer
     Public IntOperation As Integer
+    Public addEmp As Boolean
 End Module
 

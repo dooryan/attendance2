@@ -132,22 +132,24 @@ Partial Class login
         '
         'txtpassword
         '
+        Me.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpassword.Location = New System.Drawing.Point(85, 109)
         Me.txtpassword.Margin = New System.Windows.Forms.Padding(2)
         Me.txtpassword.Name = "txtpassword"
         Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtpassword.Size = New System.Drawing.Size(222, 32)
+        Me.txtpassword.Size = New System.Drawing.Size(222, 25)
         Me.txtpassword.TabIndex = 1
         Me.txtpassword.UseSystemPasswordChar = True
         '
         'txtusername
         '
+        Me.txtusername.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtusername.Font = New System.Drawing.Font("Trebuchet MS", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtusername.Location = New System.Drawing.Point(85, 52)
         Me.txtusername.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(222, 33)
+        Me.txtusername.Size = New System.Drawing.Size(222, 26)
         Me.txtusername.TabIndex = 0
         '
         'Panel2

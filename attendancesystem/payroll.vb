@@ -434,56 +434,63 @@ Public Class payroll
         Else
             AddPay()
             displayPayroll()
-            mes = MessageBox.Show("Generate Payslip?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If (mes = vbYes) Then
-            Dim dt As New DataTable
-            With dt
-                .Columns.Add("ID")
-                .Columns.Add("Name")
-                .Columns.Add("Overtime")
-                .Columns.Add("Holiday")
-                .Columns.Add("TotalSalary")
-                .Columns.Add("Philhealth")
-                .Columns.Add("Pagibig")
-                .Columns.Add("SSS")
-                .Columns.Add("TotalDeductions")
-                .Columns.Add("NetPay")
-                .Columns.Add("BasicPay")
-            End With
 
-            With dt
-                Dim R As DataRow = dt.NewRow
-                R("ID") = ComboBox1.Text
-                R("Name") = txtName.Text
-                R("Overtime") = txtOTPay.Text
-                R("Holiday") = txtHoliday.Text
-                R("TotalSalary") = txtttlpay.Text
-                R("Philhealth") = txtPhil.Text
-                R("SSS") = txtSSS.Text
-                R("Pagibig") = txtpagibig.Text
-                R("TotalDeductions") = txtTtlDeductions.Text
-                R("NetPay") = txtTotalPay.Text
-                R("BasicPay") = Val(txtHours.Text) * Val(txtHourlyRate.Text)
+            If recordsExist = False Then
 
-                dt.Rows.Add(R)
-                '.Rows.Add(dgr.Cells(0).Value
-                'dgr.Cells(1).Value, dgr.Cells(2).Value, dgr.Cells(3).Value, dgr.Cells(4).Value, dgr.Cells(5).Value, dgr.Cells(6).Value)
+            Else
 
-            End With
+                mes = MessageBox.Show("Generate Payslip?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If (mes = vbYes) Then
+                    Dim dt As New DataTable
+                    With dt
+                        .Columns.Add("ID")
+                        .Columns.Add("Name")
+                        .Columns.Add("Overtime")
+                        .Columns.Add("Holiday")
+                        .Columns.Add("TotalSalary")
+                        .Columns.Add("Philhealth")
+                        .Columns.Add("Pagibig")
+                        .Columns.Add("SSS")
+                        .Columns.Add("TotalDeductions")
+                        .Columns.Add("NetPay")
+                        .Columns.Add("BasicPay")
+                    End With
 
-            Dim report1 As ReportDocument
-            report1 = New Payslip
-            report1.SetDataSource(dt)
-            Report.CrystalReportViewer1.ReportSource = report1
+                    With dt
+                        Dim R As DataRow = dt.NewRow
+                        R("ID") = ComboBox1.Text
+                        R("Name") = txtName.Text
+                        R("Overtime") = txtOTPay.Text
+                        R("Holiday") = txtHoliday.Text
+                        R("TotalSalary") = txtttlpay.Text
+                        R("Philhealth") = txtPhil.Text
+                        R("SSS") = txtSSS.Text
+                        R("Pagibig") = txtpagibig.Text
+                        R("TotalDeductions") = txtTtlDeductions.Text
+                        R("NetPay") = txtTotalPay.Text
+                        R("BasicPay") = Val(txtHours.Text) * Val(txtHourlyRate.Text)
 
-            '
+                        dt.Rows.Add(R)
+                        '.Rows.Add(dgr.Cells(0).Value
+                        'dgr.Cells(1).Value, dgr.Cells(2).Value, dgr.Cells(3).Value, dgr.Cells(4).Value, dgr.Cells(5).Value, dgr.Cells(6).Value)
+
+                    End With
+
+                    Dim report1 As ReportDocument
+                    report1 = New Payslip
+                    report1.SetDataSource(dt)
+                    Report.CrystalReportViewer1.ReportSource = report1
+
+                    '
 
 
-            Report.ShowDialog()
-            Report.Dispose()
+                    Report.ShowDialog()
+                    Report.Dispose()
+                End If
+            End If
         End If
 
-        End If
+
 
     End Sub
     Private Sub DisplayPayHistory()

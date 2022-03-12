@@ -23,6 +23,7 @@ Partial Class adminDashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminDashboard))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -51,6 +52,7 @@ Partial Class adminDashboard
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
+        Me.btnBackUp = New System.Windows.Forms.Button()
         Me.Panel10.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -116,16 +118,16 @@ Partial Class adminDashboard
         Me.MenuStrip1.Location = New System.Drawing.Point(5, 2)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(82, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(83, 28)
         Me.MenuStrip1.TabIndex = 32
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'LogOutToolStripMenuItem
         '
-        Me.LogOutToolStripMenuItem.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LogOutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.LogOutToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(74, 24)
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(75, 24)
         Me.LogOutToolStripMenuItem.Text = "Log Out"
         '
         'Panel8
@@ -328,6 +330,7 @@ Partial Class adminDashboard
         'Panel13
         '
         Me.Panel13.BackColor = System.Drawing.Color.White
+        Me.Panel13.Controls.Add(Me.btnBackUp)
         Me.Panel13.Controls.Add(Me.btnViewUsers)
         Me.Panel13.Controls.Add(Me.btnPayroll)
         Me.Panel13.Controls.Add(Me.Button2)
@@ -340,73 +343,99 @@ Partial Class adminDashboard
         '
         'btnViewUsers
         '
-        Me.btnViewUsers.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnViewUsers.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.btnViewUsers.BackgroundImage = CType(resources.GetObject("btnViewUsers.BackgroundImage"), System.Drawing.Image)
+        Me.btnViewUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnViewUsers.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnViewUsers.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewUsers.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewUsers.ForeColor = System.Drawing.Color.White
-        Me.btnViewUsers.Location = New System.Drawing.Point(11, 183)
+        Me.btnViewUsers.Location = New System.Drawing.Point(2, 209)
         Me.btnViewUsers.Margin = New System.Windows.Forms.Padding(2)
         Me.btnViewUsers.Name = "btnViewUsers"
-        Me.btnViewUsers.Size = New System.Drawing.Size(148, 43)
+        Me.btnViewUsers.Size = New System.Drawing.Size(167, 34)
         Me.btnViewUsers.TabIndex = 30
         Me.btnViewUsers.Text = "View Users"
         Me.btnViewUsers.UseVisualStyleBackColor = False
         '
         'btnPayroll
         '
-        Me.btnPayroll.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnPayroll.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.btnPayroll.BackgroundImage = CType(resources.GetObject("btnPayroll.BackgroundImage"), System.Drawing.Image)
+        Me.btnPayroll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPayroll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPayroll.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPayroll.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPayroll.ForeColor = System.Drawing.Color.White
-        Me.btnPayroll.Location = New System.Drawing.Point(11, 136)
+        Me.btnPayroll.Location = New System.Drawing.Point(2, 171)
         Me.btnPayroll.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPayroll.Name = "btnPayroll"
-        Me.btnPayroll.Size = New System.Drawing.Size(148, 43)
+        Me.btnPayroll.Size = New System.Drawing.Size(167, 34)
         Me.btnPayroll.TabIndex = 29
         Me.btnPayroll.Text = "Payroll Management"
         Me.btnPayroll.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Font = New System.Drawing.Font("Trebuchet MS", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(11, 96)
+        Me.Button2.Location = New System.Drawing.Point(2, 133)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(148, 36)
+        Me.Button2.Size = New System.Drawing.Size(167, 34)
         Me.Button2.TabIndex = 28
         Me.Button2.Text = "Daily Records"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(11, 57)
+        Me.Button1.Location = New System.Drawing.Point(2, 94)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(148, 35)
+        Me.Button1.Size = New System.Drawing.Size(167, 34)
         Me.Button1.TabIndex = 27
         Me.Button1.Text = "Employees"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button9
         '
-        Me.Button9.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button9.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Button9.BackgroundImage = CType(resources.GetObject("Button9.BackgroundImage"), System.Drawing.Image)
+        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button9.Font = New System.Drawing.Font("Trebuchet MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(11, 19)
+        Me.Button9.Location = New System.Drawing.Point(2, 56)
         Me.Button9.Margin = New System.Windows.Forms.Padding(2)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(148, 34)
+        Me.Button9.Size = New System.Drawing.Size(167, 34)
         Me.Button9.TabIndex = 26
         Me.Button9.Text = "Dashboard"
         Me.Button9.UseVisualStyleBackColor = False
+        '
+        'btnBackUp
+        '
+        Me.btnBackUp.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.btnBackUp.BackgroundImage = CType(resources.GetObject("btnBackUp.BackgroundImage"), System.Drawing.Image)
+        Me.btnBackUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBackUp.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBackUp.ForeColor = System.Drawing.Color.White
+        Me.btnBackUp.Location = New System.Drawing.Point(2, 247)
+        Me.btnBackUp.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBackUp.Name = "btnBackUp"
+        Me.btnBackUp.Size = New System.Drawing.Size(167, 34)
+        Me.btnBackUp.TabIndex = 31
+        Me.btnBackUp.Text = "Back-up / Restore"
+        Me.btnBackUp.UseVisualStyleBackColor = False
         '
         'adminDashboard
         '
@@ -472,4 +501,5 @@ Partial Class adminDashboard
     Friend WithEvents Button3 As Button
     Friend WithEvents btnPayroll As Button
     Friend WithEvents btnViewUsers As Button
+    Friend WithEvents btnBackUp As Button
 End Class

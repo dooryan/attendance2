@@ -4,9 +4,8 @@
 
 Public Class Form1
     Private id As Integer
-    Shared Property flag As Boolean
-    Shared Property F As Boolean
-
+    'Shared Property flag As Boolean
+    'Shared Property F As Boolean
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -86,8 +85,6 @@ Public Class Form1
                 Else
                     MessageBox.Show("No record found...")
 
-
-
                 End If
                 sqlAttendanceAdapter.Dispose()
                 dataAttendance.Dispose()
@@ -121,14 +118,11 @@ Public Class Form1
                             .Rows(row).Cells(0).Value = dataAttendance.Rows(row).Item("id").ToString
                             .Rows(row).Cells(1).Value = dataAttendance.Rows(row).Item("dept_id").ToString
                             .Rows(row).Cells(2).Value = dataAttendance.Rows(row).Item("name").ToString
-
                             .Rows(row).Cells(3).Value = dataAttendance.Rows(row).Item("f_name").ToString
                             .Rows(row).Cells(4).Value = dataAttendance.Rows(row).Item("l_name").ToString
                             .Rows(row).Cells(5).Value = dataAttendance.Rows(row).Item("address").ToString
-
                             .Rows(row).Cells(6).Value = dataAttendance.Rows(row).Item("birthdate").ToString
                             .Rows(row).Cells(7).Value = dataAttendance.Rows(row).Item("gender").ToString
-
                             .Rows(row).Cells(8).Value = dataAttendance.Rows(row).Item("date_hired").ToString
                             .Rows(row).Cells(9).Value = dataAttendance.Rows(row).Item("contactno").ToString
 
@@ -232,19 +226,6 @@ Public Class Form1
             With command
                 .Parameters.Clear()
 
-                'If ComboBox1.Text = "EMPLOYEE ID" Then
-                '    .CommandText = "prcSelcEmpbyID"
-                '    .Parameters.AddWithValue("@empID", strSearch)
-
-                'ElseIf ComboBox1.Text = "EMPLOYEE NAME" Then
-                '    .CommandText = "prcSelcEmpbyName"
-                '    .Parameters.AddWithValue("empName", strSearch)
-
-
-                'Else
-                '    .CommandText = "prcDisplayEmployees"
-
-                'End If
                 .CommandText = "prcDisplayEmployees"
                 .CommandType = CommandType.StoredProcedure
                 sqlAttendanceAdapter.SelectCommand = command
@@ -318,10 +299,13 @@ Public Class Form1
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         With addEmployee
+            .addEdit = True
             .ShowDialog()
             IntOperation = 0
-            addEmployee.flag = False
+            'addEmp = True
+
         End With
+
         prcDisplayEmployee()
 
 
@@ -329,38 +313,24 @@ Public Class Form1
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         With addEmployee
+            .addEdit = False
             IntOperation = 1
             id = CInt(DataGridView1.CurrentRow.Cells(0).Value.ToString)
 
             .Label9.Text = DataGridView1.CurrentRow.Cells(0).Value
-
             .cmbDept.Text = DataGridView1.CurrentRow.Cells(2).Value
             .txtFname.Text = DataGridView1.CurrentRow.Cells(3).Value
             .txtLname.Text = DataGridView1.CurrentRow.Cells(4).Value
             .txtAddress.Text = DataGridView1.CurrentRow.Cells(5).Value
             .bdate.Value = DataGridView1.CurrentRow.Cells(6).Value
-
             .cmbGender.Text = DataGridView1.CurrentRow.Cells(7).Value
             .dhired.Value = DataGridView1.CurrentRow.Cells(8).Value
-
-
             .txtContact.Text = DataGridView1.CurrentRow.Cells(9).Value
             .ShowDialog()
+            'addEmp = False
 
         End With
 
-        addEmployee.flag = True
-
-        'Dim flag As New addEmployee
-        'addEmployee.flag = True
-
-        ' Dim F As New addEmployee
-        'addEmployee.F = False
-
-
-
-
-        Me.Refresh()
         prcDisplayEmployee()
     End Sub
 
@@ -387,6 +357,9 @@ Public Class Form1
             MessageBox.Show("" & ex.Message)
         End Try
         prcDisplayEmployee()
+    End Sub
+    Public Sub clearAllTextbox()
+
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
@@ -420,6 +393,7 @@ Public Class Form1
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Hide()
+        adminDashboard.Show()
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged_1(sender As Object, e As EventArgs)
@@ -435,5 +409,9 @@ Public Class Form1
 
 
         'End If
+    End Sub
+
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+        WageDetails.Show()
     End Sub
 End Class

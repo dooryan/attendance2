@@ -51,6 +51,7 @@ Partial Class Form1
         Me.gendr = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dhired = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cont = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -102,10 +103,10 @@ Partial Class Form1
         Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button2.Location = New System.Drawing.Point(20, 245)
+        Me.Button2.Location = New System.Drawing.Point(38, 276)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(106, 32)
+        Me.Button2.Size = New System.Drawing.Size(93, 30)
         Me.Button2.TabIndex = 5
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -165,6 +166,7 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.textSearch)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.DataGridView1)
@@ -297,6 +299,19 @@ Partial Class Form1
         Me.cont.Name = "cont"
         Me.cont.ReadOnly = True
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DarkGreen
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.Location = New System.Drawing.Point(686, 30)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(131, 23)
+        Me.Button1.TabIndex = 43
+        Me.Button1.Text = "Add Salary Details"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -346,4 +361,5 @@ Partial Class Form1
     Friend WithEvents gendr As DataGridViewTextBoxColumn
     Friend WithEvents dhired As DataGridViewTextBoxColumn
     Friend WithEvents cont As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class

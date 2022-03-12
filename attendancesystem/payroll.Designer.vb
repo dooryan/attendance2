@@ -24,9 +24,9 @@ Partial Class payroll
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -63,6 +63,7 @@ Partial Class payroll
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnPay = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -90,7 +91,6 @@ Partial Class payroll
         Me.ttime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.days = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label25 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -132,6 +132,19 @@ Partial Class payroll
         Me.TabPage1.Text = "Payroll"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.ForestGreen
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(912, 18)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(88, 23)
+        Me.Button3.TabIndex = 37
+        Me.Button3.Text = "Clear All"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'Label23
         '
         Me.Label23.AutoSize = True
@@ -159,19 +172,6 @@ Partial Class payroll
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1016, 545)
         Me.Panel4.TabIndex = 35
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.ForestGreen
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(912, 18)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(88, 23)
-        Me.Button3.TabIndex = 37
-        Me.Button3.Text = "Clear All"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'Label19
         '
@@ -607,6 +607,16 @@ Partial Class payroll
         Me.Panel1.Size = New System.Drawing.Size(981, 64)
         Me.Panel1.TabIndex = 26
         '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Calibri", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(673, 22)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(18, 26)
+        Me.Label25.TabIndex = 30
+        Me.Label25.Text = "-"
+        '
         'ComboBox1
         '
         Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -691,7 +701,7 @@ Partial Class payroll
         '
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtName.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtName.Location = New System.Drawing.Point(719, 18)
+        Me.txtName.Location = New System.Drawing.Point(606, 21)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(273, 25)
@@ -712,10 +722,10 @@ Partial Class payroll
         '
         Me.TabPage2.Controls.Add(Me.Panel7)
         Me.TabPage2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 30)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1017, 598)
+        Me.TabPage2.Size = New System.Drawing.Size(1017, 596)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Reports"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -866,16 +876,6 @@ Partial Class payroll
         '
         Me.days.HeaderText = "Total Working Hours"
         Me.days.Name = "days"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Calibri", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(673, 22)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(18, 26)
-        Me.Label25.TabIndex = 30
-        Me.Label25.Text = "-"
         '
         'payroll
         '

@@ -1,28 +1,12 @@
 ﻿Public Class addEmployee
     Shared Property flag As Boolean
     Shared Property F As Boolean
+    Public addEdit As Boolean
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btn_cancel_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub addEmployee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
         F = False
-
-
 
         Me.Refresh()
 
@@ -50,18 +34,19 @@
                 CType(ctrl, ComboBox).Text = String.Empty
             End If
         Next ctrl
-
-
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        addUpdateEmployee()
+        addEdit = False
+    End Sub
+
+    Public Sub addUpdateEmployee()
 
         Dim date1 As String = dhired.Value.ToString("yyyy/MM/dd")
-
         Dim date2 As String = bdate.Value.ToString("yyyy/MM/dd")
 
-
-        If flag = True Then
+        If addEdit = False Then
             Try
                 With command
                     .Parameters.Clear()
@@ -90,7 +75,7 @@
 
             End Try
 
-        ElseIf (flag = False)
+        ElseIf (addEdit = True) Then
 
             Try
                 With command
@@ -120,24 +105,28 @@
                 MessageBox.Show("" & ex.Message)
 
             End Try
-
-
-
         End If
 
 
-        'F = False
+
 
 
         Me.Hide()
-        ClearComboBox(Me)
-        ClearTextBox(Me)
+        clearAllTextbox()
     End Sub
-
+    Public Sub clearAllTextbox()
+        Label9.Text = " "
+        cmbDept.Text = "Department"
+        txtFname.Clear()
+        txtLname.Clear()
+        txtAddress.Clear()
+        bdate.Value = Date.Now
+        cmbGender.Text = " "
+        dhired.Value = Date.Now
+        txtContact.Clear()
+    End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ClearComboBox(Me)
-        ClearTextBox(Me)
-
+        clearAllTextbox()
         Me.Hide()
     End Sub
 End Class
