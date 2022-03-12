@@ -47,12 +47,12 @@ Partial Class adminDashboard
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblLate = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.btnBackUp = New System.Windows.Forms.Button()
         Me.btnViewUsers = New System.Windows.Forms.Button()
         Me.btnPayroll = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.btnBackUp = New System.Windows.Forms.Button()
         Me.Panel10.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -341,6 +341,21 @@ Partial Class adminDashboard
         Me.Panel13.Size = New System.Drawing.Size(171, 372)
         Me.Panel13.TabIndex = 23
         '
+        'btnBackUp
+        '
+        Me.btnBackUp.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.btnBackUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBackUp.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBackUp.ForeColor = System.Drawing.Color.White
+        Me.btnBackUp.Location = New System.Drawing.Point(2, 247)
+        Me.btnBackUp.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBackUp.Name = "btnBackUp"
+        Me.btnBackUp.Size = New System.Drawing.Size(167, 34)
+        Me.btnBackUp.TabIndex = 31
+        Me.btnBackUp.Text = "Back-up / Restore"
+        Me.btnBackUp.UseVisualStyleBackColor = False
+        '
         'btnViewUsers
         '
         Me.btnViewUsers.BackColor = System.Drawing.SystemColors.ActiveBorder
@@ -420,22 +435,6 @@ Partial Class adminDashboard
         Me.Button9.TabIndex = 26
         Me.Button9.Text = "Dashboard"
         Me.Button9.UseVisualStyleBackColor = False
-        '
-        'btnBackUp
-        '
-        Me.btnBackUp.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.btnBackUp.BackgroundImage = CType(resources.GetObject("btnBackUp.BackgroundImage"), System.Drawing.Image)
-        Me.btnBackUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBackUp.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBackUp.ForeColor = System.Drawing.Color.White
-        Me.btnBackUp.Location = New System.Drawing.Point(2, 247)
-        Me.btnBackUp.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnBackUp.Name = "btnBackUp"
-        Me.btnBackUp.Size = New System.Drawing.Size(167, 34)
-        Me.btnBackUp.TabIndex = 31
-        Me.btnBackUp.Text = "Back-up / Restore"
-        Me.btnBackUp.UseVisualStyleBackColor = False
         '
         'adminDashboard
         '

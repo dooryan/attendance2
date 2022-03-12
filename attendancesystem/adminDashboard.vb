@@ -219,6 +219,7 @@ Public Class adminDashboard
 
     Private Sub AddNewUserToolStripMenuItem1_Click_1(sender As Object, e As EventArgs)
         addUser.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
@@ -229,6 +230,7 @@ Public Class adminDashboard
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         EmpTimesheet.Show()
+
     End Sub
 
     Private Sub ViewUsersToolStripMenuItem1_Click(sender As Object, e As EventArgs)
@@ -268,5 +270,11 @@ Public Class adminDashboard
 
     Private Sub btnPayroll_Click(sender As Object, e As EventArgs) Handles btnPayroll.Click
         payroll.Show()
+
+    End Sub
+
+    Private Sub btnBackUp_Click(sender As Object, e As EventArgs) Handles btnBackUp.Click
+        backRestore.Show()
+
     End Sub
 End Class
