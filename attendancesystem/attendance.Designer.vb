@@ -40,6 +40,7 @@ Partial Class attendance
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lblName = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -201,6 +202,7 @@ Partial Class attendance
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel3.Controls.Add(Me.LinkLabel1)
         Me.Panel3.Controls.Add(Me.lblName)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.dgrid_emp_time_history)
@@ -222,6 +224,21 @@ Partial Class attendance
         Me.lblName.TabIndex = 21
         Me.lblName.Text = "Name"
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.ForeColor = System.Drawing.Color.Black
+        Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
+        Me.LinkLabel1.Location = New System.Drawing.Point(777, 7)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(52, 17)
+        Me.LinkLabel1.TabIndex = 22
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Logout"
+        '
         'attendance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -235,7 +252,7 @@ Partial Class attendance
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "attendance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -268,4 +285,5 @@ Partial Class attendance
     Friend WithEvents stat As DataGridViewTextBoxColumn
     Friend WithEvents lblName As Label
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

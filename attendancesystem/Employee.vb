@@ -391,9 +391,8 @@ Public Class Form1
         prcDisplayByAutoSearch(textSearch.Text)
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Hide()
-        adminDashboard.Show()
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged_1(sender As Object, e As EventArgs)
@@ -413,5 +412,10 @@ Public Class Form1
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
         WageDetails.Show()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Me.Close()
+        adminDashboard.Show()
     End Sub
 End Class

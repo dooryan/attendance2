@@ -22,7 +22,6 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -32,12 +31,13 @@ Partial Class Form1
         Me.DirectorySearcher2 = New System.DirectoryServices.DirectorySearcher()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.textSearch = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -51,8 +51,8 @@ Partial Class Form1
         Me.gendr = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dhired = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cont = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -77,7 +77,7 @@ Partial Class Form1
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(40, 32)
+        Me.Label3.Location = New System.Drawing.Point(110, 30)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(126, 20)
@@ -87,7 +87,6 @@ Partial Class Form1
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.White
-        Me.Panel7.Controls.Add(Me.Button2)
         Me.Panel7.Controls.Add(Me.Button3)
         Me.Panel7.Controls.Add(Me.Button6)
         Me.Panel7.Controls.Add(Me.Button7)
@@ -97,18 +96,17 @@ Partial Class Form1
         Me.Panel7.Size = New System.Drawing.Size(144, 317)
         Me.Panel7.TabIndex = 0
         '
-        'Button2
+        'PictureBox2
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.Control
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button2.Location = New System.Drawing.Point(38, 276)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(93, 30)
-        Me.Button2.TabIndex = 5
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.PictureBox2.BackgroundImage = Global.attendancesystem.My.Resources.Resources._936347
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.ErrorImage = Nothing
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(21, 21)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(35, 29)
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
         '
         'Button3
         '
@@ -166,6 +164,7 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.textSearch)
         Me.Panel2.Controls.Add(Me.Panel3)
@@ -177,9 +176,22 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(846, 446)
         Me.Panel2.TabIndex = 41
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DarkGreen
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.Location = New System.Drawing.Point(686, 30)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(131, 23)
+        Me.Button1.TabIndex = 43
+        Me.Button1.Text = "Add Salary Details"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'textSearch
         '
-        Me.textSearch.Location = New System.Drawing.Point(181, 32)
+        Me.textSearch.Location = New System.Drawing.Point(251, 30)
         Me.textSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.textSearch.Multiline = True
         Me.textSearch.Name = "textSearch"
@@ -299,19 +311,6 @@ Partial Class Form1
         Me.cont.Name = "cont"
         Me.cont.ReadOnly = True
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DarkGreen
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(686, 30)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(131, 23)
-        Me.Button1.TabIndex = 43
-        Me.Button1.Text = "Add Salary Details"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -322,13 +321,14 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(892, 492)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Location = New System.Drawing.Point(184, 36)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employees"
         Me.Panel7.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -341,7 +341,6 @@ Partial Class Form1
     Friend WithEvents DirectorySearcher1 As DirectoryServices.DirectorySearcher
     Friend WithEvents DirectorySearcher2 As DirectoryServices.DirectorySearcher
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
@@ -362,4 +361,5 @@ Partial Class Form1
     Friend WithEvents dhired As DataGridViewTextBoxColumn
     Friend WithEvents cont As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

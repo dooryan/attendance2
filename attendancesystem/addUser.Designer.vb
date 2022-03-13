@@ -43,12 +43,12 @@ Partial Class addUser
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(93, 14)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semilight", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(101, 11)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(185, 33)
+        Me.Label5.Size = New System.Drawing.Size(158, 30)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Create Account"
         '
@@ -73,28 +73,28 @@ Partial Class addUser
         'txtUname
         '
         Me.txtUname.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUname.Location = New System.Drawing.Point(127, 95)
+        Me.txtUname.Location = New System.Drawing.Point(141, 95)
         Me.txtUname.Name = "txtUname"
-        Me.txtUname.Size = New System.Drawing.Size(151, 26)
+        Me.txtUname.Size = New System.Drawing.Size(164, 26)
         Me.txtUname.TabIndex = 20
         '
         'txtID
         '
         Me.txtID.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.Location = New System.Drawing.Point(127, 65)
+        Me.txtID.Location = New System.Drawing.Point(141, 65)
         Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(151, 26)
+        Me.txtID.Size = New System.Drawing.Size(164, 26)
         Me.txtID.TabIndex = 19
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(13, 161)
+        Me.Label1.Location = New System.Drawing.Point(10, 162)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(110, 15)
+        Me.Label1.Size = New System.Drawing.Size(110, 17)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Confirm Password:"
         '
@@ -103,17 +103,18 @@ Partial Class addUser
         Me.txtConfirmPassword.BackColor = System.Drawing.Color.White
         Me.txtConfirmPassword.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(127, 155)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(141, 155)
         Me.txtConfirmPassword.Margin = New System.Windows.Forms.Padding(2)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtConfirmPassword.Size = New System.Drawing.Size(151, 26)
+        Me.txtConfirmPassword.Size = New System.Drawing.Size(164, 26)
         Me.txtConfirmPassword.TabIndex = 18
         '
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Button2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button2.Location = New System.Drawing.Point(106, 206)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
@@ -126,23 +127,23 @@ Partial Class addUser
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(59, 131)
+        Me.Label6.Location = New System.Drawing.Point(56, 132)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(64, 15)
+        Me.Label6.Size = New System.Drawing.Size(62, 17)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Password:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(57, 101)
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(54, 102)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(65, 15)
+        Me.Label7.Size = New System.Drawing.Size(68, 17)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Username:"
         '
@@ -151,22 +152,22 @@ Partial Class addUser
         Me.txtPass.BackColor = System.Drawing.Color.White
         Me.txtPass.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.txtPass.Location = New System.Drawing.Point(127, 125)
+        Me.txtPass.Location = New System.Drawing.Point(141, 125)
         Me.txtPass.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPass.Size = New System.Drawing.Size(151, 26)
+        Me.txtPass.Size = New System.Drawing.Size(164, 26)
         Me.txtPass.TabIndex = 15
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(82, 71)
+        Me.Label8.Location = New System.Drawing.Point(79, 72)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(40, 15)
+        Me.Label8.Size = New System.Drawing.Size(43, 17)
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "ID No:"
         '

@@ -95,6 +95,7 @@ Partial Class login
         'btn_login
         '
         Me.btn_login.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.btn_login.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
@@ -109,24 +110,24 @@ Partial Class login
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.GrayText
         Me.Label2.Location = New System.Drawing.Point(36, 94)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 14)
+        Me.Label2.Size = New System.Drawing.Size(48, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Password"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.GrayText
         Me.Label1.Location = New System.Drawing.Point(36, 36)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 14)
+        Me.Label1.Size = New System.Drawing.Size(54, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Username"
         '
@@ -154,7 +155,7 @@ Partial Class login
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Location = New System.Drawing.Point(352, 35)
@@ -180,10 +181,11 @@ Partial Class login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Tan
         Me.BackgroundImage = Global.attendancesystem.My.Resources.Resources.beautiful_color_ui_gradients_backgrounds_frost
+        Me.CancelButton = Me.btn_login
         Me.ClientSize = New System.Drawing.Size(773, 369)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

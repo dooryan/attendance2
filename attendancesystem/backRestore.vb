@@ -59,9 +59,17 @@ Public Class backRestore
 
             End Try
 
-
-
-
         End Using
+    End Sub
+
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+    End Sub
+
+    Private Sub backRestore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.FlatAppearance.BorderSize = 0
     End Sub
 End Class

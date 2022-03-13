@@ -302,4 +302,10 @@ Public Class attendance
     Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
 
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        login.Show()
+        Me.Close()
+
+    End Sub
 End Class

@@ -61,6 +61,7 @@ Public Class EmpTimesheet
 
     Private Sub EmpTimesheet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         checkDatabaseConnection()
         DateTimePicker1.Format = DateTimePickerFormat.Custom
         DateTimePicker1.CustomFormat = "yyyy/MM/dd"
@@ -384,5 +385,10 @@ Public Class EmpTimesheet
 
     Private Sub rbDate_CheckedChanged(sender As Object, e As EventArgs) Handles rbDate.CheckedChanged
         rbID.Enabled = True
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Me.Close()
+        adminDashboard.Show()
     End Sub
 End Class

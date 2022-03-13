@@ -226,11 +226,12 @@ Public Class adminDashboard
         Dim oForm As New Form1
 
         oForm.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         EmpTimesheet.Show()
-
+        Me.Close()
     End Sub
 
     Private Sub ViewUsersToolStripMenuItem1_Click(sender As Object, e As EventArgs)
@@ -270,6 +271,7 @@ Public Class adminDashboard
 
     Private Sub btnPayroll_Click(sender As Object, e As EventArgs) Handles btnPayroll.Click
         payroll.Show()
+        Me.Close()
 
     End Sub
 

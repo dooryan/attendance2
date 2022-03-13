@@ -166,7 +166,7 @@ Public Class login
         decrypt()
         txtpassword.Clear()
         txtusername.Clear()
-        Me.Hide()
+        Me.Close()
 
     End Sub
 
