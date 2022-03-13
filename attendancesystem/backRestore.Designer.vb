@@ -71,9 +71,9 @@ Partial Class backRestore
         Me.Button1.BackgroundImage = Global.attendancesystem.My.Resources.Resources._936343
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Location = New System.Drawing.Point(21, 21)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(38, 32)
+        Me.Button1.Size = New System.Drawing.Size(29, 24)
         Me.Button1.TabIndex = 7
         Me.Button1.UseVisualStyleBackColor = False
         '

@@ -52,6 +52,7 @@ Partial Class adminDashboard
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel10.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -511,4 +512,5 @@ Partial Class adminDashboard
     Friend WithEvents btnPayroll As Button
     Friend WithEvents btnViewUsers As Button
     Friend WithEvents btnBackUp As Button
+    Friend WithEvents Timer2 As Timer
 End Class

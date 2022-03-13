@@ -25,6 +25,7 @@ Public Class payroll
         DateTimePicker2.Format = DateTimePickerFormat.Custom
         DateTimePicker2.CustomFormat = "yyyy/MM/dd"
 
+        'DisplayPayHistory()
         displayPayroll()
 
         Try
@@ -140,9 +141,6 @@ Public Class payroll
                     End While
                 Else
 
-
-
-
                 End If
                 sqlAttendanceAdapter.Dispose()
                 dataAttendance.Dispose()
@@ -150,7 +148,7 @@ Public Class payroll
         Catch ex As Exception
 
         End Try
-        Me.Refresh()
+        'Me.Refresh()
     End Sub
     Private Sub prcDisplayByAutoSearch(ByVal strValue As String)
         sqlAttendanceAdapter = New MySqlDataAdapter

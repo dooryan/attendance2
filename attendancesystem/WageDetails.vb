@@ -297,4 +297,13 @@ Public Class WageDetails
         delete()
         displayWageDetails()
     End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Form1.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
+
+    End Sub
 End Class

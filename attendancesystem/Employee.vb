@@ -98,6 +98,9 @@ Public Class Form1
     Private Sub prcDisplayByAutoSearch(ByVal strValue As String)
         sqlAttendanceAdapter = New MySqlDataAdapter
         dataAttendance = New DataTable
+
+
+
         Try
             With command
                 .Parameters.Clear()
@@ -388,7 +391,13 @@ Public Class Form1
     End Sub
 
     Private Sub textSearch_TextChanged_1(sender As Object, e As EventArgs) Handles textSearch.TextChanged
-        prcDisplayByAutoSearch(textSearch.Text)
+        If textSearch.Text = " " Then
+            prcDisplayEmployee()
+        Else
+            prcDisplayByAutoSearch(textSearch.Text)
+        End If
+
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
@@ -412,10 +421,12 @@ Public Class Form1
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
         WageDetails.Show()
+        Me.Close()
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Me.Close()
+
         adminDashboard.Show()
+        Me.Close()
     End Sub
 End Class

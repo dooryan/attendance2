@@ -38,9 +38,10 @@ Partial Class attendance
         Me.lbl_time = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.lblName = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         CType(Me.dgrid_emp_time_history, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -88,6 +89,7 @@ Partial Class attendance
         Me.dgrid_emp_time_history.Location = New System.Drawing.Point(26, 45)
         Me.dgrid_emp_time_history.Margin = New System.Windows.Forms.Padding(2)
         Me.dgrid_emp_time_history.Name = "dgrid_emp_time_history"
+        Me.dgrid_emp_time_history.ReadOnly = True
         Me.dgrid_emp_time_history.RowTemplate.Height = 24
         Me.dgrid_emp_time_history.Size = New System.Drawing.Size(506, 395)
         Me.dgrid_emp_time_history.TabIndex = 2
@@ -96,16 +98,19 @@ Partial Class attendance
         '
         Me.date1.HeaderText = "Date"
         Me.date1.Name = "date1"
+        Me.date1.ReadOnly = True
         '
         'time1
         '
         Me.time1.HeaderText = "Time"
         Me.time1.Name = "time1"
+        Me.time1.ReadOnly = True
         '
         'stat
         '
         Me.stat.HeaderText = "IN/OUT"
         Me.stat.Name = "stat"
+        Me.stat.ReadOnly = True
         '
         'Label1
         '
@@ -155,6 +160,7 @@ Partial Class attendance
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Controls.Add(Me.MonthCalendar1)
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Location = New System.Drawing.Point(558, 45)
         Me.Panel2.Name = "Panel2"
@@ -190,7 +196,7 @@ Partial Class attendance
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Location = New System.Drawing.Point(13, 20)
@@ -201,7 +207,7 @@ Partial Class attendance
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.LinkLabel1)
         Me.Panel3.Controls.Add(Me.lblName)
         Me.Panel3.Controls.Add(Me.Label1)
@@ -213,16 +219,6 @@ Partial Class attendance
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(853, 456)
         Me.Panel3.TabIndex = 21
-        '
-        'lblName
-        '
-        Me.lblName.AutoSize = True
-        Me.lblName.Font = New System.Drawing.Font("Segoe UI", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(22, 7)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(77, 31)
-        Me.lblName.TabIndex = 21
-        Me.lblName.Text = "Name"
         '
         'LinkLabel1
         '
@@ -238,6 +234,25 @@ Partial Class attendance
         Me.LinkLabel1.TabIndex = 22
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Logout"
+        '
+        'lblName
+        '
+        Me.lblName.AutoSize = True
+        Me.lblName.Font = New System.Drawing.Font("Segoe UI", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Location = New System.Drawing.Point(22, 7)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(77, 31)
+        Me.lblName.TabIndex = 21
+        Me.lblName.Text = "Name"
+        '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MonthCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday
+        Me.MonthCalendar1.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.MonthCalendar1.Location = New System.Drawing.Point(20, 211)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.TabIndex = 22
         '
         'attendance
         '
@@ -286,4 +301,5 @@ Partial Class attendance
     Friend WithEvents lblName As Label
     Friend WithEvents Timer2 As Timer
     Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents MonthCalendar1 As MonthCalendar
 End Class

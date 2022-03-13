@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 
 Public Class login
-
+    Dim closeForm As Boolean
     Private Sub btn_login_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -67,6 +67,7 @@ Public Class login
                         End If
                         txtusername.Clear()
                         txtpassword.Clear()
+
                     Else
                         MessageBox.Show("Username or password does not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Exit Sub
@@ -106,7 +107,7 @@ Public Class login
                     MessageBox.Show("Error Occured", " ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
 
                 End If
-
+                Me.Close()
             Else
                 MessageBox.Show("Username or password does not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
@@ -166,7 +167,7 @@ Public Class login
         decrypt()
         txtpassword.Clear()
         txtusername.Clear()
-        Me.Close()
+
 
     End Sub
 

@@ -40,8 +40,10 @@ Public Class addUser
 
                         MessageBox.Show("Succesfully Added User.", "", MessageBoxButtons.OK,
                                             MessageBoxIcon.Information)
-                        Me.Hide()
-                        Me.Dispose()
+                        txtID.Clear()
+                        txtPass.Clear()
+                        txtUname.Clear()
+                        txtConfirmPassword.Clear()
                     Else
                         MessageBox.Show("Password doesn't match..", "", MessageBoxButtons.OK,
                                            MessageBoxIcon.Information)

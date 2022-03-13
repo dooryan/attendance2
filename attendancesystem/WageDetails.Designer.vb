@@ -22,7 +22,7 @@ Partial Class WageDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
@@ -54,12 +54,14 @@ Partial Class WageDetails
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnDelete = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -256,10 +258,11 @@ Partial Class WageDetails
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnSave.BackColor = System.Drawing.Color.Transparent
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(154, 399)
+        Me.btnSave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSave.Location = New System.Drawing.Point(144, 390)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(92, 32)
@@ -269,10 +272,11 @@ Partial Class WageDetails
         '
         'btnUpdate
         '
-        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnUpdate.BackColor = System.Drawing.Color.Transparent
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(19, 399)
+        Me.btnUpdate.ForeColor = System.Drawing.Color.Blue
+        Me.btnUpdate.Location = New System.Drawing.Point(30, 390)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(83, 32)
@@ -294,20 +298,20 @@ Partial Class WageDetails
         'DataGridView1
         '
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.ForestGreen
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column1, Me.Column2, Me.Column5, Me.Column7, Me.Column8, Me.Column9})
         Me.DataGridView1.GridColor = System.Drawing.Color.DarkGreen
         Me.DataGridView1.Location = New System.Drawing.Point(268, 48)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(587, 404)
+        Me.DataGridView1.Size = New System.Drawing.Size(587, 399)
         Me.DataGridView1.TabIndex = 18
         '
         'Column3
@@ -350,17 +354,18 @@ Partial Class WageDetails
         Me.btnAdd.BackColor = System.Drawing.Color.YellowGreen
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAdd.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(649, 11)
+        Me.btnAdd.Location = New System.Drawing.Point(677, 7)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(92, 32)
+        Me.btnAdd.Size = New System.Drawing.Size(74, 31)
         Me.btnAdd.TabIndex = 19
         Me.btnAdd.Text = "Add new"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'Panel5
         '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel5.BackColor = System.Drawing.Color.White
+        Me.Panel5.Controls.Add(Me.PictureBox2)
         Me.Panel5.Controls.Add(Me.btnDelete)
         Me.Panel5.Controls.Add(Me.DataGridView1)
         Me.Panel5.Controls.Add(Me.btnAdd)
@@ -371,9 +376,9 @@ Partial Class WageDetails
         Me.Panel5.Controls.Add(Me.txtName)
         Me.Panel5.Controls.Add(Me.Panel1)
         Me.Panel5.Controls.Add(Me.Panel4)
-        Me.Panel5.Location = New System.Drawing.Point(11, 11)
+        Me.Panel5.Location = New System.Drawing.Point(17, 19)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(869, 469)
+        Me.Panel5.Size = New System.Drawing.Size(859, 455)
         Me.Panel5.TabIndex = 20
         '
         'btnDelete
@@ -381,13 +386,25 @@ Partial Class WageDetails
         Me.btnDelete.BackColor = System.Drawing.Color.Red
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDelete.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(763, 10)
+        Me.btnDelete.Location = New System.Drawing.Point(769, 7)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(92, 32)
+        Me.btnDelete.Size = New System.Drawing.Size(74, 31)
         Me.btnDelete.TabIndex = 20
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.attendancesystem.My.Resources.Resources._936347
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.ErrorImage = Nothing
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(19, 11)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(37, 27)
+        Me.PictureBox2.TabIndex = 29
+        Me.PictureBox2.TabStop = False
         '
         'WageDetails
         '
@@ -399,7 +416,7 @@ Partial Class WageDetails
         Me.ClientSize = New System.Drawing.Size(892, 492)
         Me.Controls.Add(Me.Panel5)
         Me.DoubleBuffered = True
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "WageDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -414,6 +431,7 @@ Partial Class WageDetails
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -449,4 +467,5 @@ Partial Class WageDetails
     Friend WithEvents btnAdd As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents btnDelete As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

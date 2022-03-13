@@ -17,7 +17,7 @@ Public Class backRestore
 
                 sfd.InitialDirectory = "C:\Users\" & My.User.Name & "\Desktop"
                 sfd.Title = "Save to a file"
-                sfd.FileName = "attendanceandpayroll.sql"
+                sfd.FileName = "PayrollBackup.sql"
                 sfd.Filter = "(*.sql)|*.sql"
 
                 If sfd.ShowDialog = DialogResult.OK Then
@@ -69,6 +69,7 @@ Public Class backRestore
     End Sub
 
     Private Sub backRestore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        checkDatabaseConnection()
         Button1.FlatStyle = FlatStyle.Flat
         Button1.FlatAppearance.BorderSize = 0
     End Sub
