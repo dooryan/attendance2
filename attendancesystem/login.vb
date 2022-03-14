@@ -95,12 +95,14 @@ Public Class login
                 If userType = "admin" Then
                     Dim adminDashboard As New adminDashboard
                     adminDashboard.adminDashboard = txtusername.Text
+                    addLogs(userType)
                     adminDashboard.Show()
 
 
                 ElseIf userType = "user" Then
                     Dim UserDashboard As New attendance
                     attendance.userDashboard = txtusername.Text
+                    addLogs(userType)
                     attendance.Show()
 
                 Else
@@ -149,6 +151,7 @@ Public Class login
                         Dim userType As String = paramUtype.Value
                         Dim pwdDecrypted As String = CaesarDecipher(paramPwd.Value, intShift:=15)
                         userLogin(pwdDecrypted, userType)
+
                     Else
                         MessageBox.Show("Username does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
@@ -162,6 +165,35 @@ Public Class login
 
             End Try
         End If
+    End Sub
+
+    Private Sub addLogs(ByVal type As String)
+        checkDatabaseConnection()
+        Dim d As String = Date.Now.ToString("yyyy/MM/dd") & " " & TimeOfDay.ToString("HH:mm:ss")
+
+        If (conAttendanceSystem.State = ConnectionState.Open) Then
+
+            Console.WriteLine(d)
+            'Using cmd As New MySqlCommand
+            'cmd.Connection = conAttendanceSystem
+
+            With command
+
+                    .Parameters.Clear()
+                    .CommandText = "prcInsertLogs"
+                    .CommandType = CommandType.StoredProcedure
+
+                    .Parameters.AddWithValue("uname", txtusername.Text)
+                    .Parameters.AddWithValue("tdate", d)
+                .Parameters.AddWithValue("utype", type)
+                .Parameters.AddWithValue("uAction", "login")
+                .ExecuteNonQuery()
+
+                End With
+
+            'End Using
+        End If
+
     End Sub
     Private Sub btn_login_Click_1(sender As Object, e As EventArgs) Handles btn_login.Click
         decrypt()

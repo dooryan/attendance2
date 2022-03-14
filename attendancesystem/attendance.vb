@@ -304,8 +304,37 @@ Public Class attendance
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        addLogs("user")
         login.Show()
         Me.Close()
+
+    End Sub
+    Private Sub addLogs(ByVal type As String)
+        checkDatabaseConnection()
+        Dim d As String = dateNow & " " & timeNow
+
+        If (conAttendanceSystem.State = ConnectionState.Open) Then
+
+            Console.WriteLine(d)
+            'Using cmd As New MySqlCommand
+            'cmd.Connection = conAttendanceSystem
+
+            With command
+
+                .Parameters.Clear()
+                .CommandText = "prcInsertLogs"
+                .CommandType = CommandType.StoredProcedure
+
+                .Parameters.AddWithValue("uname", Label1.Text)
+                .Parameters.AddWithValue("tdate", d)
+                .Parameters.AddWithValue("utype", type)
+                .Parameters.AddWithValue("uAction", "logout")
+                .ExecuteNonQuery()
+
+            End With
+
+            'End Using
+        End If
 
     End Sub
 End Class

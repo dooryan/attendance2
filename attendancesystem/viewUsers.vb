@@ -3,6 +3,7 @@ Public Class viewUsers
     Private Sub viewUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         checkDatabaseConnection()
         displayUsers()
+        displayLogs()
 
     End Sub
 
@@ -76,13 +77,58 @@ Public Class viewUsers
 
     End Sub
 
+    Private Sub displayLogs()
+        Dim DA = New DataTable()
+        Dim adaptersql = New MySqlDataAdapter
+        command.Connection = conAttendanceSystem
+        Try
+            With command
+                .Parameters.Clear()
+                .CommandText = "prcDisplayLogs"
+                .CommandType = CommandType.StoredProcedure
+                adaptersql.SelectCommand = command
+                DA.Clear()
+                adaptersql.Fill(DA)
+
+
+                If DA.Rows.Count > 0 Then
+                    DataGridView2.RowCount = DA.Rows.Count
+
+                    row = 0
+                    While Not DA.Rows.Count - 1 < row
+                        With DataGridView2
+                            .Rows(row).Cells(0).Value = DA.Rows(row).Item("emp_id").ToString
+                            .Rows(row).Cells(1).Value = DA.Rows(row).Item("t_date").ToString
+                            .Rows(row).Cells(2).Value = DA.Rows(row).Item("u_type").ToString
+                            .Rows(row).Cells(3).Value = DA.Rows(row).Item("action").ToString
+
+
+                        End With
+                        row = row + 1
+                    End While
+                Else
+
+
+                End If
+                sqlAttendanceAdapter.Dispose()
+
+            End With
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         deleteUser()
         displayUsers()
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        adminDashboard.Show()
+
         Me.Close()
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
     End Sub
 End Class

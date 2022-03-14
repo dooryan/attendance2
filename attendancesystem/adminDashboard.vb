@@ -179,9 +179,37 @@ Public Class adminDashboard
 
     Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
         Dim oForm As New login
-
+        addLogs("admin")
         oForm.Show()
         Me.Hide()
+    End Sub
+    Private Sub addLogs(ByVal type As String)
+        checkDatabaseConnection()
+        Dim d As String = Date.Now.ToString("yyyy/MM/dd") & " " & TimeOfDay.ToString("HH:mm:ss")
+
+        If (conAttendanceSystem.State = ConnectionState.Open) Then
+
+            Console.WriteLine(d)
+            'Using cmd As New MySqlCommand
+            'cmd.Connection = conAttendanceSystem
+
+            With command
+
+                .Parameters.Clear()
+                .CommandText = "prcInsertLogs"
+                .CommandType = CommandType.StoredProcedure
+
+                .Parameters.AddWithValue("uname", "admin")
+                .Parameters.AddWithValue("tdate", d)
+                .Parameters.AddWithValue("utype", type)
+                .Parameters.AddWithValue("uAction", "logout")
+                .ExecuteNonQuery()
+
+            End With
+
+            'End Using
+        End If
+
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
